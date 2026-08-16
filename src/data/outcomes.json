@@ -1,0 +1,5751 @@
+[
+ {
+  "id": "CP1",
+  "slug": "CP1",
+  "title": "Receipt and Ingestion",
+  "module": "Claims Processing",
+  "moduleCode": "CP",
+  "moduleSlug": "claims-processing",
+  "outcome": "The system receives, ingests, and retains claims, claims adjustments, and supporting documentation submitted both electronically and by paper in standard formats.",
+  "metrics": [
+   "Count/percentage of claims received by submission channel (paper vs. electronic).",
+   "Median processing time for ingestion of non-electronic claims/documentation (from receipt to correct ingestion of/association with the associated claims record)."
+  ],
+  "regs": [
+   {
+    "cite": "45 CFR 162.1102",
+    "title": "45",
+    "section": "162.1102",
+    "url": "https://www.ecfr.gov/current/title-45/section-162.1102",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "45 CFR 162.1102",
+  "regLines": [
+   [
+    {
+     "text": "45 CFR 162.1102",
+     "url": "https://www.ecfr.gov/current/title-45/section-162.1102"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "CP2",
+  "slug": "CP2",
+  "title": "Validation",
+  "module": "Claims Processing",
+  "moduleCode": "CP",
+  "moduleSlug": "claims-processing",
+  "outcome": "The system performs comprehensive validation of claims and claims adjustments, including validity of services.",
+  "metrics": [
+   "Count/percentage of claims/claims adjustments accepted/suspended/rejected for processing."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.052",
+    "title": "42",
+    "section": "431.052",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.52",
+    "note": "published as 431.052; resolves to 431.52"
+   },
+   {
+    "cite": "42 CFR 431.055",
+    "title": "42",
+    "section": "431.055",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.55",
+    "note": "published as 431.055; resolves to 431.55"
+   },
+   {
+    "cite": "42 CFR 447.26",
+    "title": "42",
+    "section": "447.26",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.26",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 447.45(f)",
+    "title": "42",
+    "section": "447.45(f)",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.45#p-447.45(f)",
+    "note": ""
+   },
+   {
+    "cite": "45 CFR 162.1002",
+    "title": "45",
+    "section": "162.1002",
+    "url": "https://www.ecfr.gov/current/title-45/section-162.1002",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "SMD Letter 10-017",
+   "SMM Part 11 Section 11300"
+  ],
+  "regRaw": "42 CFR 431.052\r\n42 CFR 431.055\r\n42 CFR 447.26\r\n42 CFR 447.45(f)\r\n45 CFR 162.1002\r\nSMD Letter 10-017\r\nSMM Part 11 Section 11300",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 431.052",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.52",
+     "note": "published as 431.052; resolves to 431.52"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 431.055",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.55",
+     "note": "published as 431.055; resolves to 431.55"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.26",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.26"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.45(f)",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.45#p-447.45(f)"
+    }
+   ],
+   [
+    {
+     "text": "45 CFR 162.1002",
+     "url": "https://www.ecfr.gov/current/title-45/section-162.1002"
+    }
+   ],
+   [
+    {
+     "text": "SMD Letter 10-017"
+    }
+   ],
+   [
+    {
+     "text": "SMM Part 11 Section 11300"
+    }
+   ]
+  ],
+  "alsoIn": [
+   "program-integrity"
+  ]
+ },
+ {
+  "id": "CP3",
+  "slug": "CP3",
+  "title": "Prior Authorization",
+  "module": "Claims Processing",
+  "moduleCode": "CP",
+  "moduleSlug": "claims-processing",
+  "outcome": "The system confirms authorization for services that require prior approval to manage costs or ensure patient safety, and that the services provided are consistent with the authorization. The system accepts use of the authorization by multiple sequential providers during the period as allowed by state rules. Prior-authorization records stored by the system are correctly associated with the relevant claim(s).",
+  "metrics": [
+   "Count/percentage of claims/claims adjustments requiring prior-authorization accepted/suspended/rejected for processing based on prior authorization or lack thereof."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.630",
+    "title": "42",
+    "section": "431.630",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.630",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 431.960",
+    "title": "42",
+    "section": "431.960",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.960",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "SSA 1927(d)(5)",
+   "SMM Part 4",
+   "SMM Part 11 Section 11325"
+  ],
+  "regRaw": "SSA 1927(d)(5)\r\n42 CFR 431.630\r\n42 CFR 431.960\r\nSMM Part 4\r\nSMM Part 11 Section 11325",
+  "regLines": [
+   [
+    {
+     "text": "SSA 1927(d)(5)"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 431.630",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.630"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 431.960",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.960"
+    }
+   ],
+   [
+    {
+     "text": "SMM Part 4"
+    }
+   ],
+   [
+    {
+     "text": "SMM Part 11 Section 11325"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "CP4",
+  "slug": "CP4",
+  "title": "Calculation and Resolution",
+  "module": "Claims Processing",
+  "moduleCode": "CP",
+  "moduleSlug": "claims-processing",
+  "outcome": "The system correctly calculates payable amounts in accordance with the State Plan and logs accounts payable amounts for payment processing. The system accepts, adjusts, or denies claim line items and amounts and captures the applicable reason codes.",
+  "metrics": [
+   "Count/percentage of transactions by reason code.",
+   "Count/percentage of transactions re-priced post-payment by underpayment/ overpayment and, if applicable, reason code or other applicable categorization available to the State."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.052",
+    "title": "42",
+    "section": "431.052",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.52",
+    "note": "published as 431.052; resolves to 431.52"
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 431.052",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 431.052",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.52",
+     "note": "published as 431.052; resolves to 431.52"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "CP5",
+  "slug": "CP5",
+  "title": "Provide Submission Status",
+  "module": "Claims Processing",
+  "moduleCode": "CP",
+  "moduleSlug": "claims-processing",
+  "outcome": "The state communicates claims status throughout the submission and payment processes and in response to inquiry. If there are correctable errors in a claims submission, the system suspends the claims, attaches pre-defined reason code(s) to suspended claims, and communicates those errors to the provider for correction. The system associates applicable error or reason code(s) for all statuses (e.g., rejected, suspended, denied, approved for payment, paid) and communicates those to the submitter. The system shows providers, case managers and members current submission status through one or more of the following:\r\n- Automatic notices as appropriate based on claims decision or suspension.\r\n- Explanation of Benefits (EOB).\r\n- Providing prompt response to inquiries regarding the status of any claim through a variety of appropriate technologies, and tracking and monitoring responses to the inquiries.\r\n- Application programming interface (API)",
+  "metrics": [
+   "Count/percentage of claims suspended for correction/corrected by reason code.",
+   "Count/percentage of inquiries/responses/communications by submission/response channel."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.60",
+    "title": "42",
+    "section": "431.60",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.60",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "45 CFR Part 162.1402(c)",
+   "45 CFR Part 162.1403 (a) & (b)",
+   "SMM Part 11 Section 11325"
+  ],
+  "regRaw": "45 CFR Part 162.1402(c)\r\n45 CFR Part 162.1403 (a) & (b)\r\n42 CFR 431.60 (a) & (b)\r\nSMM Part 11 Section 11325",
+  "regLines": [
+   [
+    {
+     "text": "45 CFR Part 162.1402(c)"
+    }
+   ],
+   [
+    {
+     "text": "45 CFR Part 162.1403 (a) & (b)"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 431.60",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.60"
+    },
+    {
+     "text": " (a) & (b)"
+    }
+   ],
+   [
+    {
+     "text": "SMM Part 11 Section 11325"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "CP6",
+  "slug": "CP6",
+  "title": "Record-Keeping",
+  "module": "Claims Processing",
+  "moduleCode": "CP",
+  "moduleSlug": "claims-processing",
+  "outcome": "The system tracks each claim throughout the adjudication process (including logging edits made to the claim) and retains transaction history to support claims processing, reporting, appeals, audits, and other uses.",
+  "metrics": [
+   "Records must be retained for a minimum of 3 years for fiscal records, 5 years for records related to cost reports, 6 years for medical records of covered entities, and 10 years for managed care records (or greater if required under State laws) – periods are measured from the date of closure of all related actions for a given record.",
+   "Pass/Fail that the state can demonstrate that 100% of records were retained for the appropriate number of years indicated above."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 447.45",
+    "title": "42",
+    "section": "447.45",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.45",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 431.17",
+    "title": "42",
+    "section": "431.17",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.17",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "SMM Part 11 Section 11325"
+  ],
+  "regRaw": "42 CFR 447.45\r\n42 CFR 431.17\r\nSMM Part 11 Section 11325",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 447.45",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.45"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 431.17",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.17"
+    }
+   ],
+   [
+    {
+     "text": "SMM Part 11 Section 11325"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "DSS/DW1",
+  "slug": "DSS-DW1",
+  "title": "",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleCode": "DSSDW",
+  "moduleSlug": "dssdw",
+  "outcome": "The system supports various business processes' reporting requirements",
+  "metrics": [
+   "Verify and validate the CMS annual report provisions from 431.428 (1) through 431.428 (11) are met annually."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.428",
+    "title": "42",
+    "section": "431.428",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.428",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 431.428",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 431.428",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.428"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "DSS/DW2",
+  "slug": "DSS-DW2",
+  "title": "",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleCode": "DSSDW",
+  "moduleSlug": "dssdw",
+  "outcome": "The solution includes analytical and reporting capabilities to support key policy decision making",
+  "metrics": [
+   "Produce data-driven reporting on transaction data and performance to meet 433.112 (b) (15)."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.112",
+    "title": "42",
+    "section": "433.112",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.112",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.112",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.112",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.112"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE1",
+  "slug": "EE1",
+  "title": "Application",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "The eligibility system receives, ingests, and processes the single-streamlined applications, change of circumstances, renewal forms, and any supporting documentation requested by the state (including telephonic signatures) from individuals, for all Medicaid eligibility groups and CHIP through online via multiple browsers, mail (paper), phone, and in-person (e.g., via kiosk) applications to support eligibility determination for all Insurance Affordability Programs (Federal Health Insurance Exchange), state Medicaid or CHIP, State-Based Marketplace (SBM), Basic Health Program (BHP).",
+  "metrics": [
+   "Number/Percentage of applications (Medicaid only vs multi-benefit, when applicable) submitted through each modality (use Performance Indicator Data #5 'Number of Applications Received' submitted to CMS).",
+   "Percentage of change in circumstances reported through each modality.",
+   "Percentage of supporting documents/information submitted through each modality.",
+   "Percentage of renewal documents submitted through each modality"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.907",
+    "title": "42",
+    "section": "435.907",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.907",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 435.916",
+    "title": "42",
+    "section": "435.916",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.916",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.907\r\n - 42 CFR 435.916\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.907",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.907"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.916",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.916"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE2",
+  "slug": "EE2",
+  "title": "Application",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals experience a user-friendly, dynamic, online application, such that subsequent questions are based on prior answers.",
+  "metrics": [
+   "Average time it takes to complete an online application.",
+   "User surveys",
+   "Abandonment rate of online applications",
+   "Outcome attestation of dynamic application skip logic"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.907",
+    "title": "42",
+    "section": "435.907",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.907",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.907\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.907",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.907"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE3",
+  "slug": "EE3",
+  "title": "Automatic Enrollment",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals eligible for automatic Medicaid eligibility are promptly enrolled (e.g., SSI recipients in 1634 states, individuals receiving a mandatory state supplement under a federally- or state-administered program, individuals receiving an optional State supplement per 42 CFR 435.230 , and deemed newborns). (Automatic enrollment in Guam, Puerto Rico, and the U.S. Virgin Islands is required only for individuals receiving cash assistance under a state plan for OAA, AFDC, AB, APTD, or AABD, and deemed newborns.)",
+  "metrics": [
+   "Percentage of individuals receiving SSI automatically eligible (1634 states only)",
+   "Percentage of deemed newborns automatically eligible"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.117",
+    "title": "42",
+    "section": "435.117",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.117",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 435.909",
+    "title": "42",
+    "section": "435.909",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.909",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.909",
+    "title": "42",
+    "section": "436.909",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.909",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.124",
+    "title": "42",
+    "section": "436.124",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.124",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.117\r\n - 42 CFR 435.909\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.909\r\n - 42 CFR 436.124",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.117",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.117"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.909",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.909"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.909",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.909"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.124",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.124"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE4",
+  "slug": "EE4",
+  "title": "Income Methodologies",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "The state correctly calculate income and household composition based on Modified Adjusted Gross Income (MAGI) and non-MAGI methodologies at application and renewal. Example business rules include subtracting 5 percentage points off FPL for applicable family size",
+  "metrics": [
+   "Most recent PERM results",
+   "Description/reports of internal quality assurance processes"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.601",
+    "title": "42",
+    "section": "435.601",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.601",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 435.603",
+    "title": "42",
+    "section": "435.603",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.603",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 435.811-814",
+    "title": "42",
+    "section": "435.811-814",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.811",
+    "note": "range cite; opens 435.811"
+   },
+   {
+    "cite": "42 CFR 436.601",
+    "title": "42",
+    "section": "436.601",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.601",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.811-814",
+    "title": "42",
+    "section": "436.811-814",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.811",
+    "note": "range cite; opens 436.811"
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.601\r\n - 42 CFR 435.603\r\n - 42 CFR 435.811-814\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.601\r\n - 42 CFR 436.811-814\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.601",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.601"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.603",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.603"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.811-814",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.811",
+     "note": "range cite; opens 435.811"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.601",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.601"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.811-814",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.811",
+     "note": "range cite; opens 436.811"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE5",
+  "slug": "EE5",
+  "title": "Electronic Verification",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "The eligibility system uses automated interfaces with electronic data sources to enable real-time or near real-time, no manual touch eligibility determinations. The data sources include (but are not limited to) SSA and the Department of Homeland Security (DHS) (directly or via the Federal Data Services Hub (FDSH)), state quarterly wage data, data from financial institutions for asset verification, Renewal and Redetermination Verification service through the FDSH, Public Assistance Reporting Information System (PARIS) to verify Medicaid coverage in other states.",
+  "metrics": [
+   "Number/percentage of individuals whose determinations were entirely automated",
+   "Percentage of determinations that required a request for additional documentation from the applicant."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.940-965",
+    "title": "42",
+    "section": "435.940-965",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.940",
+    "note": "range cite; opens 435.940"
+   },
+   {
+    "cite": "42 CFR 435.945(d)",
+    "title": "42",
+    "section": "435.945(d)",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.945#p-435.945(d)",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:",
+   "For Puerto Rico:",
+   "- Consolidated Appropriations Act of 2023, Section 5101 (requiring an Asset Verification System to be implemented by 2026)"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.940-965\r\n - 42 CFR 435.945(d)\r\n\r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901\r\n \r\nFor Puerto Rico:\r\n - Consolidated Appropriations Act of 2023, Section 5101 (requiring an Asset Verification System to be implemented by 2026)",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.940-965",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.940",
+     "note": "range cite; opens 435.940"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.945(d)",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.945#p-435.945(d)"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ],
+   [
+    {
+     "text": "For Puerto Rico:"
+    }
+   ],
+   [
+    {
+     "text": "- Consolidated Appropriations Act of 2023, Section 5101 (requiring an Asset Verification System to be implemented by 2026)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE6",
+  "slug": "EE6",
+  "title": "Timely Determinations",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals who apply for Medicaid based on disability receive an eligibility determination within 90 days and all other applicants receive an eligibility determination within 45 days.",
+  "metrics": [
+   "Percentage of determinations (individuals) whose eligibility is based on non-MAGI methodologies which took less than or equal to 90 days (use Performance Indicator Data #12 'Processing Time for Determinations' submitted to CMS)",
+   "Percentage of determinations (individuals) whose eligibility is based on MAGI methodologies which took less than or equal to 45 days (use Performance Indicator Data #12 'Processing Time for Determinations' submitted to CMS)",
+   "Percentage of determinations (individuals) whose eligibility is based on MAGI methodologies which took less than or equal to 45 days (use Performance Indicator Data #12 'Processing Time for Determinations' submitted to CMS)",
+   "Number of undetermined MAGI related applications (individuals) that are greater than 45 days from when they were received.",
+   "Number of undetermined non-MAGI related applications (individuals) that are greater than 90 days from when they were received."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.911-912",
+    "title": "42",
+    "section": "435.911-912",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.911",
+    "note": "range cite; opens 435.911"
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.911-912\r\n\r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.911-912",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.911",
+     "note": "range cite; opens 435.911"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE7",
+  "slug": "EE7",
+  "title": "Reasonable Opportunity Period",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals are enrolled for up to 90 days if pending verification of citizenship or immigration status.",
+  "metrics": [
+   "Number of individuals enrolled during a ROP period.",
+   "Number of people who remained enrolled at the end of the ROP.",
+   "Number of people disenrolled at the end of the ROP for failure to verify citizenship or immigration status."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.407",
+    "title": "42",
+    "section": "435.407",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.407",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 435.956",
+    "title": "42",
+    "section": "435.956",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.956",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.407",
+    "title": "42",
+    "section": "436.407",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.407",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.407\r\n - 42 CFR 435.956\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.407\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.407",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.407"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.956",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.956"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.407",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.407"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE8",
+  "slug": "EE8",
+  "title": "SSN Verification",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals are enrolled pending verification of SSN.",
+  "metrics": [
+   "Number of individuals enrolled pending verification of SSN",
+   "Number of people who remained enrolled upon verification of SSN",
+   "Number of people disenrolled for failure to verify SSN"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.910",
+    "title": "42",
+    "section": "435.910",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.910",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 435.956(d)",
+    "title": "42",
+    "section": "435.956(d)",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.956#p-435.956(d)",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.910\r\n - 42 CFR 435.956(d)\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.910",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.910"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.956(d)",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.956#p-435.956(d)"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE9",
+  "slug": "EE9",
+  "title": "Notices",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals receive system-generated timely automated (versus manual) eligibility notices and request for additional information for eligibility determination, as necessary.",
+  "metrics": [
+   "Percentage of notices automatically generated and sent",
+   "Types of notices that are automated.",
+   "Types of notices that are manually generally.",
+   "Percentage of terminations due to lack of response to a notice"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.210-214",
+    "title": "42",
+    "section": "431.210-214",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.210",
+    "note": "range cite; opens 431.210"
+   },
+   {
+    "cite": "42 CFR 435.917-918",
+    "title": "42",
+    "section": "435.917-918",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.917",
+    "note": "range cite; opens 435.917"
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For all states, District of Columbia, and territories:",
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For all states, District of Columbia, and territories:\r\n - 42 CFR 431.210-214\r\n \r\nFor states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.917-918\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For all states, District of Columbia, and territories:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 431.210-214",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.210",
+     "note": "range cite; opens 431.210"
+    }
+   ],
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.917-918",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.917",
+     "note": "range cite; opens 435.917"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE10",
+  "slug": "EE10",
+  "title": "Notices",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals receive electronic notices and alerts as applicable via their preferred mode of communication (e.g., email, text that notice is available in online account).",
+  "metrics": [
+   "Outcome attestation of ability for applicants to receive notifications in their preferred mode of communication."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.210-214",
+    "title": "42",
+    "section": "431.210-214",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.210",
+    "note": "range cite; opens 431.210"
+   },
+   {
+    "cite": "42 CFR 435.917-918",
+    "title": "42",
+    "section": "435.917-918",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.917",
+    "note": "range cite; opens 435.917"
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For all states, District of Columbia, and territories:",
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For all states, District of Columbia, and territories:\r\n - 42 CFR 431.210-214\r\n\r\nFor states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.917-918\r\n\r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For all states, District of Columbia, and territories:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 431.210-214",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.210",
+     "note": "range cite; opens 431.210"
+    }
+   ],
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.917-918",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.917",
+     "note": "range cite; opens 435.917"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE11",
+  "slug": "EE11",
+  "title": "Enrollment",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Following an eligibility determination, the system promptly sends the beneficiary information to MMIS to complete enrollment into the appropriate delivery system (e.g., FFS, managed care).",
+  "metrics": [
+   "Percentage of automated transmissions to the MMIS.",
+   "Percentage of transmissions to MMIS that require manual intervention or exceptions."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.914",
+    "title": "42",
+    "section": "435.914",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.914",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.914\r\n\r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.914",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.914"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE12",
+  "slug": "EE12",
+  "title": "Presumptive Eligibility Applications",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "The system receives Presumptive Eligibility (PE) applications from all approved entities in an automated manner and facilitates eligibility termination if no full Medicaid application is received by the end of the month following the month of PE determination.",
+  "metrics": [
+   "Number of PE applications received.",
+   "Percentage of individuals disenrolled at the end of the PE period for failure to file a full application.",
+   "Percentage of individuals who are determined eligible for Medicaid by the end of the PE period."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.1110",
+    "title": "42",
+    "section": "435.1110",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.1110",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.1110",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.1110",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.1110"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE13",
+  "slug": "EE13",
+  "title": "Annual Renewals",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "The system uses electronic data sources to confirm eligibility, wherever possible, to facilitate ex-parte renewals.",
+  "metrics": [
+   "Percentage of individuals whose redeterminations were made using the Ex-Parte process."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.916",
+    "title": "42",
+    "section": "435.916",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.916",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.916\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.916",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.916"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE14",
+  "slug": "EE14",
+  "title": "Annual Renewals",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "If ex-parte renewal cannot be completed, the system can automatically generate pre-populated renewal forms and distribute those forms via individuals' preferred communication mode.",
+  "metrics": [
+   "Percentage of individuals up for renewal who were sent a prepopulated renewal form.",
+   "Percentage of pre-populated renewals sent electronically and by mail."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.916",
+    "title": "42",
+    "section": "435.916",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.916",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.916\r\n\r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.916",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.916"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE15",
+  "slug": "EE15",
+  "title": "Eligibility Category",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "The system applies an automated eligibility hierarchy that places an individual in the most advantageous group for which they are eligible at initial application and renewal.",
+  "metrics": [
+   "Outcome Attestation - Possibly the following:",
+   "Test results (automated if possible) verifying that the system applies an automated eligibility hierarchy to assign individuals to the most advantageous category for which they are eligible.",
+   "Most recent PERM report and related Corrective Action Plan, if applicable.",
+   "Demonstration of system functionality to apply the eligibility hierarchy in sub-production environment."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.404",
+    "title": "42",
+    "section": "435.404",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.404",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.404",
+    "title": "42",
+    "section": "436.404",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.404",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.404\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.404",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.404",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.404"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.404",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.404"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE16",
+  "slug": "EE16",
+  "title": "Eligibility Category",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "The system uses automated business rules to assign accurate eligibility categories for all the mandatory and relevant optional eligibility groups at initial application and renewal. Example business rules include:\r\n·       Correct identification of individuals age 19-64 at or below 133 percent FPL (VIII group)\r\n·       Correct alignment of eligibility categories to FMAP rate",
+  "metrics": [
+   "Most recent PERM results"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.404",
+    "title": "42",
+    "section": "435.404",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.404",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.404",
+    "title": "42",
+    "section": "436.404",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.404",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.404\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.404",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.404",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.404"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.404",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.404"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE17",
+  "slug": "EE17",
+  "title": "Incarcerated individuals",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Incarcerated individuals receive timely access to inpatient services and receive a timely and accurate eligibility determination upon release.",
+  "metrics": [
+   "Number/Percentage of individuals whose eligibility status was suspended due to incarceration, if applicable.",
+   "Number/Percentage of claims for inpatient services for incarcerated individuals.",
+   "Number/Percentage of claims paid for services other than inpatient services for incarcerated individuals."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.1009",
+    "title": "42",
+    "section": "435.1009",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.1009",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.1005",
+    "title": "42",
+    "section": "436.1005",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.1005",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.1009\r\n\r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.1005",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.1009",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.1009"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.1005",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.1005"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE18",
+  "slug": "EE18",
+  "title": "Emergency Medicaid",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals whose coverage is limited to emergency services due to immigration status receive timely and accurate eligibility determination.",
+  "metrics": [
+   "Number/Percentage of claims paid for emergency services for individuals whose coverage is limited due to immigration status.",
+   "Number/Percentage of claims paid for services other than emergency services for individuals whose coverage is limited due to immigration status."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 440.255",
+    "title": "42",
+    "section": "440.255",
+    "url": "https://www.ecfr.gov/current/title-42/section-440.255",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 435.139",
+    "title": "42",
+    "section": "435.139",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.139",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.128",
+    "title": "42",
+    "section": "436.128",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.128",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For all states, District of Columbia, and territories:",
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For all states, District of Columbia, and territories:\r\n - 42 CFR 440.255\r\n \r\nFor states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.139\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.128",
+  "regLines": [
+   [
+    {
+     "text": "For all states, District of Columbia, and territories:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 440.255",
+     "url": "https://www.ecfr.gov/current/title-42/section-440.255"
+    }
+   ],
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.139",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.139"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.128",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.128"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE19",
+  "slug": "EE19",
+  "title": "Retroactive Eligibility",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals receive timely and accurate determinations of eligibility for the three months prior to the date of application if the individual would have been eligible and received Medicaid covered services.",
+  "metrics": [
+   "Percentage of individuals who received retroactive coverage up to 3 months prior to the date of application."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.915",
+    "title": "42",
+    "section": "435.915",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.915",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.915\r\n\r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.915",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.915"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE20",
+  "slug": "EE20",
+  "title": "Effective Date of Eligibility",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Individuals are promptly enrolled with the accurate effective date of eligibility in accordance with the approved State Plan.",
+  "metrics": [
+   "Outcome Attestation",
+   "Possibly: Test results (automated if possible) verifying that the system sets eligibility effective date according to state policy (pass/fail)",
+   "Demonstration of process for assigning correct effective dates in sub- production environment (pass/fail)"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.915",
+    "title": "42",
+    "section": "435.915",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.915",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.915\r\n \r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.915",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.915"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE21",
+  "slug": "EE21",
+  "title": "Multi-Benefit Application",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "In states that have an integrated eligibility system with human services programs, the system is able to pend application for one program without having to do so for Medicaid or CHIP programs, if needed.",
+  "metrics": [
+   "Individuals who apply for Medicaid on the basis of disability using a multi-benefit application receive determinations within 90 days and all other applicants using a multi-benefit application receive an eligibility determination within 45 days."
+  ],
+  "regs": [],
+  "regOther": [
+   "For all states, District of Columbia, and territories:",
+   "- June 18, 2013, CMS Guidance on State Alternative Applications for Health Coverage"
+  ],
+  "regRaw": "For all states, District of Columbia, and territories:\r\n - June 18, 2013, CMS Guidance on State Alternative Applications for Health Coverage",
+  "regLines": [
+   [
+    {
+     "text": "For all states, District of Columbia, and territories:"
+    }
+   ],
+   [
+    {
+     "text": "- June 18, 2013, CMS Guidance on State Alternative Applications for Health Coverage"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE22",
+  "slug": "EE22",
+  "title": "Integration with Other Programs",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "The state maintains a coordinated eligibility and enrollment process with all insurance affordability programs by supporting bi-directional data-sharing for application-related data and adjudication status with all relevant insurance affordability programs (FFE, CHIP, SBE if applicable, BHP if applicable).",
+  "metrics": [
+   "Success rate of Inbound Account Transfers from the state to the FFE (The state does not need to provide data for this metric; it will be taken from the CMS Weekly AT Report).",
+   "Success rate of Outbound Account Transfers from the FFE to the state (The state does not need to provide data for this metric; it will be taken from the CMS Weekly AT Report).",
+   "Success rate of Inbound Account Transfers from the state to the SBE, if applicable.",
+   "Success rate of Outbound Account Transfers from the SBE to the state, if applicable.",
+   "Number of applications sent to the state's separate CHIP (only applicable in states with separate CHIP programs)",
+   "Number of applications sent to the state's Basic Health Program (BHP) (only applicable in states with a BHP."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.1200",
+    "title": "42",
+    "section": "435.1200",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.1200",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.1200",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.1200",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.1200"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE23",
+  "slug": "EE23",
+  "title": "Account Transfers (for FFE Determination States)",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Account Transfer information for individuals applying at the FFE from a determination state is automatically ingested and the state promptly enrolls individuals determined eligible by the FFE.",
+  "metrics": [
+   "Number of days to enroll an individual who is determined eligible by the FFE.",
+   "Number of days to enroll an individual who is determined eligible by the SBE, if applicable."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.1200",
+    "title": "42",
+    "section": "435.1200",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.1200",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.1200",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.1200",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.1200"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE24",
+  "slug": "EE24",
+  "title": "Account Transfers (for FFE Assessment States)",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Account Transfer information for individuals applying at the FFE from an assessment state is automatically ingested and the state conducts only the remaining verifications necessary to complete the determination process for individuals assessed as potential eligible by the FFE.",
+  "metrics": [
+   "Average Number of days it takes to make an eligibility determination for Account Transfers from the FFE for non-disability related assessments.",
+   "Average Number of days it takes to make an eligibility determination for Account Transfers from the SBE, if applicable, for non-disability related assessments.",
+   "Average Number of days it takes to make an eligibility determination for Account Transfers from the FFE for disability related assessments.",
+   "Average Number of days it takes to make an eligibility determination for Account Transfers from the SBE, if applicable, for disability related assessments."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.1200",
+    "title": "42",
+    "section": "435.1200",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.1200",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.1200",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.1200",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.1200"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE25",
+  "slug": "EE25",
+  "title": "Minimum Essential Coverage (MEC) Check",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "The system receives and responds to requests from the FFE in real-time to confirm whether an individual applying for coverage through the FFE currently has Minimum Essential Coverage through Medicaid or CHIP.",
+  "metrics": [
+   "Outcome Attestation",
+   "Possibly: Test results (automated if possible) verifying that the system receives and responds to requests from the FFE for MEC check in real-time (Pass/fail)"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.1200",
+    "title": "42",
+    "section": "435.1200",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.1200",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.1200",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.1200",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.1200"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE26",
+  "slug": "EE26",
+  "title": "Accessibility",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Persons with disabilities or with Limited English Proficiency (LEP) can submit a single streamlined application with any necessary assistance (e.g., TTY for the hearing impaired for phone applications, and language assistance for persons with LEP).",
+  "metrics": [
+   "Number of calls using a TTY line.",
+   "Number of requests for translation services by language.",
+   "data on the Most common Help Desk calls from applicants and Beneficiaries."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 435.905",
+    "title": "42",
+    "section": "435.905",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.905",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 435.908",
+    "title": "42",
+    "section": "435.908",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.908",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 436.901",
+    "title": "42",
+    "section": "436.901",
+    "url": "https://www.ecfr.gov/current/title-42/section-436.901",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For states, District of Columbia, Northern Mariana Islands, and American Samoa:",
+   "For Guam, Puerto Rico, and the Virgin Islands:"
+  ],
+  "regRaw": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:\r\n - 42 CFR 435.905\r\n - 42 CFR 435.908\r\n\r\nFor Guam, Puerto Rico, and the Virgin Islands:\r\n - 42 CFR 436.901",
+  "regLines": [
+   [
+    {
+     "text": "For states, District of Columbia, Northern Mariana Islands, and American Samoa:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.905",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.905"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 435.908",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.908"
+    }
+   ],
+   [
+    {
+     "text": "For Guam, Puerto Rico, and the Virgin Islands:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 436.901",
+     "url": "https://www.ecfr.gov/current/title-42/section-436.901"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EE27",
+  "slug": "EE27",
+  "title": "Appeals",
+  "module": "Eligibility and Enrollment",
+  "moduleCode": "EE",
+  "moduleSlug": "eligibility-enrollment",
+  "outcome": "Beneficiaries and applicants can submit an appeal against an adverse action via multiple channels (e.g., online, phone, mail, in person) and the status and adjudication of an appeal can easily be accessed by necessary state staff and appellants.",
+  "metrics": [
+   "Percentage of appeals requested through each modality (mail, online, phone, in person).",
+   "Number of pending appeals in the reporting period."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.221",
+    "title": "42",
+    "section": "431.221",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.221",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "For all states, District of Columbia, and territories:"
+  ],
+  "regRaw": "For all states, District of Columbia, and territories:\r\n - 42 CFR 431.221",
+  "regLines": [
+   [
+    {
+     "text": "For all states, District of Columbia, and territories:"
+    }
+   ],
+   [
+    {
+     "text": "- "
+    },
+    {
+     "text": "42 CFR 431.221",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.221"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EPS1",
+  "slug": "EPS1",
+  "title": "",
+  "module": "Encounter Processing System",
+  "moduleCode": "EPS",
+  "moduleSlug": "encounter-processing",
+  "outcome": "The system ingests encounter data (submissions and re-submissions) from MCOs and sends quality transaction feedback back to the plans to ensure appropriate industry standard format. (Quality transaction checks include, but are not limited to: completeness, missing information, formatting, and the TR3 implementation guide business rules validations).",
+  "metrics": [
+   "Percentage of timely encounter submissions from MCOs."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.242",
+    "title": "42",
+    "section": "438.242",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.242",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.242",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.242",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.242"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EPS2",
+  "slug": "EPS2",
+  "title": "",
+  "module": "Encounter Processing System",
+  "moduleCode": "EPS",
+  "moduleSlug": "encounter-processing",
+  "outcome": "The system ingests encounter data (submissions and re-submissions) from managed care entities in compliance with HIPAA security and privacy standards and performing quality checks for completeness and accuracy before submitting to CMS using standardized formatting, such as ASC X12N 837, NCPDP and the ASC X12N 835, as appropriate. (Quality checks include, but are not limited to completeness, character types, missing information, formatting, duplicates, and business rules validations, such as payment to dis-enrolled providers, etc.).",
+  "metrics": [
+   "Percentage state receives timely encounter re-submissions from MCOs."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.604",
+    "title": "42",
+    "section": "438.604",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.604",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.604, 438.818, and 438.242",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.604",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.604"
+    },
+    {
+     "text": ", 438.818, and 438.242"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EPS3",
+  "slug": "EPS3",
+  "title": "",
+  "module": "Encounter Processing System",
+  "moduleCode": "EPS",
+  "moduleSlug": "encounter-processing",
+  "outcome": "The state includes submission requirements (timeliness, re-submissions, etc.), definitions, data specifications and standards, and consequences for non-compliance in its managed care contracts. The state enforces consequences for non-compliance.",
+  "metrics": [
+   "This is a state specific requirement, for the most part, states have encounters submission/re-submission processes based on 30/60/90/180 days and 365 days."
+  ],
+  "regs": [],
+  "regOther": [
+   "42 CFR Part 438.3"
+  ],
+  "regRaw": "42 CFR Part 438.3",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR Part 438.3"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EPS4",
+  "slug": "EPS4",
+  "title": "",
+  "module": "Encounter Processing System",
+  "moduleCode": "EPS",
+  "moduleSlug": "encounter-processing",
+  "outcome": "The state uses encounter data to calculate capitation rates and performs payment comparisons with FFS claims data.",
+  "metrics": [
+   "State can validate that solution supports capability to set and edit capitation targets – Pass/Fail",
+   "State can validate that solution supports the capability to flag cases where MCO payments exceed FFS upper limit – Pass/Fail"
+  ],
+  "regs": [],
+  "regOther": [
+   "42 CFR Part 438"
+  ],
+  "regRaw": "42 CFR Part 438",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR Part 438"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EPS5",
+  "slug": "EPS5",
+  "title": "",
+  "module": "Encounter Processing System",
+  "moduleCode": "EPS",
+  "moduleSlug": "encounter-processing",
+  "outcome": "The state complies with federal reporting  requirements.",
+  "metrics": [
+   "SMA submits federal reports in a timely, and agreed upon, manner – Pass/Fail",
+   "Reports are those currently required by applicable federal regulations, state plans, waivers etc. This include, but are not limited to:",
+   "T-MSIS (monthly)",
+   "CMS 416 (monthly)",
+   "CHIPRA core set (quarterly)",
+   "CMS 37 (biannually)",
+   "CMS 372 (semi-annually)",
+   "CMS 64 (quarterly)"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.818",
+    "title": "42",
+    "section": "438.818",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.818",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.818, 438.242",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.818",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.818"
+    },
+    {
+     "text": ", 438.242"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "FM1",
+  "slug": "FM1",
+  "title": "",
+  "module": "Financial Management",
+  "moduleCode": "FM",
+  "moduleSlug": "financial-management",
+  "outcome": "The system calculates FFS provider payment or recoupment amounts, as well as value-based and alternative payment models (APM), correctly and initiates payment or recoupment action as appropriate.",
+  "metrics": [
+   "Count/percentage and amount/percentage of corrected claims by program, service category, and payment model. Report Medicaid and CHIP metrics separately."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.139",
+    "title": "42",
+    "section": "433.139",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.139",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 447.20",
+    "title": "42",
+    "section": "447.20",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.20",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 447.45",
+    "title": "42",
+    "section": "447.45",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.45",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 447.56",
+    "title": "42",
+    "section": "447.56",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.56",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 447.272",
+    "title": "42",
+    "section": "447.272",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.272",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1902(a)(37) of the Act"
+  ],
+  "regRaw": "Section 1902(a)(37) of the Act \r\n42 CFR 433.139\r\n42 CFR 447.20 \r\n42 CFR 447.45\r\n42 CFR 447.56\r\n42 CFR 447.272",
+  "regLines": [
+   [
+    {
+     "text": "Section 1902(a)(37) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 433.139",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.139"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.20",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.20"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.45",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.45"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.56",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.56"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.272",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.272"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "FM2",
+  "slug": "FM2",
+  "title": "",
+  "module": "Financial Management",
+  "moduleCode": "FM",
+  "moduleSlug": "financial-management",
+  "outcome": "The system pays providers promptly via direct transfer and electronic remittance advice or by paper check and remittance advice if electronic means are not available.",
+  "metrics": [
+   "90% Clean Claims<=30 Days",
+   "99% Clean Claims <=90 Days",
+   "100% All Other Claims <=12 Months"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 447.45",
+    "title": "42",
+    "section": "447.45",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.45",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 447.46",
+    "title": "42",
+    "section": "447.46",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.46",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 447.45\r\n42 CFR 447.46",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 447.45",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.45"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.46",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.46"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "FM3",
+  "slug": "FM3",
+  "title": "",
+  "module": "Financial Management",
+  "moduleCode": "FM",
+  "moduleSlug": "financial-management",
+  "outcome": "The system supports the provider appeals by providing a financial history of the claim along with any adjustments to the provider's account resulting from an appeal.",
+  "metrics": [
+   "Records must be retained for a minimum of 3 years for fiscal records, 5 years for records related to cost reports, 6 years for medical records of covered entities, and 10 years for managed care records (or greater if required under State laws) – periods are measured from the date of closure of all related actions for a given record.",
+   "Pass/Fail that the state can demonstrate that 100% of records were retained for the appropriate number of years indicated above."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.152",
+    "title": "42",
+    "section": "431.152",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.152",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 431.152",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 431.152",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.152"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "FM4",
+  "slug": "FM4",
+  "title": "",
+  "module": "Financial Management",
+  "moduleCode": "FM",
+  "moduleSlug": "financial-management",
+  "outcome": "The system accurately pays per member/per month capitation payments electronically in a timely fashion. Payments account for reconciliation of withholds, incentives, payment errors, beneficiary cost sharing, and any other term laid out in an MCO contract.",
+  "metrics": [
+   "Count/percentage and amount/percentage of payments by assistance program (Medicaid, CHIP, etc.), and service category. Report Medicaid and CHIP metrics separately."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438",
+    "title": "42",
+    "section": "438",
+    "url": "https://www.ecfr.gov/current/title-42/part-438",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 447.56(d)",
+    "title": "42",
+    "section": "447.56(d)",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.56#p-447.56(d)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438\r\n42 CFR 447.56(d)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438",
+     "url": "https://www.ecfr.gov/current/title-42/part-438"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.56(d)",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.56#p-447.56(d)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "FM5",
+  "slug": "FM5",
+  "title": "",
+  "module": "Financial Management",
+  "moduleCode": "FM",
+  "moduleSlug": "financial-management",
+  "outcome": "The system accurately tallies recoupments by tracking repayments and amounts outstanding for individual transactions and in aggregate for a provider.",
+  "metrics": [
+   "Repayment aging report showing counts/aggregate received/outstanding 60 days or less, >60 days, and any additional periods useful for State management of receivables."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 447",
+    "title": "42",
+    "section": "447",
+    "url": "https://www.ecfr.gov/current/title-42/part-447",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 447",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 447",
+     "url": "https://www.ecfr.gov/current/title-42/part-447"
+    }
+   ]
+  ],
+  "alsoIn": [
+   "program-integrity"
+  ]
+ },
+ {
+  "id": "FM6",
+  "slug": "FM6",
+  "title": "",
+  "module": "Financial Management",
+  "moduleCode": "FM",
+  "moduleSlug": "financial-management",
+  "outcome": "The state recovers third party liability (TPL) payments by:\r\n·       Tracking individual TPL transactions, repayments, outstanding amounts due,\r\n·       Aggregating by member, member type, provider, third party, and time period,\r\n·       Alerting state recovery units when appropriate, and\r\n·       Electronically transferring payments to the state.",
+  "metrics": [
+   "Third party recovery aging report showing counts/aggregate received/outstanding 60 days or less, >60 days, and any additional periods useful for State management of receivables."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.139",
+    "title": "42",
+    "section": "433.139",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.139",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.139",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.139",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.139"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "FM7",
+  "slug": "FM7",
+  "title": "",
+  "module": "Financial Management",
+  "moduleCode": "FM",
+  "moduleSlug": "financial-management",
+  "outcome": "The system processes drug rebates accurately and quickly.",
+  "metrics": [
+   "Count/Percentage & Amount/Percentage on time (within 45 days of end of quarter)/late."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 447.509",
+    "title": "42",
+    "section": "447.509",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.509",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 447.509",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 447.509",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.509"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "FM8",
+  "slug": "FM8",
+  "title": "",
+  "module": "Financial Management",
+  "moduleCode": "FM",
+  "moduleSlug": "financial-management",
+  "outcome": "State and federal entities receive timely and accurate financial reports (cost reporting, financial monitoring, and regulatory reporting), and record of all transactions according to state and federal accounting, transaction retention, and audit standards.",
+  "metrics": [
+   "Count/Percentage of on-time reporting for designated reporting period according to reporting schedule(s)."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 431.428",
+    "title": "42",
+    "section": "431.428",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.428",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 433.32",
+    "title": "42",
+    "section": "433.32",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.32",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 431.428\r\n42 CFR 433.32",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 431.428",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.428"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 433.32",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.32"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "FM9",
+  "slug": "FM9",
+  "title": "",
+  "module": "Financial Management",
+  "moduleCode": "FM",
+  "moduleSlug": "financial-management",
+  "outcome": "The system tracks that Medicaid premiums and cost sharing incurred by all individuals in the Medicaid household does not exceed an aggregate limit of five percent of the family's income. If the beneficiaries at risk of reaching the aggregate family limit, the system tracks each family's incurred premiums and cost sharing without relying on beneficiary documentation.",
+  "metrics": [
+   "Count/percentage of family’s below/at/exceeding threshold. (The last of these indicates an overpayment by the household.)"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 447.56(f)",
+    "title": "42",
+    "section": "447.56(f)",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.56#p-447.56(f)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 447.56(f)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 447.56(f)",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.56#p-447.56(f)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS1",
+  "slug": "LTSS1",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS system generates notifications including eligibility determination; termination of state waiver (30 days in advance); and inspections taking place in a beneficiary's home when a beneficiary receives services in his/her own home or the home of a relative (HCBS waiver for individuals 65 and older) (48 hours in advance).",
+  "metrics": [
+   "Percent of notifications and decisions sent to the correct individuals within the required timeframe."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 441.307",
+    "title": "42",
+    "section": "441.307",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.307",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 441.356",
+    "title": "42",
+    "section": "441.356",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.356",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 441.365",
+    "title": "42",
+    "section": "441.365",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.365",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 431.206",
+    "title": "42",
+    "section": "431.206",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.206",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 431.210",
+    "title": "42",
+    "section": "431.210",
+    "url": "https://www.ecfr.gov/current/title-42/section-431.210",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 441.307\r\n42 CFR 441.356\r\n42 CFR 441.365\r\n42 CFR 431.206\r\n42 CFR 431.210",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 441.307",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.307"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 441.356",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.356"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 441.365",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.365"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 431.206",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.206"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 431.210",
+     "url": "https://www.ecfr.gov/current/title-42/section-431.210"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS2",
+  "slug": "LTSS2",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS systems stores proof of beneficiary consent to enroll in HCBS state plan or waiver-based programs.",
+  "metrics": [
+   "Percentage of beneficiaries with proof of consent stored in system"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 441.301",
+    "title": "42",
+    "section": "441.301",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.301",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 441.301",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 441.301",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.301"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS3",
+  "slug": "LTSS3",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS system assigns, tracks and changes beneficiary prioritization and waiver waitlist status.",
+  "metrics": [
+   "Verify assigning and changing of beneficiary prioritization.",
+   "Verify assigning and changing waitlist status.",
+   "Verify researching and finding prioritization and waitlist status.",
+   "Verify ability to report on waitlist and prioritization status."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 441.305",
+    "title": "42",
+    "section": "441.305",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.305",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 441.305",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 441.305",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.305"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS4",
+  "slug": "LTSS4",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS system maintains a record of beneficiaries who have left the waiver program due to death or loss of eligibility for Medicaid under the State Plan to replace those beneficiaries with others on the waitlist.",
+  "metrics": [
+   "Verify ability to update beneficiary records for death, loss of eligibility",
+   "– Pass/Fail"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 441.305",
+    "title": "42",
+    "section": "441.305",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.305",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 441.305",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 441.305",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.305"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS5",
+  "slug": "LTSS5",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS system stores the person-centered plan, including any updates or changes containing all required information and consent signatures.",
+  "metrics": [
+   "Percentage of beneficiaries with current and complete person-centered plan"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 441.302",
+    "title": "42",
+    "section": "441.302",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.302",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 441.302",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 441.302",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.302"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS6",
+  "slug": "LTSS6",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS system supports conflict-free case management via role-based access, proper firewalls, and mitigation strategies that provide beneficiaries appropriate access to records.",
+  "metrics": [
+   "Pass/Fail for the following:",
+   "Verify that only correctly assigned/authorized logins can view care plans.",
+   "Verify that 'not authorized logins' are unable to view plans.",
+   "Verify that 'not authorized logins' cannot update or change data."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 441.301",
+    "title": "42",
+    "section": "441.301",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.301",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "HIPAA"
+  ],
+  "regRaw": "HIPAA\r\n42 CFR 441.301",
+  "regLines": [
+   [
+    {
+     "text": "HIPAA"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 441.301",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.301"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS7",
+  "slug": "LTSS7",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS System supports completion of CMS Form 372.",
+  "metrics": [
+   "Timeliness of reporting to CMS"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.112",
+    "title": "42",
+    "section": "433.112",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.112",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 441.302",
+    "title": "42",
+    "section": "441.302",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.302",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.112\r\n42 CFR 441.302",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.112",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.112"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 441.302",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.302"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS8",
+  "slug": "LTSS8",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS system collects and saves prior authorizations to exchange with MMIS as needed to prevent the provision of unnecessary or inappropriate services and supports.",
+  "metrics": [
+   "Pass/Fail for the following:",
+   "Verify the capability to save and track prior authorization information on LTSS beneficiaries.",
+   "Verify capability to send/exchange prior authorization data to required interfaces."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 441.301",
+    "title": "42",
+    "section": "441.301",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.301",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 441.301",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 441.301",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.301"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS9",
+  "slug": "LTSS9",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS system documents and tracks reportable events related but not limited to instances of abuse, neglect, exploitation, and unexplained death from case initiation to case closeout.",
+  "metrics": [
+   "Average number of days it takes from a critical incident to completion of an administrative review",
+   "Pass/Fail for the following:",
+   "Verify capability to receive reportable events from various media such as phone, tablet, text message, online.",
+   "Verify capability to track reportable events through to closure.",
+   "Verify capability to search for and view a reportable event using information such as beneficiary name and/or date of reportable event."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 441.404",
+    "title": "42",
+    "section": "441.404",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.404",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 441.585",
+    "title": "42",
+    "section": "441.585",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.585",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "CMS Bulletin, Modifications to Quality Measures and Reporting in §1915(c) Home and Community-Based Waivers, March 12, 2014"
+  ],
+  "regRaw": "42 CFR 441.404\r\nCMS Bulletin, Modifications to Quality Measures and Reporting in §1915(c) Home and Community-Based Waivers, March 12, 2014\r\n42 CFR 441.585 and 42 CFR Part 438",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 441.404",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.404"
+    }
+   ],
+   [
+    {
+     "text": "CMS Bulletin, Modifications to Quality Measures and Reporting in §1915(c) Home and Community-Based Waivers, March 12, 2014"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 441.585",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.585"
+    },
+    {
+     "text": " and 42 CFR Part 438"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS10",
+  "slug": "LTSS10",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS system collects grievances related but not limited to instances of abuse, neglect, exploitation, and unexplained death from case initiation to case closeout.",
+  "metrics": [
+   "Average number of days it takes from a grievance reported to completion of an administrative review.",
+   "Pass/Fail for the following:",
+   "Verify capability to receive grievances from various media such as phone, tablet, text message, online (per state-specified requirements).",
+   "Verify capability to collect grievance data required for audits/hearings.",
+   "Verify capability to track grievances through closure.",
+   "Verify capability to search for and view a grievance by using information such as beneficiary name and/or date of reportable event."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 441.464",
+    "title": "42",
+    "section": "441.464",
+    "url": "https://www.ecfr.gov/current/title-42/section-441.464",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 441.464; 441.555",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 441.464",
+     "url": "https://www.ecfr.gov/current/title-42/section-441.464"
+    },
+    {
+     "text": "; 441.555"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "LTSS11",
+  "slug": "LTSS11",
+  "title": "",
+  "module": "Long Term Services & Supports",
+  "moduleCode": "LTSS",
+  "moduleSlug": "ltss",
+  "outcome": "LTSS system creates trend reports of critical incident causes and tracks trends of critical incidents after operational implementation of interventions/mitigations/corrective actions.",
+  "metrics": [
+   "Trend data of critical incidents."
+  ],
+  "regs": [],
+  "regOther": [
+   "Application for a §1915(c) Home and Community-Based Waiver [Version 3.6, January 2019]",
+   "Instructions, Technical Guide and Review Criteria p.242-243 (Appendix G-1-e)",
+   "Modifications to Quality Measures and Reporting in §1915(c) Home and Community-Based Waivers, Page 10"
+  ],
+  "regRaw": "Application for a §1915(c) Home and Community-Based Waiver [Version 3.6, January 2019]\r\nInstructions, Technical Guide and Review Criteria p.242-243 (Appendix G-1-e)\r\nModifications to Quality Measures and Reporting in §1915(c) Home and Community-Based Waivers, Page 10",
+  "regLines": [
+   [
+    {
+     "text": "Application for a §1915(c) Home and Community-Based Waiver [Version 3.6, January 2019]"
+    }
+   ],
+   [
+    {
+     "text": "Instructions, Technical Guide and Review Criteria p.242-243 (Appendix G-1-e)"
+    }
+   ],
+   [
+    {
+     "text": "Modifications to Quality Measures and Reporting in §1915(c) Home and Community-Based Waivers, Page 10"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM1",
+  "slug": "MM1",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "The system auto-assigns managed care enrollees to appropriate managed care organizations, per state and federal regulations.",
+  "metrics": [
+   "Percentage of system auto assignment for MCO enrollees ongoing basis."
+  ],
+  "regs": [],
+  "regOther": [
+   "CFR 42 438.54"
+  ],
+  "regRaw": "CFR 42 438.54",
+  "regLines": [
+   [
+    {
+     "text": "CFR 42 438.54"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM2",
+  "slug": "MM2",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "The system sends notice, or facilitates, to the enrolled member with an initial assignment, a reasonable period to change the selection, and appropriate information needed to make an informed choice. If no selection is made, the system either confirms the original assignment, or assigns the member to FFS.",
+  "metrics": [
+   "Notice to the enrollee must be provided by the later of 30 calendar days prior to the effective date of the termination, or 15 calendar days after receipt or issuance of the termination notice.",
+   "For States that choose to restrict disenrollment for periods of 90 days or more, States must send the notice no less than 60 calendar days before the start of each enrollment period."
+  ],
+  "regs": [],
+  "regOther": [
+   "CFR 42 438.10, 438.54"
+  ],
+  "regRaw": "CFR 42 438.10, 438.54",
+  "regLines": [
+   [
+    {
+     "text": "CFR 42 438.10, 438.54"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM3",
+  "slug": "MM3",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "The system disenrolls members at the request of the plan and in accordance with state procedures.",
+  "metrics": [
+   "Disenrollment requested by the enrollee.  Without cause, at the following times:",
+   "During the 90 days following the date of the beneficiary's initial enrollment into the MCO, PIHP, PAHP, PCCM, or PCCM entity, or during the 90 days following the date the State sends the beneficiary notice of that enrollment, whichever is later.",
+   "At least once every 12 months thereafter."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.56(b)",
+    "title": "42",
+    "section": "438.56(b)",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.56#p-438.56(b)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.56(b) (c), and (d)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.56(b)",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.56#p-438.56(b)"
+    },
+    {
+     "text": " (c), and (d)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM4",
+  "slug": "MM4",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "Disenrollments are effective in the system the first day of the second month following the request for disenrollment.",
+  "metrics": [
+   "Disenrollments are effective the first day of the second month following the request for disenrollment."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.56(e)",
+    "title": "42",
+    "section": "438.56(e)",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.56#p-438.56(e)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.56(e)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.56(e)",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.56#p-438.56(e)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM5",
+  "slug": "MM5",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "The system notifies enrollees of their disenrollment rights at least 60 days before the start of each enrollment period. This notification is in writing.",
+  "metrics": [
+   "The system notifies enrollees, in writing, of their disenrollment rights at least 60 days before the start of each enrollment period."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.56(f)",
+    "title": "42",
+    "section": "438.56(f)",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.56#p-438.56(f)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.56(f)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.56(f)",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.56#p-438.56(f)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM6",
+  "slug": "MM6",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "To prevent duplication of activities, enrollee's needs are captured by the system so that MCOs, PIHPs, and PAHPs can see and share the information (in accordance with privacy controls).",
+  "metrics": [
+   "The MCO, PIHP or PAHP makes a best effort to conduct an initial screening of each enrollee's needs, within 90 days of the effective date of enrollment for all new enrollees, including subsequent attempts if the initial attempt to contact the enrollee is unsuccessful."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.208(b)",
+    "title": "42",
+    "section": "438.208(b)",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.208#p-438.208(b)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.208(b)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.208(b)",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.208#p-438.208(b)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM7",
+  "slug": "MM7",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "The system allows beneficiaries or their representative to receive information through multiple channels including phone, Internet, in-person, and via auxiliary aids and services.",
+  "metrics": [
+   "Percentage of beneficiaries or their representative received outreach communication by the following channels: phone, internet, in-person, and via auxiliary aids and services"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.71",
+    "title": "42",
+    "section": "438.71",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.71",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.71",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.71",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.71"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM8",
+  "slug": "MM8",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "The state provides content required by 42 CFR 438.10, including but not limited to definitions for managed care and enrollee handbook, through a website maintained by the state.",
+  "metrics": [
+   "An electronic provider directory must be updated no later than 30 calendar days after the MCO, PIHP, PAHP, or PCCM entity receives updated provider information."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.10(c)",
+    "title": "42",
+    "section": "438.10(c)",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.10#p-438.10(c)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.10(c)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.10(c)",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.10#p-438.10(c)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM9",
+  "slug": "MM9",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "Potential enrollees are provided information about the state's managed care program when the individual become eligible or is required to enroll in a managed care program. The information includes, but is not limited to the right to disenroll, basic features of managed care, service area coverage, covered benefits, and provider directory and formulary information.",
+  "metrics": [
+   "Notice to the enrollee must be provided by the later of 30 calendar days prior to the effective date of the termination, or 15 calendar days after receipt or issuance of the termination notice."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.10(e)",
+    "title": "42",
+    "section": "438.10(e)",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.10#p-438.10(e)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.10(e)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.10(e)",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.10#p-438.10(e)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM10",
+  "slug": "MM10",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "The system maintains an up-to-date (updated at least annually) fee-for-service (FFS) or primary care case-management (PCCM) provider directory containing the following:\r\n•      Physician/provider\r\n•      Specialty \r\n•      Address and telephone number \r\n•      Whether the physician/provider is accepting new Medicaid patients (for PCCM providers), and\r\nThe physician/provider's cultural capabilities and a list of languages supported (for PCCM providers).",
+  "metrics": [
+   "The system maintains an up-to-date (updated at least annually) fee-for-service (FFS) or primary care case-management (PCCM) provider directory."
+  ],
+  "regs": [],
+  "regOther": [
+   "Section 1902(a)(83), 1902(mm), SMD # 18-007"
+  ],
+  "regRaw": "Section 1902(a)(83), 1902(mm), SMD # 18-007",
+  "regLines": [
+   [
+    {
+     "text": "Section 1902(a)(83), 1902(mm), SMD # 18-007"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "MM11",
+  "slug": "MM11",
+  "title": "",
+  "module": "Member Management",
+  "moduleCode": "MM",
+  "moduleSlug": "member-management",
+  "outcome": "The system captures enough information such that the state can evaluate whether members have access to adequate networks. (Adequacy is based on the state's plan and federal regulations).",
+  "metrics": [
+   "Calculate accessibility of members to providers’ network based on state and federal regulations."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.68",
+    "title": "42",
+    "section": "438.68",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.68",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.68",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.68",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.68"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PBM1",
+  "slug": "PBM1",
+  "title": "",
+  "module": "Pharmacy Benefit Management",
+  "moduleCode": "PBM",
+  "moduleSlug": "pbm",
+  "outcome": "The system adjudicates claims within established time parameters to ensure timely pharmacy claims payments.",
+  "metrics": [
+   "Timely adjudication of pharmacy claims and encounters.",
+   "Percentage of claims paid on time (only if payment is included in RX module)",
+   "N/A if payments are issued from the MMIS system."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 456.722",
+    "title": "42",
+    "section": "456.722",
+    "url": "https://www.ecfr.gov/current/title-42/section-456.722",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1927(h) of the SSA"
+  ],
+  "regRaw": "Section 1927(h) of the SSA \r\n42 CFR 456.722 - POS requirement to support claims adjudication or payment",
+  "regLines": [
+   [
+    {
+     "text": "Section 1927(h) of the SSA"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 456.722",
+     "url": "https://www.ecfr.gov/current/title-42/section-456.722"
+    },
+    {
+     "text": " - POS requirement to support claims adjudication or payment"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PBM2",
+  "slug": "PBM2",
+  "title": "",
+  "module": "Pharmacy Benefit Management",
+  "moduleCode": "PBM",
+  "moduleSlug": "pbm",
+  "outcome": "The system adjudicates claims accurately within established parameters. The module can be configured to provide authority/ability to override a reject/edit/denied claim and then resubmit to ensure timely provider claims payments.",
+  "metrics": [
+   "Accurately identifies enrolled providers.",
+   "Pharmacy claims and encounters are priced according to the correct pricing algorithm."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 456.722",
+    "title": "42",
+    "section": "456.722",
+    "url": "https://www.ecfr.gov/current/title-42/section-456.722",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 456.722",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 456.722",
+     "url": "https://www.ecfr.gov/current/title-42/section-456.722"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PBM3",
+  "slug": "PBM3",
+  "title": "",
+  "module": "Pharmacy Benefit Management",
+  "moduleCode": "PBM",
+  "moduleSlug": "pbm",
+  "outcome": "The system captures the necessary data to ensure timely processing of manufacturer rebates as well as the capability to track rebates to promote beneficiary cost savings.",
+  "metrics": [
+   "The system has the capability to accept/store/apply the rebate and covered outpatient drug (COD) information received from CMS and manufacturers necessary to generate rebate invoices.",
+   "Timely identification of eligible PAD claims/encounters that do not convert to NDC units."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 447.509",
+    "title": "42",
+    "section": "447.509",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.509",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1927 of the SSA"
+  ],
+  "regRaw": "Section 1927 of the SSA \r\n 42 CFR 447.509",
+  "regLines": [
+   [
+    {
+     "text": "Section 1927 of the SSA"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.509",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.509"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PBM4",
+  "slug": "PBM4",
+  "title": "",
+  "module": "Pharmacy Benefit Management",
+  "moduleCode": "PBM",
+  "moduleSlug": "pbm",
+  "outcome": "The system has the capability to support cost savings by capturing, storing, and transferring data to the payment process system to generate invoices of participating drug manufacturers within 60 days of the end of each quarter.",
+  "metrics": [
+   "Percentage Rebate Invoiced per Dollar (Note if invoice period is behind the actual reporting period).",
+   "Issue timely invoicing within established parameters (+/- 5 days)."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 447.520",
+    "title": "42",
+    "section": "447.520",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.520",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 447.511",
+    "title": "42",
+    "section": "447.511",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.511",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1927 of the SSA",
+   "Section 1927(b)(2) of the SSA"
+  ],
+  "regRaw": "Section 1927 of the SSA \r\n42 CFR 447.520 \r\nSection 1927(b)(2) of the SSA \r\n42 CFR 447.511",
+  "regLines": [
+   [
+    {
+     "text": "Section 1927 of the SSA"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.520",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.520"
+    }
+   ],
+   [
+    {
+     "text": "Section 1927(b)(2) of the SSA"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.511",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.511"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PBM5",
+  "slug": "PBM5",
+  "title": "",
+  "module": "Pharmacy Benefit Management",
+  "moduleCode": "PBM",
+  "moduleSlug": "pbm",
+  "outcome": "The system supports cost savings by enabling the tracking, monitoring, and reporting of manufacturer's pharmacy drugs and rebate savings.",
+  "metrics": [
+   "Provide a sample of the CMS rebate report and the manufacturer rebate report with production data.",
+   "Provide the post-production operational measure of rebates collection."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 447.520",
+    "title": "42",
+    "section": "447.520",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.520",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 447.511",
+    "title": "42",
+    "section": "447.511",
+    "url": "https://www.ecfr.gov/current/title-42/section-447.511",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1927 of the SSA",
+   "Section 1927(b)(2) of the SSA"
+  ],
+  "regRaw": "Section 1927 of the SSA \r\n42 CFR 447.520 \r\nSection 1927(b)(2) of the SSA \r\n42 CFR 447.511",
+  "regLines": [
+   [
+    {
+     "text": "Section 1927 of the SSA"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.520",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.520"
+    }
+   ],
+   [
+    {
+     "text": "Section 1927(b)(2) of the SSA"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 447.511",
+     "url": "https://www.ecfr.gov/current/title-42/section-447.511"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PBM6",
+  "slug": "PBM6",
+  "title": "",
+  "module": "Pharmacy Benefit Management",
+  "moduleCode": "PBM",
+  "moduleSlug": "pbm",
+  "outcome": "The system enables the beneficiary to have timely access to medication if the system has the capability to perform prior authorization and provide a response by telephone or other telecommunication devices within 24 hours of a request and provides for the dispensing of at least 72-hour supply of a covered outpatient prescription drug in an emergency situation (unless excluded under the SSA ).",
+  "metrics": [
+   "Timely Access:  Response to a Prior Authorization request provided within 24 hours.",
+   "Timely Access: Emergency 72-hour fill requests reject rate - this can be the % of total POS claims not authorized with a 72-hour emergency fill."
+  ],
+  "regs": [],
+  "regOther": [
+   "Section 1927(d)(5) of the SSA"
+  ],
+  "regRaw": "Section 1927(d)(5) of the SSA",
+  "regLines": [
+   [
+    {
+     "text": "Section 1927(d)(5) of the SSA"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PBM7",
+  "slug": "PBM7",
+  "title": "",
+  "module": "Pharmacy Benefit Management",
+  "moduleCode": "PBM",
+  "moduleSlug": "pbm",
+  "outcome": "The system supports CMS oversight of the safe, effective, and appropriate dispensing of medications by enabling the capability to provide data to support the creation of the CMS annual report on the operation and status of the state's DUR program.",
+  "metrics": [
+   "Provide a copy of the State’s DUR Report"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 456.712",
+    "title": "42",
+    "section": "456.712",
+    "url": "https://www.ecfr.gov/current/title-42/section-456.712",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1927(g)(3)(D) of the SSA",
+   "Section 1944(e)(1) of the SSA"
+  ],
+  "regRaw": "Section 1927(g)(3)(D) of the SSA \r\n42 CFR 456.712\r\nSection 1944(e)(1) of the SSA",
+  "regLines": [
+   [
+    {
+     "text": "Section 1927(g)(3)(D) of the SSA"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 456.712",
+     "url": "https://www.ecfr.gov/current/title-42/section-456.712"
+    }
+   ],
+   [
+    {
+     "text": "Section 1944(e)(1) of the SSA"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PBM8",
+  "slug": "PBM8",
+  "title": "",
+  "module": "Pharmacy Benefit Management",
+  "moduleCode": "PBM",
+  "moduleSlug": "pbm",
+  "outcome": "The system supports the safe, effective, and appropriate dispensing of medications by enabling the capability to provide point-of-sale or point of distribution prospective review of drug therapy based upon predetermined standards, including standards for counseling.",
+  "metrics": [
+   "Provide a sample report showing the ability to provide prospective review data with a timestamp prior to adjudication."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 456.703",
+    "title": "42",
+    "section": "456.703",
+    "url": "https://www.ecfr.gov/current/title-42/section-456.703",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1927 (g) of the SSA"
+  ],
+  "regRaw": "42 CFR 456.703, 456.705(b) 456.709\r\nSection 1927 (g) of the SSA",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 456.703",
+     "url": "https://www.ecfr.gov/current/title-42/section-456.703"
+    },
+    {
+     "text": ", 456.705(b) 456.709"
+    }
+   ],
+   [
+    {
+     "text": "Section 1927 (g) of the SSA"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PBM9",
+  "slug": "PBM9",
+  "title": "",
+  "module": "Pharmacy Benefit Management",
+  "moduleCode": "PBM",
+  "moduleSlug": "pbm",
+  "outcome": "The system supports the identification of patterns of fraud, abuse, gross overuse, or inappropriate or medically unnecessary care, or prescribing or billing practices indicating abuse or excessive utilization among physicians, pharmacists and individuals receiving benefits by enabling the collection of pharmacy data to be used in retrospective drug utilization reviews.",
+  "metrics": [
+   "Provide a sample report of post-production operational measures that calculate the average cost avoidance per claim."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 456.703",
+    "title": "42",
+    "section": "456.703",
+    "url": "https://www.ecfr.gov/current/title-42/section-456.703",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1927 (g) of the SSA"
+  ],
+  "regRaw": "42 CFR 456.703, 456.705(b) 456.709\r\nSection 1927 (g) of the SSA",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 456.703",
+     "url": "https://www.ecfr.gov/current/title-42/section-456.703"
+    },
+    {
+     "text": ", 456.705(b) 456.709"
+    }
+   ],
+   [
+    {
+     "text": "Section 1927 (g) of the SSA"
+    }
+   ]
+  ],
+  "alsoIn": [
+   "program-integrity"
+  ]
+ },
+ {
+  "id": "PDMP1",
+  "slug": "PDMP1",
+  "title": "Qualified PDMP",
+  "module": "Prescription Drug Monitoring Program",
+  "moduleCode": "PDMP",
+  "moduleSlug": "pdmp",
+  "outcome": "Covered providers have near real-time access to:\r\na. Information regarding Medicaid beneficiary’s prescription drug history.\r\nb. The number and type of controlled substances prescribed to and filled for the covered individual during at least the most recent 12-month period.\r\nc. The name, location, and contact information (or other identifying number selected by the state, such as a national provider identifier issued by the CMS National Plan and Provider Enumeration System) of each covered provider who prescribed a controlled substance to the covered individual during at least the most recent 12-month period.",
+  "metrics": [
+   "Real-time access: Average time (in mins) to access a report on bene prescription drug history"
+  ],
+  "regs": [],
+  "regOther": [
+   "Section 1944(b) of the Act",
+   "Section 5042 – Medicaid PARTNERSHIP Act",
+   "CMS FAQs-SUPPORT for Patients and Communities Act"
+  ],
+  "regRaw": "Section 1944(b) of the Act\r\nSection 5042 – Medicaid PARTNERSHIP Act\r\nCMS FAQs-SUPPORT for Patients and Communities Act",
+  "regLines": [
+   [
+    {
+     "text": "Section 1944(b) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "Section 5042 – Medicaid PARTNERSHIP Act"
+    }
+   ],
+   [
+    {
+     "text": "CMS FAQs-SUPPORT for Patients and Communities Act"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PDMP2",
+  "slug": "PDMP2",
+  "title": "Workflow Integration",
+  "module": "Prescription Drug Monitoring Program",
+  "moduleCode": "PDMP",
+  "moduleSlug": "pdmp",
+  "outcome": "Providers can easily use the PDMP information through workflow integration, which may include electronic prescribing system for controlled substances.",
+  "metrics": [
+   "--"
+  ],
+  "regs": [],
+  "regOther": [
+   "Section 1944(b) of the Act",
+   "Section 5042 – Medicaid PARTNERSHIP Act",
+   "CMS FAQs-SUPPORT for Patients and Communities Act"
+  ],
+  "regRaw": "Section 1944(b) of the Act\r\nSection 5042 – Medicaid PARTNERSHIP Act\r\nCMS FAQs-SUPPORT for Patients and Communities Act",
+  "regLines": [
+   [
+    {
+     "text": "Section 1944(b) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "Section 5042 – Medicaid PARTNERSHIP Act"
+    }
+   ],
+   [
+    {
+     "text": "CMS FAQs-SUPPORT for Patients and Communities Act"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PDMP3",
+  "slug": "PDMP3",
+  "title": "Data-sharing Agreements",
+  "module": "Prescription Drug Monitoring Program",
+  "moduleCode": "PDMP",
+  "moduleSlug": "pdmp",
+  "outcome": "The state has data-sharing agreements with all contiguous states to track patients, prescribers, and prescriptions across state lines.",
+  "metrics": [
+   "Provide copies of data-sharing agreements entered with contiguous states"
+  ],
+  "regs": [],
+  "regOther": [
+   "Section 1944(b) of the Act",
+   "Section 5042 – Medicaid PARTNERSHIP Act",
+   "CMS FAQs-SUPPORT for Patients and Communities Act"
+  ],
+  "regRaw": "Section 1944(b) of the Act\r\nSection 5042 – Medicaid PARTNERSHIP Act\r\nCMS FAQs-SUPPORT for Patients and Communities Act",
+  "regLines": [
+   [
+    {
+     "text": "Section 1944(b) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "Section 5042 – Medicaid PARTNERSHIP Act"
+    }
+   ],
+   [
+    {
+     "text": "CMS FAQs-SUPPORT for Patients and Communities Act"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PDMP4",
+  "slug": "PDMP4",
+  "title": "Medicaid Program Access to PDMP (if applicable)",
+  "module": "Prescription Drug Monitoring Program",
+  "moduleCode": "PDMP",
+  "moduleSlug": "pdmp",
+  "outcome": "The state medical and pharmacy directors and any designee has access to the PDMP information in an electronic format based on data-sharing agreements in place (subject to state law).",
+  "metrics": [
+   "Provide a copy of the report of issues reported for designated users who could not or were denied access"
+  ],
+  "regs": [],
+  "regOther": [
+   "Section 1944(b) of the Act",
+   "Section 5042 – Medicaid PARTNERSHIP Act",
+   "CMS FAQs-SUPPORT for Patients and Communities Act"
+  ],
+  "regRaw": "Section 1944(b) of the Act\r\nSection 5042 – Medicaid PARTNERSHIP Act\r\nCMS FAQs-SUPPORT for Patients and Communities Act",
+  "regLines": [
+   [
+    {
+     "text": "Section 1944(b) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "Section 5042 – Medicaid PARTNERSHIP Act"
+    }
+   ],
+   [
+    {
+     "text": "CMS FAQs-SUPPORT for Patients and Communities Act"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PDMP5",
+  "slug": "PDMP5",
+  "title": "Required Reporting",
+  "module": "Prescription Drug Monitoring Program",
+  "moduleCode": "PDMP",
+  "moduleSlug": "pdmp",
+  "outcome": "The state produces data for the reports that are required to be submitted in the Annual Report to HHS.",
+  "metrics": [
+   "Quantity of daily morphine milligram equivalents prescribed for controlled substances.",
+   "the number and Quantity of daily morphine milligram equivalents prescribed for controlled substances per covered individual.",
+   "number of occurrences of data or privacy breaches of a qualified PDMP that includes the number of covered individuals impacted by each breach."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.112(b)(15)",
+    "title": "42",
+    "section": "433.112(b)(15)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.112#p-433.112(b)(15)",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1944(e) of the Act",
+   "Section 5042 – Medicaid PARTNERSHIP Act",
+   "CMS FAQs-SUPPORT for Patients and Communities Act"
+  ],
+  "regRaw": "Section 1944(e) of the Act\r\nSection 5042 – Medicaid PARTNERSHIP Act\r\n42 CFR 433.112(b)(15)\r\nCMS FAQs-SUPPORT for Patients and Communities Act",
+  "regLines": [
+   [
+    {
+     "text": "Section 1944(e) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "Section 5042 – Medicaid PARTNERSHIP Act"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 433.112(b)(15)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.112#p-433.112(b)(15)"
+    }
+   ],
+   [
+    {
+     "text": "CMS FAQs-SUPPORT for Patients and Communities Act"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PDMP6",
+  "slug": "PDMP6",
+  "title": "Utilization and Quality Reports",
+  "module": "Prescription Drug Monitoring Program",
+  "moduleCode": "PDMP",
+  "moduleSlug": "pdmp",
+  "outcome": "The system produces reports to contribute to reports to HHS by the State Drug Utilization Review (DUR) Board and for program evaluation, continuous improvement in business operations, transparency and accountability, as well as identify patterns of fraud, abuse, gross overuse, excessive utilization related to limitations identified by the state, inappropriate or medically unnecessary care, or prescribing or billing practices that indicate abuse or excessive utilization among Medicaid physicians, pharmacists and enrollees associated with specific drugs or groups of drugs.",
+  "metrics": [
+   "Number of covered individuals concurrently prescribed opioids and benzodiazepines.",
+   "List of covered individuals who were prescribed opioids from multiple providers.",
+   "number and/or percentage of opioid-related hospitalizations, ER visits, urgent care visits for covered individuals."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.112(b)(15)",
+    "title": "42",
+    "section": "433.112(b)(15)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.112#p-433.112(b)(15)",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1944 (e)(1) of the Act",
+   "Section 1927(g)(2)(B) and (g)(3)(D) of the Act",
+   "Section 1004 of the SUPPORT Act",
+   "CMS FAQs-SUPPORT for Patients and Communities Act",
+   "Centers for Disease Control"
+  ],
+  "regRaw": "Section 1944 (e)(1) of the Act\r\nSection 1927(g)(2)(B) and (g)(3)(D) of the Act\r\nSection 1004 of the SUPPORT Act\r\n42 CFR 433.112(b)(15)\r\nCMS FAQs-SUPPORT for Patients and Communities Act\r\nCenters for Disease Control",
+  "regLines": [
+   [
+    {
+     "text": "Section 1944 (e)(1) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "Section 1927(g)(2)(B) and (g)(3)(D) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "Section 1004 of the SUPPORT Act"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 433.112(b)(15)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.112#p-433.112(b)(15)"
+    }
+   ],
+   [
+    {
+     "text": "CMS FAQs-SUPPORT for Patients and Communities Act"
+    }
+   ],
+   [
+    {
+     "text": "Centers for Disease Control"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PI1",
+  "slug": "PI1",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can check member record to ensure the member on the claim was enrolled in the Medicaid program and the benefit was covered at the time of service. Membership enrollment records the system is checking against are updated daily.\r\n\r\n*Applicable to CP",
+  "metrics": [
+   "Count of claims with a non-member/total claims submitted (Target=0%)"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI2",
+  "slug": "PI2",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System provides a method for identifying suspected inappropriate services and incorrect billing. \r\n\r\n*Applicable to CP, E&E, MM",
+  "metrics": [
+   "Count of algorithms initiated/count state-specified target number of algorithms",
+   "Number of new algorithms initiated annually (possibly 2 or 3 new initiatives quarterly or annually)"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI3",
+  "slug": "PI3",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can verify with beneficiaries whether services billed by providers were received.",
+  "metrics": [
+   "Ad-hoc reporting capabilties"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI4",
+  "slug": "PI4",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can suspend Medicaid payments in whole or in part to providers for whom the agency has determined there is a credible allegation of fraud and is conducting an investigation and other activities, including provide notice of suspension; referrals to MFCU; and documentation and record retention.",
+  "metrics": [
+   "Track number of PI FWA detection and actionable cases sent ending in payment suspension/All cases initiated"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI5",
+  "slug": "PI5",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can perform provider lock-in for identified members responsible for fraudulent activity, or that have utilized services in excess of what is medically necessary (as defined by state guidelines), and can send notice to the impacted member and the appropriate provider.\r\n\r\n*Applicable to PM",
+  "metrics": [
+   "Number of provider lock-in identified, Number of notices sent to impacted members and providers"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI6",
+  "slug": "PI6",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can recover improper payments by: \r\n(a) Tracking repayments and outstanding amounts due at an individual transaction level as well as aggregating by provider, time period\r\n(b) Supporting electronic transfer back to the state\r\n(c ) Temporarily limiting future payments to provider(s) who have an outstanding recovery balance.",
+  "metrics": [
+   "Total recovered dollars/Total dollars identified"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI7",
+  "slug": "PI7",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can complete the required independent certified audit of Disproportionate Share Hospital (DSH) payments for each Medicaid State Plan rate year using payment and utilization information.",
+  "metrics": [
+   "Percentage of DSH audits completed in a plan year"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI8",
+  "slug": "PI8",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can reject claims for items or services that were ordered or referred that do not contain a National Provider Identifier.\r\n\r\n*Applicable to CP",
+  "metrics": [
+   "Count of claims rejected with a missing NPI/Total claims submitted (Target=0%)"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI9",
+  "slug": "PI9",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can support activities conducted by Medicaid RACs can including review all claims submitted by providers of items or services for which payment has been made to identify underpayments and overpayments and recoup overpayments as necessary.",
+  "metrics": [
+   "Provide a copy of the RAC report of total claims submitted, underpayments, ovrpayments and recoup overpayments"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI10",
+  "slug": "PI10",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can refer all cases of suspected provider fraud to the state's Medicaid Fraud Unit and provide access to Case Tracking as applicable.",
+  "metrics": [
+   "Cases sent to MFCU/All cases initiated"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI11",
+  "slug": "PI11",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can sample and review active cases, including negative cases, to determine eligibility errors in accordance with the state's MEQC pilot planning document.",
+  "metrics": [
+   "Percentage of eligibility errors"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PI12",
+  "slug": "PI12",
+  "title": "",
+  "module": "Program Integrity",
+  "moduleCode": "PI",
+  "moduleSlug": "program-integrity",
+  "outcome": "System can submit following information to CMS for among other purposes, estimating improper payments in Medicaid and CHIP, that include, but are not limited to—\r\n(1) Adjudicated fee-for-service or managed care claims information, or both, on a quarterly basis, from the review year;\r\n(2) Upon request from CMS, provider contact information that has been verified by the state as current;\r\n(3) All medical, eligibility, and other related policies in effect, and any quarterly policy updates;\r\n(4) Current managed care contracts, rate information, and any quarterly updates applicable to the review year;\r\n(5) Data processing systems manuals;\r\n(6) Repricing information for claims that are determined during the review to have been improperly paid;\r\n(7) Information on claims that were selected as part of the sample, but changed in substance after selection, for example, successful provider appeals; (8) Adjustments made within 60 days of the adjudication dates for the original claims or line items, with sufficient information to indicate the nature of the adjustments and to match the adjustments to the original claims or line items;\r\n(9) Case documentation to support the eligibility review, as requested by CMS;\r\n(10) A corrective action plan for purposes of reducing erroneous payments in FFS, managed care, and eligibility; and\r\n(11) Other information that the Secretary determines is necessary for these purposes.",
+  "metrics": [
+   "Ad-hoc reporting capabilties"
+  ],
+  "regs": [],
+  "regOther": [],
+  "regRaw": "",
+  "regLines": [],
+  "alsoIn": []
+ },
+ {
+  "id": "PM11",
+  "slug": "PM11",
+  "title": "Risk Level Assignment",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can assign and screen all applications by a risk categorization of limited, moderate, or high for a provider at the time of new application, re-enrollment, or re-validation of enrollment. A state user can adjust a provider's risk level due to payment suspension or moratorium.",
+  "metrics": [
+   "Number of providers in each category by category for each new application, re-enrollment/revalidation",
+   "Number of providers with changes from moderate to high due to payment suspension or moratorium"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.450",
+    "title": "42",
+    "section": "455.450",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.450",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.450",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.450",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.450"
+    }
+   ]
+  ],
+  "alsoIn": [
+   "program-integrity"
+  ]
+ },
+ {
+  "id": "PM17",
+  "slug": "PM17",
+  "title": "Fraud",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can report required information about fraud and abuse to the appropriate officials.",
+  "metrics": [
+   "Number of open FWA investigations by provider type and status (This may already be submitted by states)"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.17",
+    "title": "42",
+    "section": "455.17",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.17",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.17",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.17",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.17"
+    }
+   ]
+  ],
+  "alsoIn": [
+   "program-integrity"
+  ]
+ },
+ {
+  "id": "PM18",
+  "slug": "PM18",
+  "title": "Payment Suspension",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "The system, or a state user, can suspend payment to providers in cases of fraud.",
+  "metrics": [
+   "Number of providers in suspend status due to fraud include reasons and aging by provider type"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.23",
+    "title": "42",
+    "section": "455.23",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.23",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.23",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.23",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.23"
+    }
+   ]
+  ],
+  "alsoIn": [
+   "program-integrity"
+  ]
+ },
+ {
+  "id": "PM1",
+  "slug": "PM1",
+  "title": "Application",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A provider can initiate, save, and apply to be a Medicaid provider.",
+  "metrics": [
+   "Number of requests to help desk for problems with initiating, saving, and applying.",
+   "Average time to enroll from point of submit.",
+   "a.   Total time to enroll all providers/",
+   "b.   Total # of enrolled providers"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.410(a)",
+    "title": "42",
+    "section": "455.410(a)",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.410#p-455.410(a)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.410(a)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.410(a)",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.410#p-455.410(a)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM2",
+  "slug": "PM2",
+  "title": "Screening",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can view screening results from other authorized agencies (Medicare, CHIP, other related agencies) to approve provider if applicable.",
+  "metrics": [
+   "Average Time to screen providers upon initial application without Return to Provider time.",
+   "(Total time to screen all providers – RTP time)/Total # providers screened",
+   "Average Time to screen providers upon initial application with Return to Provider time included.",
+   "Total time to screen all providers/Total # providers screened"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.410(c)",
+    "title": "42",
+    "section": "455.410(c)",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.410#p-455.410(c)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.410(c)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.410(c)",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.410#p-455.410(c)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM3",
+  "slug": "PM3",
+  "title": "Screening",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can verify that any provider purporting to be licensed in a state is licensed by such state and confirm that the provider's license has not expired and that there are no current limitations on the provider's license ensure valid licenses for a provider.",
+  "metrics": [
+   "Number of enrollment denials and reasons for denials.",
+   "Average Time to screen providers upon initial application without Return to Provider time",
+   "(Total time to screen all providers – RTP time)/Total # providers screened",
+   "Average Time to screen providers upon initial application with Return to Provider time included",
+   "Total time to screen all providers/Total # providers screened",
+   "Average Time to credential providers",
+   "Total time to credential providers/Total # of credentialed providers"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.412",
+    "title": "42",
+    "section": "455.412",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.412",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.412",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.412",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.412"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM4",
+  "slug": "PM4",
+  "title": "Revalidation",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "The system tracks the provider enrollment period to ensure that the state initiates provider revalidation at least every five years.",
+  "metrics": [
+   "Number of providers scheduled for revalidation by year. (Total # of providers in Medicaid)",
+   "Percentage of providers enrolled in the state system that are in the CMS Adverse Actions List.",
+   "# of state providers enrolled that are on the CMS Adverse Actions List/",
+   "# state providers enrolled"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.414",
+    "title": "42",
+    "section": "455.414",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.414",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.414",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.414",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.414"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM5",
+  "slug": "PM5",
+  "title": "Termination",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user (or the system, based on automated business rules) must terminate or deny a provider's enrollment upon certain conditions (refer to the specific regulatory requirements conditions in 42CFR455.416).",
+  "metrics": [
+   "Number of providers denied enrollment or termination of participation with reason.  Provide denial or termination reason."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.416",
+    "title": "42",
+    "section": "455.416",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.416",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.416",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.416",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.416"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM6",
+  "slug": "PM6",
+  "title": "Reactivation",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "After deactivation, a provider seeking reactivation must be re-screened by the state and submit payment of associated application fees before their enrollment is reactivated.",
+  "metrics": [
+   "Number of providers seeking reactivation and turn-around time (TAT) for enrollment.",
+   "Number of providers seeking reactivation with submittal of payment and TAT for enrollment."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.420",
+    "title": "42",
+    "section": "455.420",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.420",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.420",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.420",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.420"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM7",
+  "slug": "PM7",
+  "title": "Appeal",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A provider can appeal a termination or denial decision, and a state user can monitor the appeal process and resolution including nursing homes and ICFs/IID.",
+  "metrics": [
+   "Number of provider (by provider type) appeals and status of appeal:  include TAT to final determination."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.422",
+    "title": "42",
+    "section": "455.422",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.422",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.422",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.422",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.422"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM8",
+  "slug": "PM8",
+  "title": "Site Visits",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can manage information for mandatory pre-enrollment and post-enrollment site visits conducted on a provider in a moderate or high-risk category.",
+  "metrics": [
+   "Number of providers scheduled for site visit categorized by moderate and high risk.",
+   "Number of Providers with past due site visits.  Include number of days past due"
+  ],
+  "regs": [],
+  "regOther": [
+   "FR 455.432(a)"
+  ],
+  "regRaw": "FR 455.432(a)",
+  "regLines": [
+   [
+    {
+     "text": "FR 455.432(a)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM9",
+  "slug": "PM9",
+  "title": "Background Checks",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can view the status of criminal background checks, fingerprinting, and site visits for a provider as required based on their risk level and state law.",
+  "metrics": [
+   "List of providers in pending status due to checks listed in outcome.  Provide screen shots of high-risk providers.",
+   "Number of provider enrollments in process listed by outcomes check and status of outcome check and duration for each check. For example:  10 providers undergoing background checks.  Aging range from 1 -10 days."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.434",
+    "title": "42",
+    "section": "455.434",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.434",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.434",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.434",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.434"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM10",
+  "slug": "PM10",
+  "title": "External Systems Checks",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "The system checks appropriate databases to confirm a provider's identity and exclusion status for enrollment and reenrollment and conducts routine checks using federal databases including: Social Security Administration's Death Master File, the National Plan and Provider Enumeration System (NPPES), the List of Excluded Individuals/Entities (LEIE), and the Excluded Parties List System (EPLS). Authorized users can view the results of the data matches as needed.",
+  "metrics": [
+   "Number of providers in pending status due to other database confirmations.  Include the reason for pending.  For example:  # of providers pending for NPPES verification or mismatch and or # of providers found in the Death Master File",
+   "Number of providers by provider type found in the Death Master File and the enrollment status of each"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.436",
+    "title": "42",
+    "section": "455.436",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.436",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.436",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.436",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.436"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM12",
+  "slug": "PM12",
+  "title": "Application Fees",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "The system can collect application fees. A state user ensures any applicable application fee is collected before executing a provider agreement.",
+  "metrics": [
+   "Total number of providers in the network, # of providers in pend status due to lack of application fee, # of providers denied due to lack of application fee payment",
+   "Aging report of number of providers with lack of application fee payment in enrollment pend status"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.460",
+    "title": "42",
+    "section": "455.460",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.460",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.460",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.460",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.460"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM13",
+  "slug": "PM13",
+  "title": "Moratoria",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can set CMS and state-imposed temporary moratoria on new providers or provider types in six-month increments.",
+  "metrics": [
+   "Number of providers in temporary moratoria status and duration range",
+   "Number of providers in temporary moratoria outside of 6 months"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.470",
+    "title": "42",
+    "section": "455.470",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.470",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.470",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.470",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.470"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM14",
+  "slug": "PM14",
+  "title": "Network Adequacy",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can determine network adequacy based upon federal regulations and state plan.",
+  "metrics": [
+   "Network adequacy is already reported on"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.68",
+    "title": "42",
+    "section": "438.68",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.68",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.68",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.68",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.68"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM15",
+  "slug": "PM15",
+  "title": "Sanctions and Terminations",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user, and/or the system, can send and receive provider sanction and termination information shared from other states and Medicare to determine continued enrollment for providers.",
+  "metrics": [
+   "Provider enrollment stats for providers in pend and denied status due to sanction and or pending sanction and Medicare information."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.416(c)",
+    "title": "42",
+    "section": "455.416(c)",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.416#p-455.416(c)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.416(c)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.416(c)",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.416#p-455.416(c)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM16",
+  "slug": "PM16",
+  "title": "Notices and Communications",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "The system can generate relevant notices or communications to providers to include, but not limited to, application status, requests for additional information, re-enrollment termination, investigations of fraud, suspension of payment in cases of fraud.",
+  "metrics": [
+   "Provide a copy of relevant notices and communications submitted to providers for each outcome category."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.23",
+    "title": "42",
+    "section": "455.23",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.23",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.23",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.23",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.23"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM19",
+  "slug": "PM19",
+  "title": "Agreements and Disclosures",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can view provider agreements and disclosures as required by federal and state regulations.",
+  "metrics": [
+   "These are related to ownership regulations.",
+   "Number of providers identifying as one or more of the ownership relationships.  List by ownership relationship type"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 455.104",
+    "title": "42",
+    "section": "455.104",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.104",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 455.105",
+    "title": "42",
+    "section": "455.105",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.105",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 455.106",
+    "title": "42",
+    "section": "455.106",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.106",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 455.107",
+    "title": "42",
+    "section": "455.107",
+    "url": "https://www.ecfr.gov/current/title-42/section-455.107",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 455.104\r\n42 CFR 455.105\r\n42 CFR 455.106\r\n42 CFR 455.107",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 455.104",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.104"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 455.105",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.105"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 455.106",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.106"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 455.107",
+     "url": "https://www.ecfr.gov/current/title-42/section-455.107"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM20",
+  "slug": "PM20",
+  "title": "Change in Circumstances",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A state user can view information from a managed care plan describing changes in a network provider's circumstances that may affect the provider's eligibility to participate in Medicaid, including termination of the provider agreement.",
+  "metrics": [
+   "List of providers by provider type who have been released from the managed care entity due to:",
+   "Change in state residence",
+   "Investigation of FWA",
+   "Death",
+   "Others as defined by state",
+   "Include provider state Medicaid status"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.608(a)",
+    "title": "42",
+    "section": "438.608(a)",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.608#p-438.608(a)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.608(a)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.608(a)",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.608#p-438.608(a)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "PM21",
+  "slug": "PM21",
+  "title": "Directory",
+  "module": "Provider Management",
+  "moduleCode": "PM",
+  "moduleSlug": "provider-management",
+  "outcome": "A beneficiary can view and search a provider directory.",
+  "metrics": [
+   "Number of help desk tickets logged for inaccessibility to provider directory.",
+   "Number of website hits on provider directory page."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 438.10(h)",
+    "title": "42",
+    "section": "438.10(h)",
+    "url": "https://www.ecfr.gov/current/title-42/section-438.10#p-438.10(h)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 438.10(h)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 438.10(h)",
+     "url": "https://www.ecfr.gov/current/title-42/section-438.10#p-438.10(h)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL1",
+  "slug": "TPL1",
+  "title": "Application",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system does the following:\r\n- Records third parties,\r\n- Determines the liability of third parties,\r\n- Avoids payment of third-party claims,\r\n- Recovers reimbursement from third parties after Medicaid claims payment, and\r\n- Records information and actions related to the plan.",
+  "metrics": [
+   "Percentage of Medicaid beneficiaries with stored potential third party liability information.",
+   "Number of records of third-party liability reimbursements.",
+   "Amount of recovered dollars from reimbursements."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.138(k)(2)(i)",
+    "title": "42",
+    "section": "433.138(k)(2)(i)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(k)(2)(i)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.138(k)(2)(i)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.138(k)(2)(i)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(k)(2)(i)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL2",
+  "slug": "TPL2",
+  "title": "Health Insurance Information",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system records other health insurance information at the time of application or renewal for Medicaid eligibility that would be useful in identifying legally liable third-party resources.",
+  "metrics": [
+   "Percentage of beneficiaries with TPL information."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.136",
+    "title": "42",
+    "section": "433.136",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.136",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 433.137",
+    "title": "42",
+    "section": "433.137",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.137",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 433.138",
+    "title": "42",
+    "section": "433.138",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.138",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1902(a)(25) of the Act"
+  ],
+  "regRaw": "Section 1902(a)(25) of the Act\r\n42 CFR 433.136\r\n42 CFR 433.137\r\n42 CFR 433.138",
+  "regLines": [
+   [
+    {
+     "text": "Section 1902(a)(25) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 433.136",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.136"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 433.137",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.137"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 433.138",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.138"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL3",
+  "slug": "TPL3",
+  "title": "Information to Determine Legal Liability",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system uses electronic exchange state wage information collection agency.\r\n\r\nThe system(s) regularly updates the member file with any third-party liability information, how long it is valid, and for what services, through regular automated checks with these databases.",
+  "metrics": [
+   "Cadence of updates to member files with TPL information by database."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.138(d)",
+    "title": "42",
+    "section": "433.138(d)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(d)",
+    "note": ""
+   },
+   {
+    "cite": "42 CFR 435.4",
+    "title": "42",
+    "section": "435.4",
+    "url": "https://www.ecfr.gov/current/title-42/section-435.4",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "State Plan"
+  ],
+  "regRaw": "42 CFR 433.138(d) and (f)\r\n42 CFR 435.4\r\nState Plan",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.138(d)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(d)"
+    },
+    {
+     "text": " and (f)"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 435.4",
+     "url": "https://www.ecfr.gov/current/title-42/section-435.4"
+    }
+   ],
+   [
+    {
+     "text": "State Plan"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL4",
+  "slug": "TPL4",
+  "title": "Rejection Based on TPL",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system rejects and returns to the provider for a determination of the amount of liability for all claims for which the probable existence of third-party liability is established at the time the claim is filed.",
+  "metrics": [
+   "Percentage of claims rejected with a code for failure to file with a private insurer or other liable party.",
+   "Timeliness of claims rejection and return to provider."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.139(b)",
+    "title": "42",
+    "section": "433.139(b)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.139#p-433.139(b)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.139(b)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.139(b)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.139#p-433.139(b)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL5",
+  "slug": "TPL5",
+  "title": "Pay and Chase Identification",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "For claims identified with a third-party liability and designated as 'mandatory pay and chase,' the system makes appropriate payments and identifies such claims for future recovery. (Examples include preventive pediatric services provided to children, or medical child support from an absent parent.)",
+  "metrics": [
+   "Percentage of claims identified as pay and chase.",
+   "Percentage of recovered reimbursement for pay and chase claims."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.139(b)(3)(ii)",
+    "title": "42",
+    "section": "433.139(b)(3)(ii)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.139#p-433.139(b)(3)(ii)",
+    "note": ""
+   }
+  ],
+  "regOther": [
+   "Section 1902(a)(25) of the Act"
+  ],
+  "regRaw": "Section 1902(a)(25) of the Act \r\n42 CFR 433.139(b)(3)(ii)",
+  "regLines": [
+   [
+    {
+     "text": "Section 1902(a)(25) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "42 CFR 433.139(b)(3)(ii)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.139#p-433.139(b)(3)(ii)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL6",
+  "slug": "TPL6",
+  "title": "Pay and Chase Timeline",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system(s) supports providing up to 100 days to pay claims related to medical support enforcement, preventive pediatric services, labor and delivery, and postpartum care that are subject to 'pay and chase.' If a state cannot differentiate the costs for prenatal services from labor and delivery on the claim, it will have to cost avoid the entire claim.",
+  "metrics": [
+   "Percentage of pay and chase claims paid within 100 days.",
+   "Percentage of pay and chase claims paid to incorrect entity.",
+   "Percentage of pay and chase claims paid in the wrong amount."
+  ],
+  "regs": [],
+  "regOther": [
+   "Bipartisan Budget Act of 2018, Sec. 53102",
+   "Section 1902(a)(25) of the Act",
+   "CMCS Informational Bulleting (CIB) November 14, 2019 (pg. 2)"
+  ],
+  "regRaw": "Bipartisan Budget Act of 2018, Sec. 53102\r\nSection 1902(a)(25) of the Act \r\nCMCS Informational Bulleting (CIB) November 14, 2019 (pg. 2)",
+  "regLines": [
+   [
+    {
+     "text": "Bipartisan Budget Act of 2018, Sec. 53102"
+    }
+   ],
+   [
+    {
+     "text": "Section 1902(a)(25) of the Act"
+    }
+   ],
+   [
+    {
+     "text": "CMCS Informational Bulleting (CIB) November 14, 2019 (pg. 2)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL7",
+  "slug": "TPL7",
+  "title": "Claims Identification for TPL",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system identifies paid claims that contain diagnosis codes indicative of trauma, injury, poisoning, and other consequences of external causes on a routine and timely basis for the purposes of determining legal liability of third parties.",
+  "metrics": [
+   "Frequency of claims being flagged as needing third party liability confirmation.",
+   "Percentage of claims identified during cross-checks."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.138(e)",
+    "title": "42",
+    "section": "433.138(e)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(e)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.138(e) and (f)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.138(e)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(e)"
+    },
+    {
+     "text": " and (f)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL8",
+  "slug": "TPL8",
+  "title": "Probable TPL Determination Timeline",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system identifies probable TPL within 60 days after the end of the month in which payment has been made (unless there is an approved waiver to not recoup funds).",
+  "metrics": [
+   "Timeframes for TPL identification.",
+   "Timeframes for reimbursement recovery.",
+   "Timeframes for reconciliation of questions."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.139(d)",
+    "title": "42",
+    "section": "433.139(d)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.139#p-433.139(d)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.139(d)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.139(d)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.139#p-433.139(d)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL9",
+  "slug": "TPL9",
+  "title": "Report Generation",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system can generate reports on data exchanges and trauma codes so that the state can evaluate its TPL identification process.",
+  "metrics": [
+   "Frequency of report generation.",
+   "Frequency of monitoring of data exchanges and other oversight processes."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.138(j)",
+    "title": "42",
+    "section": "433.138(j)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(j)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.138(j)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.138(j)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(j)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL10",
+  "slug": "TPL10",
+  "title": "Cost Effectiveness",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system enables the agency to seek reimbursement from a liable third party on all claims for which it is cost effective.",
+  "metrics": [
+   "Percentage of claims recovered above the ROI threshold. ROI of claims recovered by contractors.",
+   "Percentage of claims not recovered due to ROI threshold."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.139(f)",
+    "title": "42",
+    "section": "433.139(f)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.139#p-433.139(f)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.139(f)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.139(f)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.139#p-433.139(f)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL11",
+  "slug": "TPL11",
+  "title": "MCO TPL Recovery",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "As determined by the state policies, system(s) enables the state to manage and oversee TPL recoveries made by its MCOs.",
+  "metrics": [
+   "Number of dollars recovered due to MCO TPL recovery.",
+   "Percentage of recovered reimbursement attributed to MCOs.",
+   "Response time for MCOs to respond to SME regarding TPL recovery."
+  ],
+  "regs": [],
+  "regOther": [
+   "COB/TPL Training and Handbook- 2020 (pg. 53-55)"
+  ],
+  "regRaw": "COB/TPL Training and Handbook- 2020 (pg. 53-55)",
+  "regLines": [
+   [
+    {
+     "text": "COB/TPL Training and Handbook- 2020 (pg. 53-55)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL12",
+  "slug": "TPL12",
+  "title": "Privacy and Security",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "Before requesting information from or releasing information to other agencies to identify legally liable third-party resources, state must execute data exchange agreements with those agencies.",
+  "metrics": [
+   "Periodic risk analysis of these connections or exchange protocols between the data sharing parties."
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.138(h)",
+    "title": "42",
+    "section": "433.138(h)",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(h)",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.138(h)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.138(h)",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.138#p-433.138(h)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "TPL13",
+  "slug": "TPL13",
+  "title": "Reimbursement Tracking",
+  "module": "Third Party Liability",
+  "moduleCode": "TPL",
+  "moduleSlug": "tpl",
+  "outcome": "The system tracks TPL reimbursements received so that the state can reimburse the federal government in accordance with the state's FMAP.",
+  "metrics": [
+   "Expected vs Actual TPL reimbursement"
+  ],
+  "regs": [
+   {
+    "cite": "42 CFR 433.140",
+    "title": "42",
+    "section": "433.140",
+    "url": "https://www.ecfr.gov/current/title-42/section-433.140",
+    "note": ""
+   }
+  ],
+  "regOther": [],
+  "regRaw": "42 CFR 433.140 (c)",
+  "regLines": [
+   [
+    {
+     "text": "42 CFR 433.140",
+     "url": "https://www.ecfr.gov/current/title-42/section-433.140"
+    },
+    {
+     "text": " (c)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ }
+]

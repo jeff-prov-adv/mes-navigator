@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# A newer push to the same branch supersedes an in-flight run.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Match the Node version the Vercel project builds with.
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npx eslint
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      # Clones the CMS repository (pinned via PINNED_REF) and regenerates
+      # src/data + public assets. The ETL's own assertions fail the build if
+      # CMS content is missing or truncated.
+      - name: Build
+        run: npm run build
+
+      - name: Data invariants
+        run: npm run check:data
+
+      # The build rewrites data-snapshot/. With content pinned, any diff means
+      # someone changed the ETL without refreshing the committed fallback —
+      # which is what would silently ship a stale or wrong-shaped snapshot.
+      # meta.json is excluded: syncedAt is the build date and changes daily.
+      - name: Committed snapshot is current
+        run: |
+          if ! git diff --quiet -- data-snapshot ':(exclude)data-snapshot/meta.json'; then
+            echo "::error::data-snapshot/ is stale. Run 'npm run build' and commit the result."
+            git diff --stat -- data-snapshot ':(exclude)data-snapshot/meta.json'
+            exit 1
+          fi
+          echo "data-snapshot/ matches this build"
+
+      - name: Link check
+        run: |
+          npx next start -p 3000 &
+          echo $! > /tmp/next.pid
+          npm run check:links
+          kill "$(cat /tmp/next.pid)" 2>/dev/null || true

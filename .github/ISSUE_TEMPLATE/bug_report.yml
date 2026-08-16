@@ -1,0 +1,56 @@
+name: Bug report
+description: Something in the tool behaves incorrectly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Before filing: if the *content* of an outcome, metric, or CEF looks
+        wrong, that comes from CMS's repository and should be reported there.
+        This form is for the tool misbehaving — including displaying something
+        differently from what CMS published.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, and what the tool did.
+      placeholder: |
+        Searched "timely determination", filtered to State examples, clicked the
+        second result. It opened the wrong example.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: URL or page, and the outcome or citation reference if relevant.
+      placeholder: /outcomes/EE13, or mes-navigator.com/regulations
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Which deployment
+      options:
+        - mes-navigator.com
+        - My own deployment of this code
+        - Running it locally
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      description: Only if it looks display-related.
+      placeholder: Safari, iPhone

@@ -1,0 +1,651 @@
+[
+ {
+  "state": "MO",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "",
+  "outcome": "Transform MHD from a transactional, request as needed data approach to a business intelligence driven model recognizing and treating data as an asset.",
+  "metrics": [
+   "Performance will be measured by:",
+   "Conducting an initial data maturity analysis and prioritizing recommendations and review every two (2) years.",
+   "Establishing a Data Governance Council who is engaged and meets at a minimum of quarterly and has at least 60% participation as measured by attendence.",
+   "Appointing Data Stewards who meet a minimum bi-monthly as measured by meeting schedule and has recommendation for data definitions of at least three (3) per month."
+  ]
+ },
+ {
+  "state": "MO",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "",
+  "outcome": "The Data Manager will monitor report writing performance and appropriate use of standards and perform analysis for future needs.",
+  "metrics": [
+   "Performance will be measured by:",
+   "100% of reports are requested through Jira Service Desk within three (3) months of Go-Live of the entire solution.",
+   "80% of reports are approved as written in the first review within six (6) months of Go-Live of the entire solution.",
+   "Semi-annually management will review administrative dashboards for volume, timeliness, and accuracy.",
+   "One (1) addidtional data mart recommended annually.",
+   "Twelve additional reports are added to the schedule annually."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Efficiency",
+  "outcome": "The system assists the state in monitoring quality and cost by alerting appropriate staff members when state-defined thresholds against state-defined metrics have been breached. (For example, the state has decided to monitor items such as managed care payments and controlled substance.)",
+  "metrics": [
+   "The system supports various business processes' reporting requirements through quick data propagation and data query returns."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Data Quality and Utility",
+  "outcome": "The system enables the SMA to comply with federal reporting requirements. These include, but are not necessarily limited to:\r\n- TMSIS (Transformed Medicaid Statistical Information System)\r\n- CMS 416 (EPSDT)\r\n- Statistical Enrollment Data System (SEDS)\r\n- Medicaid Administrative Reporting System (MRS)",
+  "metrics": [
+   "The solution includes analytical and reporting capabilities, both ad hoc and predefined to support key policy decision making/use cases and various business processes' reporting requirements. Examples include the ability to generate predictive analytics, automated DMA reports, personalized dashboards and organizational favorites for MLTC executives and policy-makers and business area leads."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Data Quality and Utility",
+  "outcome": "Data warehouse (DW) supports seamless inbound and/or outbound data sharing through data interfaces and appropriate standards including a broad set of data from required state and federal sources.",
+  "metrics": [
+   "The system enables the SMA to comply with federal reporting requirements."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Data Quality and Utility",
+  "outcome": "The data warehouse accurately maps data from the various data streams",
+  "metrics": [
+   "Expand user base of Decision Support System (DSS) to support key policy decision making/use cases and various business processes' reporting requirements. The solution includes analytical and reporting capabilities, both ad hoc and predefined to support key policy decision making/use cases and various business processes' reporting requirements."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Data Quality and Utility",
+  "outcome": "The system performs data quality checks on inbound data (formatting, completeness, duplication, etc.). It rejects erroneous data and notifies the data source so that the data can be corrected and re-submitted.",
+  "metrics": [
+   "Extensible and scalable to maintain provider, recipient, claims processing, encounter, and other data to support agency management reports and analyses."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Data Quality and Utility",
+  "outcome": "SMA has architected the data warehouse to be extensible and scalable in order to accommodate what the state has projected its future business needs to be.",
+  "metrics": [
+   "Provide tools and services to guide informed decision making within the State to ensure optimal operational and policy decisions."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Data Quality and Utility",
+  "outcome": "SMA has a data management strategy / plan that addresses current and future needs (e.g. data fields, elements, structure, reuse of data elements and de-duplication to enforce single version of truth).",
+  "metrics": [
+   "The system processes encounters from all authorized channels in approved formats and validates that encounters include all required information (in correct formats e.g. standard code sets). The system rejects invalid encounters. It identifies errors, attaches pre-defined error code(s) to rejected / denied encounters, and communicates those errors to the Managed Care Entity."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Data Quality and Utility",
+  "outcome": "The system maintains provider, recipient, claims processing, encounter, and reference data to support agency management reports and analyses.",
+  "metrics": [
+   "SMA utilizes encounter records and system generated encounter processing reports for MCO performance and contractor monitoring."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Data Quality and Utility",
+  "outcome": "SMA utilizes encounter records to monitor quality and cost of care provided to enrollees in managed care.",
+  "metrics": [
+   "SMA utilizes automated case management and reports for fraud and abuse analysis and investigations. The system provides access to post payment data and flexibility to conduct ad hoc research for a case."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Automation of Program Integrity Activities",
+  "outcome": "SMA utilizes automated case management and reports for fraud and abuse analysis and investigations.",
+  "metrics": [
+   "SMA utilizes system generated reports to evaluate program trends and identify outliers in Provider billing practices and Member service utilization to identify potential utilization anomalies."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Automation of Program Integrity Activities",
+  "outcome": "The system generates reports to evaluate program trends and identify outliers in Provider billing practices and Member service utilization to identify potential utilization anomalies.",
+  "metrics": [
+   "SMA utilizes automated case management and reports for fraud and abuse analysis and investigations."
+  ]
+ },
+ {
+  "state": "NE",
+  "module": "Decision Support System & Data Warehouse",
+  "moduleSlug": "dssdw",
+  "moduleCode": "DSSDW",
+  "goal": "Increase Automation of Program Integrity Activities",
+  "outcome": "The system provides access to post payment data and flexibility to conduct ad hoc research for a case.",
+  "metrics": [
+   "SMA utilizes automated case management and reports for fraud and abuse analysis and investigations."
+  ]
+ },
+ {
+  "state": "OH",
+  "module": "Pharmacy Benefit Management",
+  "moduleSlug": "pbm",
+  "moduleCode": "PBM",
+  "goal": "To support the implementation of a more efficient and cost effectivfe operating model to deliver pharmacy benefits to Ohio Medicaid members.",
+  "outcome": "The Single Pharmacy Benefit Manager (SPBM) module will provide accurate and timely processing of pharmacy claims utilizing fully transparent pricing and payment methodologies as determined by the Ohio Department of Medicaid.",
+  "metrics": [
+   "Assessed through the daily concurrent claims reviews conducted by ODM's Pharmacy Pricing and Audit Consultant (PPAC). Reporting will be available no later than one quarter after go live and will be continuously monitored throughout the operational life of the module."
+  ]
+ },
+ {
+  "state": "OH",
+  "module": "Pharmacy Benefit Management",
+  "moduleSlug": "pbm",
+  "moduleCode": "PBM",
+  "goal": "To support the implementation of a more efficient and cost effectivfe operating model to deliver pharmacy benefits to Ohio Medicaid members.",
+  "outcome": "The Single Pharmacy Benefit Manager (SPBM) module will improve the accuracy and timeliness of the acquisitions and integration of pharmacy claims encounter data.",
+  "metrics": [
+   "Assessed through the comparison of pre and post processing of pharmacy encounter claims, including measures such as the time from date of payment to date of encounter submission and percent of encounter claims rejected for data quality issues. Reporting will be available no later than one quarter after go live and will be continuously monitored throughout the operational life of the module."
+  ]
+ },
+ {
+  "state": "OH",
+  "module": "Pharmacy Benefit Management",
+  "moduleSlug": "pbm",
+  "moduleCode": "PBM",
+  "goal": "To support the implementation of a more efficient and cost effectivfe operating model to deliver pharmacy benefits to Ohio Medicaid members.",
+  "outcome": "The Single Pharmacy Benefit Manager (SPBM) module will reduce the overall benefits and administrative costs of the Ohio Medicaid pharmacy program.",
+  "metrics": [
+   "Assessed through the comparison of pre and post implementation expenditures on pharmacy benefits and administration. Reporting will be available no later than two quarters after go live and will be monitored until a new budgetary baseline is established."
+  ]
+ },
+ {
+  "state": "Alabama",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "Alabama Medicaid attests its providers and beneficiaries utilization of ALOHR Health IT infrastructure and investment in systems and services will improve health outcomes by:\r\n• Ability to flag each Medicaid recipient participating both in the Alabama Coordinated Health Network (ACHN), thereby reducing Emergency Room and hospital readmissions by improving care coordination with more timely patient engagement by their community care team.",
+  "metrics": [
+   "The total number of ADT alerts exchanged with each ACHN entities for the Medicaid recipients."
+  ]
+ },
+ {
+  "state": "Arkansas",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "Medicaid providers and Medicaid beneficiaries use the HIE to improve care coordination and reduce readmissions while working towards the goal of reducing unnecessary hospitalizations. The HIE will demonstrate its ability to notify PCMHS when their attributed member has an encounter at a hospital. These real-time notifications provide information to PCMHs about a patient’s medical services encounter, demographics, as well as the date and time of the event. The timely collection and distribution of these notifications to the PCMH facilitates the needed follow up care required to improve the overall quality as well as lower the cost of care delivered to patients.",
+  "metrics": [
+   "Number of Alerts sent to each PCMH each Month"
+  ]
+ },
+ {
+  "state": "Arkansas",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "To improve care coordination of PASSE members by providing real time data to the PASSE. The HIE will demonstrate the ability to send real time ADTs to Medicaid attributed PASSE members to the PASSE’s analytical tool. The real time flow of ADTs for intense care coordination improves patient’s outcomes and improves follow up after an acute encounter. Once the PASSE receives the ADT, the system generates automated tasks and transitions protocols established by Medicaid.",
+  "metrics": [
+   "Monthly count of messages or encounters on Medicaid attributed members sent to each individual PASSE."
+  ]
+ },
+ {
+  "state": "Colorado",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "The state will use the HIE to send ADT notifications to RAEs, which will use those alerts to improve care coordination and targeted follow-up with Medicaid beneficiaries.",
+  "metrics": [
+   "The number of notifications sent on behalf of the Medicaid population per RAE per month"
+  ]
+ },
+ {
+  "state": "Connecticut",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "CT Medicaid attests Medicaid providers and Medicaid beneficiaries use of the HIE care coordination technical investments will improve health outcomes including:\r\n•The Empanelment and Encounter Alert Service triggers alerts and flags patients who present to the hospital, allowing for improved outreach and care coordination across care team members aimed at improved care as seen by reducing future Emergency Department visits and hospital readmissions.",
+  "metrics": [
+   "Number and percent of unique Medicaid beneficiaries empaneled each month"
+  ]
+ },
+ {
+  "state": "District of Columbia",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "DHCF attests that Medicaid providers use of the HIE care coordination technical investments for Medicaid beneficiaries will improve health outcomes. Here is how:\r\n• The notification system triggers alerts and flags patients, including Medicaid beneficiaries, who present to the hospital, allowing for improved outreach and care coordination across care team members aimed at reducing future Emergency Department visits and hospital readmissions.",
+  "metrics": [
+   "Number of alerts sent to individual MCOs each month"
+  ]
+ },
+ {
+  "state": "District of Columbia",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "Department of Healthcare Finance (DHCF) attests that Medicaid providers use of the HIE care coordination technical investments for Medicaid beneficiaries will improve health outcomes. Here is how:\r\n• Medicaid providers are able to view and share radiological images and results/results within the Image Exchange system to improve care management for their patients.",
+  "metrics": [
+   "Number of times a provider launched the image exchange and searched for a core or emergent image for a Medicaid patient."
+  ]
+ },
+ {
+  "state": "Florida",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "County Health Department providers can securely and efficiently leverage health information exchange services to access clinical records for use in improving Medicaid patient care.",
+  "metrics": [
+   "Florida"
+  ]
+ },
+ {
+  "state": "Florida",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Public Health",
+  "outcome": "The eCR system will reduce administrative burden on providers by allowing them to submit required case reporting electronically. Medicaid providers will spend less time compiling and managing generation and submission of reportable disease case reports.",
+  "metrics": [
+   "Percent of cases reported (or counted) by FDOH that have an electronic case report"
+  ]
+ },
+ {
+  "state": "Kentucky",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "Improve Medicaid providers’ access to clinical data through the ePartnerViewer and Platinum connection, to improve care coordination and overall health outcomes of Medicaid beneficiaries.",
+  "metrics": [
+   "The number of ADTs, labs, radiology reports and transcribed notes submitted via HL7 into the HIE."
+  ]
+ },
+ {
+  "state": "Kentucky",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "Improve Medicaid providers’ access to clinical data through the ePartnerViewer and Platinum connection, to improve care coordination and overall health outcomes of Medicaid beneficiaries.",
+  "metrics": [
+   "The total number of CCDs contributed and queried through a Platinum (IHE) connection."
+  ]
+ },
+ {
+  "state": "Kentucky",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "Improve Medicaid providers’ access to clinical data through the ePartnerViewer and Platinum connection, to improve care coordination and overall health outcomes of Medicaid beneficiaries.",
+  "metrics": [
+   "The total number of provisioned users accessing the ePartnerViewer."
+  ]
+ },
+ {
+  "state": "Kentucky",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "Increase the number of Event Notifications exchanged in order to deliver healthcare providers with the most current patient information. Thereby reducing duplication of services and gaps in care ensuring beneficiaries receive quality healthcare by well-informed providers.",
+  "metrics": [
+   "The number of event notifications exchanged via each route."
+  ]
+ },
+ {
+  "state": "Kentucky",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "HIE Services",
+  "outcome": "Provide direct secure messaging to participants to enable information exchange where KHIE connections lapse.",
+  "metrics": [
+   "The number of Direct Secure Messages exchanged via KHIE’s HISP and CareAlign Portal."
+  ]
+ },
+ {
+  "state": "Mississippi",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "Use the CDIP ecosystem to identify beneficiaries who are high utilizers of DOM services and assigned to care management",
+  "metrics": [
+   "Use the Clinical Data Interoperability Program's (CDIP) ecosystem to develop reports to identify beneficiaries enrolled in care management:",
+   "# of Emergency Department visits",
+   "The report will be reviewed monthly by DOM staff and used to inform CCO oversight and compliance engagement strategies."
+  ]
+ },
+ {
+  "state": "Montana",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Clinical Data Exchange",
+  "outcome": "The activity will deliver a consolidated clinical data feed to Medicaid that will reduce data duplication and improve data consistency and eliminate the additional cost and infrastructure to build and maintain direct data interfaces from Montana Medicaid to multiple health systems and other Medicaid certified providers in the BSCC network.  BSCC manages a network of data interfaces from clinical providers across the state of Montana.  Data is ingested, normalized, matched to patients and integrated into a single longitudinal patient record and combined with clinical data from Medicaid claims as well as clinical claims data from other participating payor organizations.  This combined patient record data set is then delivered to Medicaid on a scheduled basis as described above.",
+  "metrics": [
+   "Number of updated patient Summary CCDs provided to Medicaid"
+  ]
+ },
+ {
+  "state": "Montana",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "This activity will provide a tool/platform that will improve the Medicaid program and Medicaid providers ability to track, manage and report on quality metrics, risk profiling and population health.  The platform will provide Medicaid a comprehensive suite of medical risk scores based on the claims and clinical data in the HIE. The Department will use these risk scores to complement its own population health data to create a comprehensive health profile of Medicaid members which will inform care program assignment, care coordinator clinical recommendations, and improve member outcomes.  The increased access by Medicaid Provider users will give them real-time access at the point of care to the metrics that describe a Medicaid member’s health status and conditions which will support improved member outcomes. If users don’t have access to the metrics, they will make suboptimal healthcare decisions that could negatively impact Medicaid member overall health condition.  Access to these metrics enables Medicaid to improve the quality and coordination as well as lower the cost of care delivered to patients.",
+  "metrics": [
+   "Number of patient records with associated updated risk scores",
+   "Number of patients with Risk scores provided to Medicaid"
+  ]
+ },
+ {
+  "state": "New Jersey",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Clinical Data Exchange",
+  "outcome": "Improve Medicaid providers’ access to clinical data through NJHIN to improve care coordination, overall health outcomes of Medicaid beneficiaries and allowing consumers to access their health information.",
+  "metrics": [
+   "The number of CCDA documents shared with providers and facilities via the NJHIN."
+  ]
+ },
+ {
+  "state": "New Jersey",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "The state’s Medicaid providers will receive valuable alerts on their patients when they utilize any of these services allowing them to proactively engage the patients in follow-up care which supports the CMS ADT CoP Notification mandate.",
+  "metrics": [
+   "The number of ADT messages contributed to NJHIN."
+  ]
+ },
+ {
+  "state": "New Jersey",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "The state’s Medicaid providers will receive valuable alerts on their patients when they utilize any of these services allowing them to proactively engage the patients in follow-up care which supports the CMS ADT CoP Notification mandate.",
+  "metrics": [
+   "The number of ADT messages sent to providers and facilities via the NJHIN."
+  ]
+ },
+ {
+  "state": "New Mexico",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Quality Measurement",
+  "outcome": "Support Medicaid providers by facilitating earlier identification of patients with HCV at the point of care and the number that achieve Sustained Virologic Response (SRV)",
+  "metrics": [
+   "The total number of Medicaid enrolled HCV patients identified based on positive lab results for Medicaid beneficiaries, and the number who achieved Sustained Virologic Response (SVR) each month."
+  ]
+ },
+ {
+  "state": "New Mexico",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "Support Medicaid providers by facilitating earlier identification of patients with documented histories of SUD and Substance Exposed Infants (SEI)",
+  "metrics": [
+   "The monthly number of Emergency Department visits for a Medicaid enrollee that meet criteria for a visit related to SEI, SUD and/or opioid overdose."
+  ]
+ },
+ {
+  "state": "New Mexico",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Clinical Data Exchange",
+  "outcome": "Expedite and increase Medicaid providers’ access to beneficiaries’ clinical records through the SYNCRONYS HIE to directly advance care coordination and improve care outcomes among the Medicaid population.",
+  "metrics": [
+   "The total number of Medicaid patient Consolidated Clinical Document Architecture documents (CCDA) contributed, and patient records queried through SYNCRONYS during a given month."
+  ]
+ },
+ {
+  "state": "New Mexico",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "Expedite and increase Medicaid providers’ access to beneficiaries’ clinical records through the SYNCRONYS HIE to directly advance care coordination and improve care outcomes among the Medicaid population.",
+  "metrics": [
+   "The number of Health Level Seven International (HL7) ADT (Admit, Discharge and Transfer) messages; Observation Results, Unsolicited (ORU) for labs, radiology and patient notes; and MDMs (Medical Document Management notes and other documents), submitted monthly"
+  ]
+ },
+ {
+  "state": "New York",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Quality Measurement",
+  "outcome": "SHIN-NY entities make clinical data available to support the development and implementation of NYS Medicaid’s value-based payment (VBP) program.",
+  "metrics": [
+   "Total number of members each QE was able to match by quality measure."
+  ]
+ },
+ {
+  "state": "New York",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Quality Measurement",
+  "outcome": "SHIN-NY entities make clinical data available to support the development and implementation of NYS Medicaid’s value-based payment (VBP) program.",
+  "metrics": [
+   "Number of members with clinical data relevant to the quality measure(s) being evaluated."
+  ]
+ },
+ {
+  "state": "North Dakota",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "Improve Medicaid providers’ access to clinical data through the NDHIN Clinical Portal to improve care coordination and overall health outcomes of Medicaid beneficiaries.",
+  "metrics": [
+   "The number of HL7 messages submitted to NDHIN, including ADT messages; Lab results; radiology images; radiology reports; and transcribed documents."
+  ]
+ },
+ {
+  "state": "North Dakota",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "HIE Services",
+  "outcome": "Improve Medicaid providers’ access to clinical data through the NDHIN Clinical Portal to improve care coordination and overall health outcomes of Medicaid beneficiaries.",
+  "metrics": [
+   "The total number of user logins to the NDHIN Clinical Portal, either web-access or single sign-on."
+  ]
+ },
+ {
+  "state": "North Dakota",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "Improve Medicaid providers’ access to clinical data through the NDHIN Clinical Portal to improve care coordination and overall health outcomes of Medicaid beneficiaries.",
+  "metrics": [
+   "The total number of unique patient records accessed by NDHIN users on a monthly basis."
+  ]
+ },
+ {
+  "state": "North Dakota",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Public Health",
+  "outcome": "Improve electronic public health reporting data quality in North Dakota to support Medicaid providers’ ability to coordinate care as it relates to improving population health for the Medicaid beneficiaries.",
+  "metrics": [
+   "The number of immunization records, syndromic surveillance messages, reportable conditions (ELR), and electronic case reports reported electronically via NDHIN to the ND Department of Health."
+  ]
+ },
+ {
+  "state": "North Dakota",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Public Health",
+  "outcome": "Improve electronic public health reporting data quality in North Dakota to support Medicaid providers’ ability to coordinate care as it relates to improving population health for the Medicaid beneficiaries.",
+  "metrics": [
+   "Provider utilization of NDHIN to access patients’ immunization health data"
+  ]
+ },
+ {
+  "state": "Rhode Island",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "HIE Services",
+  "outcome": "Improve Medicaid1 providers’ access to clinical data and event notifications through HIE services to improve care coordination and transitions of care, and to positively impact health outcomes of Medicaid beneficiaries. Timely access to relevant information for patient care and treatment is one of the most important core functions of an HIE. By monitoring providers’ use of HIE services, EOHHS and Medicaid can better administer the Medicaid program, working with the Accountable Entities (AE) and Managed Care Organizations (MCO) to assure optimal benefit from the use of the State’s HIE and its services.",
+  "metrics": [
+   "The percent of healthcare sites that log in to CurrentCare Viewer 11+ times per month (# of practice sites that log in to Viewer 11+ times per month / # of sites with access to Viewer)"
+  ]
+ },
+ {
+  "state": "Rhode Island",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "HIE Services",
+  "outcome": "Improve Medicaid1 providers’ access to clinical data and event notifications through HIE services to improve care coordination and transitions of care, and to positively impact health outcomes of Medicaid beneficiaries. Timely access to relevant information for patient care and treatment is one of the most important core functions of an HIE. By monitoring providers’ use of HIE services, EOHHS and Medicaid can better administer the Medicaid program, working with the Accountable Entities (AE) and Managed Care Organizations (MCO) to assure optimal benefit from the use of the State’s HIE and its services.",
+  "metrics": [
+   "Assessment of frequency of use of Care Management Dashboards (Ratio of log-ins to dashboard users in a 30-day period)"
+  ]
+ },
+ {
+  "state": "Rhode Island",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Public Health",
+  "outcome": "Reduce administrative and reporting burden for Medicaid providers, and create efficiencies and optimizations for the Medicaid program, by supporting connections for public health and quality reporting where appropriate. The HIE is uniquely positioned to facilitate connections by utilizing existing clinical interfaces with provider systems for additional state and federal reporting needs.",
+  "metrics": [
+   "The percent of non- hospital lab reportable disease results sent to NEDSS through the HIE (# lab reportable disease results/transactions sent to NEDSS Through the HIE/ # lab reportable disease results from non-hospital laboratories)"
+  ]
+ },
+ {
+  "state": "Rhode Island",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Quality Reporting",
+  "outcome": "Reduce administrative and reporting burden for Medicaid providers, and create efficiencies and optimizations for the Medicaid program, by supporting connections for public health and quality reporting where appropriate. The HIE is uniquely positioned to facilitate connections by utilizing existing clinical interfaces with provider systems for additional state and federal reporting needs.",
+  "metrics": [
+   "The number of lab results sent to the Quality Reporting System (QRS) (# lab results sent to QRS)"
+  ]
+ },
+ {
+  "state": "Wyoming",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "The state will use the HIE to send ADT notifications, which will improve care coordination and targeted follow-up with Medicaid beneficiaries. In addition, the state will use the ADT data from the HIE to improve health outcomes by improving insight into Medicaid service usage by identifying utilization of Emergency Department (ED) and hospital admissions and gaps in services. This information will be used to inform Medicaid administration and providers about the Medicaid population’s health and improve the evaluation of Medicaid program performance and client’s health outcomes.",
+  "metrics": [
+   "The number of notifications sent to the Medicaid HMUM vendor per month."
+  ]
+ },
+ {
+  "state": "Wyoming",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "The state will use the HIE to send ADT notifications, which will improve care coordination and targeted follow-up with Medicaid beneficiaries. In addition, the state will use the ADT data from the HIE to improve health outcomes by improving insight into Medicaid service usage by identifying utilization of Emergency Department (ED) and hospital admissions and gaps in services. This information will be used to inform Medicaid administration and providers about the Medicaid population’s health and improve the evaluation of Medicaid program performance and client’s health outcomes.",
+  "metrics": [
+   "The number of CCDs pulled for Medicaid HMUM patients per month."
+  ]
+ },
+ {
+  "state": "Wyoming",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "The State will use the HIE’s referral function to improve care coordination and targeted follow-up with Medicaid beneficiaries. In addition, the state will use the ADT data from the HIE to improve health outcomes for Medicaid diabetes and prediabetes patients through closed loop referrals between PCPs and RDs as part of the CDC’s National Diabetes Prevention Program (DPP).",
+  "metrics": [
+   "The number of referrals for DPP per month."
+  ]
+ },
+ {
+  "state": "Wyoming",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "The State will use the HIE’s referral function to improve care coordination and targeted follow-up with Medicaid beneficiaries. In addition, the state will use the ADT data from the HIE to improve health outcomes for Medicaid diabetes and prediabetes patients through closed loop referrals between PCPs and RDs as part of the CDC’s National Diabetes Prevention Program (DPP).",
+  "metrics": [
+   "The number of summaries by RDs per month."
+  ]
+ },
+ {
+  "state": "Wyoming",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Care Coordination",
+  "outcome": "The state will use the HIE’s ability to aggregate health data from multiple sources to improve care coordination by enabling Medicaid care team members to see all relevant health data for Medicaid Patients. It will improve outcomes by maintaining continuity as patients’ transition into and out of Medicaid eligibility.",
+  "metrics": [
+   "Number of Medicaid patients with records in WYFI over time."
+  ]
+ },
+ {
+  "state": "Wyoming",
+  "module": "Health Information Exchange",
+  "moduleSlug": "hie",
+  "moduleCode": "HIE",
+  "goal": "Event Notifications",
+  "outcome": "The state will use the HIE’s ability to aggregate health data from multiple sources to improve care coordination by enabling Medicaid care team members to see all relevant health data for Medicaid Patients. It will improve outcomes by maintaining continuity as patients’ transition into and out of Medicaid eligibility.",
+  "metrics": [
+   "Number of Medicaid Patient encounter records in WYFI over time."
+  ]
+ }
+]

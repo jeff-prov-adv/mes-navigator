@@ -1,0 +1,21 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Certification content looks wrong
+    url: https://github.com/CMSgov/CMCS-DSG-DSS-Certification/issues
+    about: >-
+      Outcomes, metrics, CEFs, and guidance text are mirrored from CMS's
+      repository and are not edited here. Corrections belong with CMS. If this
+      tool displays something differently from that repository, that IS a bug
+      here — open a bug report instead.
+
+  - name: Report a security issue
+    url: https://github.com/jeff-prov-adv/mes-navigator/security/policy
+    about: >-
+      Please report vulnerabilities privately rather than in a public issue.
+      See the security policy for scope and known limitations.
+
+  - name: Questions about CMS certification itself
+    url: https://provenanceadvisorsllc.com
+    about: >-
+      This tool is unofficial and not affiliated with CMS. For requirements
+      questions, your CMS State Officer is authoritative.

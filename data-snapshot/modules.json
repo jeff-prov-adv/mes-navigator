@@ -1,0 +1,146 @@
+[
+ {
+  "name": "Claims Processing",
+  "code": "CP",
+  "slug": "claims-processing",
+  "dir": "Claims Processing (CP)",
+  "description": "Claims processing systems cover the ingestion and validation of claims against rules. These systems may also generate reports to support Federal reporting requirements.",
+  "cmsRequired": 6,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Decision Support System & Data Warehouse",
+  "code": "DSSDW",
+  "slug": "dssdw",
+  "dir": "Decision Support System & Data Warehouse (DSSDW)",
+  "description": "The Decision Support System (DSS) / Data Warehouse (DW) business area covers software tools used by authorized State employees to extract and/or analyze Medicaid data in order to inform program decisions, policy decisions, and report on the delivery of the Medicaid Program.",
+  "cmsRequired": 2,
+  "stateSpecific": 14
+ },
+ {
+  "name": "Eligibility and Enrollment",
+  "code": "EE",
+  "slug": "eligibility-enrollment",
+  "dir": "Eligibility and Enrollment (EE)",
+  "description": "A system or subsystem that assigns accurate eligibility categories for all applicable eligibility groups by receiving, ingesting, and processing: Applications, changes of circumstance, renewal forms, and any supporting documentation requested by the state (including telephonic signatures) from individuals.",
+  "cmsRequired": 27,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Encounter Processing System",
+  "code": "EPS",
+  "slug": "encounter-processing",
+  "dir": "Encounter Processing System (EPS)",
+  "description": "Encounter Processing Systems ingest encounter data (submissions and re-submissions) from MCOs and sends quality transaction feedback back to the plans to ensure appropriate industry standard format. The systems support the tracking of MCO submission requirements and allow the state to enforce consequences for non-compliance. The systems also support payment comparisons and cost of care analysis.",
+  "cmsRequired": 5,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Financial Management",
+  "code": "FM",
+  "slug": "financial-management",
+  "dir": "Financial Management (FM)",
+  "description": "A system or subsystem that calculates FFS provider payment or recoupment amounts and initiates payment or recoupment action as appropriate. The system should also support appeals, capitation payments, and generates the data for timely and accurate financial reports.",
+  "cmsRequired": 9,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Long Term Services & Supports",
+  "code": "LTSS",
+  "slug": "ltss",
+  "dir": "Long Term Services & Supports (LTSS)",
+  "description": "Medicaid is the primary payer across the nation for long-term care services. Medicaid allows for the coverage of these services through several vehicles and over a continuum of settings, ranging from institutional care to community-based long-term services and supports (LTSS). LTSS systems support the management of these services.",
+  "cmsRequired": 11,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Member Management",
+  "code": "MM",
+  "slug": "member-management",
+  "dir": "Member Management (MM)",
+  "description": "The Member Management module includes the function of determining eligibility for Medicaid, along with enrollment of members in their benefit delivery entities and the ongoing management of that member for the duration of their enrollment in Medicaid. Activities associated with Member communications and responding to Member requests are included as well.",
+  "cmsRequired": 11,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Pharmacy Benefit Management",
+  "code": "PBM",
+  "slug": "pbm",
+  "dir": "Pharmacy Benefit Management (PBM)",
+  "description": "Pharmacy Benefit Management (PBM) systems provide services which may include claims adjudication, rebate administration, utilization monitoring, drug utilization review, and preferred drug list oversight.",
+  "cmsRequired": 9,
+  "stateSpecific": 3
+ },
+ {
+  "name": "Prescription Drug Monitoring Program",
+  "code": "PDMP",
+  "slug": "pdmp",
+  "dir": "Prescription Drug Monitoring Program (PDMP)",
+  "description": "PDMP systems monitor the use of controlled substances, including prescription drug history, prescription drug usage, and demographic information of prescribing providers.",
+  "cmsRequired": 6,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Program Integrity",
+  "code": "PI",
+  "slug": "program-integrity",
+  "dir": "Program Integrity (PI)",
+  "description": "PI systems monitor for waste, fraud, and abuse, to ensure Medicaid funds are distributed properly and accurately.",
+  "cmsRequired": 18,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Provider Management",
+  "code": "PM",
+  "slug": "provider-management",
+  "dir": "Provider Management (PM)",
+  "description": "Provider management module includes processes (initial and ongoing) to screen and enroll providers into Medicaid, as well as to keep provider information current and to provide data to authorized requesters. Provider outreach and communications, as well as responding to provider requests and issues, are included.",
+  "cmsRequired": 21,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Third Party Liability",
+  "code": "TPL",
+  "slug": "tpl",
+  "dir": "Third Party Liability (TPL)",
+  "description": "In some cases, Medicaid beneficiaries may have more than one source of coverage for health care services, such as group health plans, self-insured plans, or managed care organizations. Third Party Liability (TPL) systems identify these situations to ensure that the appropriate party pays for services.",
+  "cmsRequired": 13,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Electronic Visit Verification",
+  "code": "EVV",
+  "slug": "evv",
+  "dir": "Electronic Visit Verification (EVV)",
+  "description": "Electronic Visit Verification (EVV) is a system under which visits conducted as part of Personal Care Services (PCS) and Home Health Care Services (HHCS) are electronically verified with respect to (i) the type of service performed; (ii) the individual receiving the service; (iii) the date of the service; (iv) the location of service delivery; (v) the individual providing the service; and (vi) the time the service begins and ends.",
+  "cmsRequired": 0,
+  "stateSpecific": 0
+ },
+ {
+  "name": "Health Information Exchange",
+  "code": "HIE",
+  "slug": "hie",
+  "dir": "Health Information Exchange (HIE)",
+  "description": "Health Information Exchanges (HIEs) allows patients and health care providers to access and share medical information across hospitals/provider networks/health systems. Depending on the nature and extent of a given HIE’s capabilities, investments are expected to lead to improved individual- and population-level health outcomes through improved coordination of care and the use of data to inform health policy decision-making.",
+  "cmsRequired": 0,
+  "stateSpecific": 41
+ },
+ {
+  "name": "Asset Verification System",
+  "code": "AVS",
+  "slug": "asset-verification",
+  "dir": "Asset Verification System",
+  "description": "Electronic asset verification systems (AVSs) collect information directly from financial institutions to determine whether certain seniors and people with disabilities who are applying for or receiving Medicaid have assets below eligibility caps.",
+  "cmsRequired": 0,
+  "stateSpecific": 0
+ },
+ {
+  "name": "1115 or Waiver Support Systems",
+  "code": "WSS",
+  "slug": "waiver-support",
+  "dir": "1115 or Waiver Support Systems",
+  "description": "Under a Medicaid waiver, a state can waive certain Medicaid eligibility requirements, covering care for people who might not otherwise be eligible for Medicaid. A waiver support system could be any enhancement to an MES module that helps facilitate changes to the Medicaid program operationalized by an approved waiver.",
+  "cmsRequired": 0,
+  "stateSpecific": 0
+ }
+]
