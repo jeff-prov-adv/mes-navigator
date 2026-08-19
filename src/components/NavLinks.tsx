@@ -9,6 +9,7 @@ const NAV = [
   { href: '/cefs', label: 'CEFs' },
   { href: '/guidance/certification-process', label: 'Guidance', match: '/guidance' },
   { href: '/assistant', label: 'Assistant' },
+  { href: '/strategy', label: 'Strategy' },
   { href: '/about', label: 'About' },
 ];
 
