@@ -32,9 +32,9 @@ jobs:
       - name: Typecheck
         run: npx tsc --noEmit
 
-      # Clones the CMS repository (pinned via PINNED_REF) and regenerates
-      # src/data + public assets. The ETL's own assertions fail the build if
-      # CMS content is missing or truncated.
+      # Clones the CMS repository at the pinned commit (`sourceCommit` in
+      # data-snapshot/meta.json) and regenerates src/data + public assets. The
+      # ETL's own assertions fail the build if CMS content is missing or truncated.
       - name: Build
         run: npm run build
 
@@ -44,7 +44,11 @@ jobs:
       # The build rewrites data-snapshot/. With content pinned, any diff means
       # someone changed the ETL without refreshing the committed fallback —
       # which is what would silently ship a stale or wrong-shaped snapshot.
-      # meta.json is excluded: syncedAt is the build date and changes daily.
+      # meta.json is excluded: syncedAt is the build date and changes daily. That
+      # exclusion does not hide a moving pin — the build reads its pin from that
+      # same file, so a PR can only change content by changing sourceCommit, and
+      # the resulting data diff shows up in the files checked here. The pin is
+      # advanced by cms-sync.yml, which opens a reviewed PR every Monday.
       - name: Committed snapshot is current
         run: |
           if ! git diff --quiet -- data-snapshot ':(exclude)data-snapshot/meta.json'; then

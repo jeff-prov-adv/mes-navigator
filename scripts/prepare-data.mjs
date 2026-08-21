@@ -1,10 +1,17 @@
 // Prebuild: clone the CMS MES Certification Repository and generate src/data/*.json.
 // Runs before `next build`, locally and on Vercel.
 //
-// Content is PINNED to a known-good CMS commit (see PINNED_REF) so builds are
-// reproducible and CMS cannot change the site's content under us between deploys.
-// To resume tracking the latest CMS content, set CERT_REPO_REF=HEAD in the
-// environment, or clear PINNED_REF below.
+// Content is PINNED to a reviewed CMS commit so builds are reproducible and CMS
+// cannot change the site's content under us between deploys. The pin is not a
+// constant in this file — it is `sourceCommit` in data-snapshot/meta.json, the
+// commit that produced the committed data. One source of truth: the pin and the
+// data it generated cannot drift apart.
+//
+// The pin moves weekly, not never. .github/workflows/cms-sync.yml builds against
+// CMS HEAD every Monday and, when content actually changed, opens a PR carrying
+// the new data plus the summary of what moved. Merging that PR advances the pin,
+// because the snapshot refresh at the bottom of this file rewrites meta.json with
+// the commit the build used.
 //
 // Env knobs:
 //   CERT_REPO_DIR    — reuse an existing clone (skips cloning if _data/ present)
@@ -14,6 +21,8 @@
 //   - Clone fails (GitHub down, repo moved) → fall back to the committed data-snapshot/,
 //     with a loud warning. No snapshot → hard fail.
 //   - ETL sanity checks fail (CMS renamed/emptied files) → hard fail. Never ship a hole.
+//   - No pin readable and no CERT_REPO_REF → hard fail. An unreadable pin must never
+//     silently become "track whatever CMS has today".
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -21,12 +30,33 @@ import path from 'node:path';
 
 const REPO_URL = 'https://github.com/CMSgov/CMCS-DSG-DSS-Certification.git';
 const dir = process.env.CERT_REPO_DIR || path.join(os.tmpdir(), 'certrepo');
-// Known-good CMS commit. Not sensitive — a public commit in a public repo.
-// Verified: modules=16 outcomes=132 stateExamples=58 cefs=22 guidance=6 regulations=124 assets=6
-const PINNED_REF = 'c9db9cd049f6641373b1ad0bb5aa1e07bd0ce68a';
-const ref = process.env.CERT_REPO_REF || PINNED_REF;
 const snapshotDir = path.join(process.cwd(), 'data-snapshot');
 const outDir = path.join(process.cwd(), 'src', 'data');
+
+// The pin: the CMS commit that produced the committed snapshot. Not sensitive —
+// a public commit in a public repo.
+function readPin() {
+  const metaPath = path.join(snapshotDir, 'meta.json');
+  let commit;
+  try {
+    commit = JSON.parse(fs.readFileSync(metaPath, 'utf8')).sourceCommit;
+  } catch (err) {
+    throw new Error(
+      `Cannot read the CMS content pin from ${metaPath}: ${err.message}\n` +
+        'Restore data-snapshot/meta.json, or set CERT_REPO_REF explicitly ' +
+        '(CERT_REPO_REF=HEAD tracks the latest CMS content).',
+    );
+  }
+  if (!commit || commit === 'unknown') {
+    throw new Error(
+      `No usable sourceCommit in ${metaPath} (got ${JSON.stringify(commit)}).\n` +
+        'Set CERT_REPO_REF explicitly (CERT_REPO_REF=HEAD tracks the latest CMS content).',
+    );
+  }
+  return commit;
+}
+
+const ref = process.env.CERT_REPO_REF || readPin();
 
 function cloneRepo() {
   // CERT_REPO_REF=HEAD is the documented way to opt out of the pin and track latest.
@@ -67,7 +97,10 @@ function cloneRepo() {
     console.warn('!!! Reusing an existing clone skips checkout. Remove that directory, or unset');
     console.warn('!!! CERT_REPO_DIR, to build against the pinned content.\n');
   }
-  console.log(`Cert repo at commit ${head}${pinned ? (onPin ? ` (pinned: ${ref})` : ' (PIN NOT APPLIED)') : ' (latest)'}`);
+  const source = process.env.CERT_REPO_REF ? 'CERT_REPO_REF' : 'data-snapshot/meta.json';
+  console.log(
+    `Cert repo at commit ${head}${pinned ? (onPin ? ` (pinned: ${ref} from ${source})` : ' (PIN NOT APPLIED)') : ` (latest, via ${source})`}`,
+  );
 }
 
 try {
@@ -89,7 +122,9 @@ try {
 process.env.CERT_REPO_DIR = dir;
 await import('./etl.mjs');
 
-// Refresh the committed snapshot so the fallback stays current with the last good build.
+// Refresh the committed snapshot so the fallback stays current with the last good
+// build — and, because the pin is read from meta.json, so that a build against a
+// newer CMS commit advances the pin in the same commit as the data it produced.
 fs.mkdirSync(snapshotDir, { recursive: true });
 for (const f of fs.readdirSync(outDir)) {
   fs.copyFileSync(path.join(outDir, f), path.join(snapshotDir, f));
