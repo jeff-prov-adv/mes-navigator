@@ -24,17 +24,32 @@ Four further modules (EVV, HIE, AVS, 1115/Waiver) certify against state-specific
 runs the ETL in `scripts/etl.mjs`, and writes `src/data/*.json` plus the guidance images into
 `public/`.
 
-Content is **pinned** to a known-good CMS commit (`PINNED_REF` in `scripts/prepare-data.mjs`) so
-builds are reproducible and CMS cannot change the site's content between deploys. The build log
-reports which commit it used and whether the pin applied:
+Content is **pinned** to a reviewed CMS commit so builds are reproducible and CMS cannot change
+the site's content between deploys. The pin is not a constant in the build script — it is
+`sourceCommit` in `data-snapshot/meta.json`, the commit that produced the committed data. One
+source of truth: the pin and the data it generated cannot drift apart. The build log reports which
+commit it used, where the pin came from, and whether it applied:
 
 ```
-Cert repo at commit c9db9cd… (pinned: c9db9cd…)
+Cert repo at commit c9db9cd… (pinned: c9db9cd… from data-snapshot/meta.json)
 ```
 
-To track the latest CMS content again, set `CERT_REPO_REF=HEAD` or clear `PINNED_REF`. Note that
-reusing an existing clone via `CERT_REPO_DIR` skips checkout and therefore bypasses the pin — the
-build warns loudly and logs `(PIN NOT APPLIED)` when that happens.
+The pin moves weekly, not never. `.github/workflows/cms-sync.yml` runs every Monday, asks CMS what
+`HEAD` is, and — when it differs from the pin — rebuilds against it, runs the full CI suite (lint,
+typecheck, build, data invariants, link check), and opens a PR carrying the new data plus a summary
+of what changed: count deltas per dataset, and the outcomes, CEFs, citations, and guidance pages
+added, removed, or reworded. Removals are flagged first, since the ETL's floors tolerate a partial
+loss. Merging that PR advances the pin, because every build rewrites `data-snapshot/meta.json` with
+the commit it used. Nothing deploys until a human merges.
+
+`node scripts/summarize-sync.mjs` prints that same summary locally after any build — it compares the
+committed snapshot against the freshly built `src/data/`.
+
+To build against something other than the pin, set `CERT_REPO_REF` to a commit, tag, or branch;
+`CERT_REPO_REF=HEAD` tracks the latest CMS content. If the pin cannot be read and no `CERT_REPO_REF`
+is set, the build fails rather than quietly tracking whatever CMS has today. Note that reusing an
+existing clone via `CERT_REPO_DIR` skips checkout and therefore bypasses the pin — the build warns
+loudly and logs `(PIN NOT APPLIED)` when that happens.
 
 The ETL fails the build rather than shipping a hole: a missing CMS-required CSV throws, and sanity
 assertions enforce floors on every count. If the clone itself fails, the committed `data-snapshot/`
@@ -67,7 +82,7 @@ Where a cite is normalized, the discrepancy is shown on the page rather than sil
 | `MODEL_ID` | Model identifier, exactly as your provider names it. No default. |
 | `MODEL_BASE_URL` | Endpoint origin serving the Messages API shape (default `https://api.anthropic.com`). Point it at your own provider or boundary. |
 | `ASSISTANT_ACCESS_CODE` | If set, the assistant requires this code. Set it before any public deployment that also has an API key. |
-| `CERT_REPO_REF` | Override the pinned CMS commit. `HEAD` tracks latest. Not sensitive — a public commit in a public repo. |
+| `CERT_REPO_REF` | Build against a CMS commit/tag/branch other than the pin in `data-snapshot/meta.json`. `HEAD` tracks latest. Not sensitive — a public commit in a public repo. |
 | `CERT_REPO_DIR` | Reuse an existing local clone instead of cloning. Bypasses the pin; the build warns when it does. |
 
 The assistant's per-IP rate limit is in-memory, so it is per serverless instance and not a global
@@ -80,6 +95,11 @@ npm install
 npm run build   # required first — generates src/data/ that the app imports
 npm run dev
 ```
+
+## Contributing
+
+Bug reports and fixes are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for what belongs in this
+tool and what doesn't. For anything beyond a fix, please open an issue before writing code.
 
 ## Licensing
 

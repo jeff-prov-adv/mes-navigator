@@ -1,0 +1,171 @@
+# Weekly CMS content sync.
+#
+# The site's content is pinned to a reviewed CMS commit — `sourceCommit` in
+# data-snapshot/meta.json (see scripts/prepare-data.mjs). This job keeps that pin
+# moving: every Monday it asks CMS what HEAD is, and when it differs from the pin
+# it rebuilds, runs the full CI suite, and opens a PR carrying the new data plus a
+# summary of what actually changed in the content. Merging that PR advances the pin.
+#
+# Nothing here deploys. A human merges, and Vercel builds the merged commit.
+name: CMS content sync
+
+on:
+  schedule:
+    # Mondays, 12:00 UTC (08:00 ET). CMS pushes in bursts, weeks apart — a weekly
+    # check is well inside their cadence.
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'CMS ref to sync to (a commit/tag/branch; HEAD = latest). Use an older commit to rehearse the change path.'
+        required: false
+        default: 'HEAD'
+
+concurrency:
+  group: cms-sync
+  cancel-in-progress: false
+
+env:
+  CMS_REPO: https://github.com/CMSgov/CMCS-DSG-DSS-Certification.git
+
+jobs:
+  # Cheap gate: one ls-remote. No clone, no npm install, no build, when CMS
+  # hasn't moved — which is the common case.
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      proceed: ${{ steps.resolve.outputs.proceed }}
+      target: ${{ steps.resolve.outputs.target }}
+      short: ${{ steps.resolve.outputs.short }}
+      pinned: ${{ steps.resolve.outputs.pinned }}
+      pinnedShort: ${{ steps.resolve.outputs.pinnedShort }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve CMS commit
+        id: resolve
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REF: ${{ inputs.ref || 'HEAD' }}
+        run: |
+          set -euo pipefail
+          pinned=$(node -p "require('./data-snapshot/meta.json').sourceCommit")
+          target=$(git ls-remote "$CMS_REPO" "$REF" | cut -f1 | head -n1)
+          # A raw commit sha is not advertised by ls-remote — use it as given.
+          [ -n "$target" ] || target="$REF"
+
+          {
+            echo "pinned=$pinned"
+            echo "pinnedShort=${pinned:0:7}"
+            echo "target=$target"
+            echo "short=${target:0:7}"
+          } >> "$GITHUB_OUTPUT"
+
+          if [ "$pinned" = "$target" ]; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "CMS unchanged at \`$pinned\` — nothing to sync." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          # A re-run (or a second dispatch) must not stack duplicate PRs.
+          branch="cms-sync/${target:0:7}"
+          open=$(gh pr list --head "$branch" --state open --json number --jq 'length')
+          if [ "$open" != "0" ]; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "CMS moved to \`$target\`, but \`$branch\` already has an open PR." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          echo "proceed=true" >> "$GITHUB_OUTPUT"
+          echo "CMS moved: \`$pinned\` → \`$target\`. Building and opening a sync PR." >> "$GITHUB_STEP_SUMMARY"
+
+  sync:
+    needs: check
+    if: needs.check.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Match the Node version the Vercel project builds with.
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      # PRs opened with GITHUB_TOKEN do not trigger ci.yml's `pull_request` event,
+      # so this job runs CI's checks itself. Keep these steps in step with ci.yml.
+      - name: Lint
+        run: npx eslint
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      # Pin to the resolved sha rather than HEAD, so a CMS push mid-run cannot
+      # produce data that disagrees with the commit this PR claims to sync to.
+      - name: Build against CMS ${{ needs.check.outputs.short }}
+        env:
+          CERT_REPO_REF: ${{ needs.check.outputs.target }}
+        run: npm run build
+
+      - name: Data invariants
+        run: npm run check:data
+
+      - name: Link check
+        run: |
+          npx next start -p 3000 &
+          echo $! > /tmp/next.pid
+          npm run check:links
+          kill "$(cat /tmp/next.pid)" 2>/dev/null || true
+
+      # What moved in the content, in review-able terms. The ETL floors tolerate a
+      # partial content loss; this is where a shrink becomes visible.
+      - name: Content summary
+        run: node scripts/summarize-sync.mjs | tee /tmp/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open sync PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          branch="cms-sync/${{ needs.check.outputs.short }}"
+          title="CMS content sync: ${{ needs.check.outputs.pinnedShort }} → ${{ needs.check.outputs.short }}"
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "$branch"
+          git add src/data data-snapshot 'public/SMC Process'
+          if git diff --cached --quiet; then
+            echo "Build produced no file changes — not opening a PR." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "$title"
+          git push --set-upstream origin "$branch"
+
+          {
+            cat /tmp/summary.md
+            echo
+            echo '---'
+            echo
+            echo "Merging advances the content pin (\`sourceCommit\` in \`data-snapshot/meta.json\`)"
+            echo "to \`${{ needs.check.outputs.target }}\`; Vercel then builds this content."
+            echo
+            echo "Lint, typecheck, build, data invariants, and the link check all passed in the run"
+            echo "that opened this PR: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo
+            echo "> PRs opened with \`GITHUB_TOKEN\` do not trigger \`ci.yml\`, which is why this"
+            echo "> workflow runs those checks itself before opening the PR."
+          } > /tmp/body.md
+
+          gh pr create --base main --head "$branch" --title "$title" --body-file /tmp/body.md
