@@ -45,7 +45,7 @@ jobs:
       pinnedShort: ${{ steps.resolve.outputs.pinnedShort }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Resolve CMS commit
         id: resolve
@@ -94,9 +94,9 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           # Match the Node version the Vercel project builds with.
           node-version: '24'
