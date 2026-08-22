@@ -273,8 +273,17 @@ const rewriteGuidance = (md) => {
   });
 
   // [text](relative/path) — internal route where one exists, else the CMS repo.
+  //
+  // A leading slash is repo-root-relative, not app-absolute: CMS writes these as
+  // [text]({{ site.baseurl }}/Templates/) for their Jekyll site, and stripMd removes
+  // the Liquid variable before this runs, leaving "/Templates/". Skipping those as
+  // already-absolute renders them as dead links here. copyAsset already reads a
+  // leading slash the same way for <img src>. (The pinned content happens to carry
+  // none of these — CMS dropped them in 2026-05 — but they were used for years, and
+  // a weekly sync has to survive their return.)
   out = out.replace(/\[([^\]]*)\]\(([^)]+)\)/g, (full, text, href) => {
-    if (/^(https?:|mailto:|#|\/)/i.test(href)) return full;
+    if (/^(https?:|mailto:|#)/i.test(href)) return full;
+    href = href.replace(/^\//, '');
     const hit = INTERNAL_LINKS.find(([re]) => re.test(href));
     if (hit) return `[${text}](${hit[1]})`;
     const rel = href.replace(/^(\.\.\/)+/, '');
