@@ -27,8 +27,9 @@ what they read here is what CMS published — nothing added, nothing editorializ
 - **Hand edits to generated content.** `src/data/`, `data-snapshot/`, and `public/SMC Process/` are
   written by the build and will be overwritten. Fix the ETL instead.
 - **Corrections to CMS's own content.** Wrong outcome text, a bad metric, a missing CEF — those
-  belong [with CMS](https://github.com/CMSgov/CMCS-DSG-DSS-Certification/issues). If this tool
-  renders something differently from CMS's repository, that *is* a bug here; file it.
+  belong with CMS at <MES.Certification@cms.hhs.gov>, the address in their repository README. GitHub
+  issues are disabled on that repository, so email is the channel they read. If this tool renders
+  something differently from CMS's repository, that *is* a bug here; file it.
 - **A default model id or provider-specific wiring** in the drafting route. Operators supply their
   own endpoint, credential, and model, deliberately.
 
