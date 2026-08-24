@@ -1,12 +1,14 @@
 blank_issues_enabled: true
 contact_links:
   - name: Certification content looks wrong
-    url: https://github.com/CMSgov/CMCS-DSG-DSS-Certification/issues
+    url: mailto:MES.Certification@cms.hhs.gov
     about: >-
       Outcomes, metrics, CEFs, and guidance text are mirrored from CMS's
-      repository and are not edited here. Corrections belong with CMS. If this
-      tool displays something differently from that repository, that IS a bug
-      here — open a bug report instead.
+      repository and are not edited here. Corrections belong with CMS, at the
+      address published in their repository README — GitHub issues are disabled
+      on it, so that is the channel they actually read. If this tool displays
+      something differently from that repository, that IS a bug here — open a
+      bug report instead.
 
   - name: Report a security issue
     url: https://github.com/jeff-prov-adv/mes-navigator/security/policy
