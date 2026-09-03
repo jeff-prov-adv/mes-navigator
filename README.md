@@ -10,13 +10,15 @@ Unofficial. Not affiliated with or endorsed by CMS.
 
 | | Count |
 |---|---|
-| CMS-required outcomes | 132 across 12 modules |
+| CMS-required outcomes | 141 across 13 modules |
 | CMS-approved state-specific examples | 58 |
 | Conditions for Enhanced Funding | 22 |
 | CFR citations (Title 42 and 45), linked to eCFR | 124 |
 | CMS guidance pages | 6 |
 
-Four further modules (EVV, HIE, AVS, 1115/Waiver) certify against state-specific outcomes only.
+Three further modules (HIE, AVS, 1115/Waiver) certify against state-specific outcomes only. EVV's
+9 CMS-required outcomes are published as a table in its module readme rather than a `_data/*.csv`
+like the other 12 CSV-backed modules — the ETL reads both.
 
 ## Data pipeline
 

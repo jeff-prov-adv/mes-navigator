@@ -113,7 +113,7 @@
   "slug": "evv",
   "dir": "Electronic Visit Verification (EVV)",
   "description": "Electronic Visit Verification (EVV) is a system under which visits conducted as part of Personal Care Services (PCS) and Home Health Care Services (HHCS) are electronically verified with respect to (i) the type of service performed; (ii) the individual receiving the service; (iii) the date of the service; (iv) the location of service delivery; (v) the individual providing the service; and (vi) the time the service begins and ends.",
-  "cmsRequired": 0,
+  "cmsRequired": 9,
   "stateSpecific": 0
  },
  {

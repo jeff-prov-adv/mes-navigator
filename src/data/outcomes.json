@@ -5747,5 +5747,242 @@
    ]
   ],
   "alsoIn": []
+ },
+ {
+  "id": "EVV01",
+  "slug": "EVV01",
+  "title": "",
+  "module": "Electronic Visit Verification",
+  "moduleCode": "EVV",
+  "moduleSlug": "evv",
+  "outcome": "The electronic visit verification (EVV) solution captures and verifies data with respect to personal care services or home healthcare services, including:\n- Type of service performed;\n- Individual receiving the service;\n- Date of service;\n- Location of service delivery;\n- Individual providing the service; and\n- Time the service begins and ends.",
+  "metrics": [
+   "Association of EVV Record to Claim/Encounter",
+   "EVV Record Match Against Approved Services, Providers, and Units",
+   "EVV Records Without Manual Edits"
+  ],
+  "regs": [],
+  "regOther": [
+   "Section 1903(l) of the Social Security Act, as added by the 21st Century Cures Act (“Cures Act,” Pub. L. No. 114-255)"
+  ],
+  "regRaw": "Section 1903(l) of the Social Security Act, as added by the 21st Century Cures Act (“Cures Act,” Pub. L. No. 114-255)",
+  "regLines": [
+   [
+    {
+     "text": "Section 1903(l) of the Social Security Act, as added by the 21st Century Cures Act (“Cures Act,” Pub. L. No. 114-255)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EVV02",
+  "slug": "EVV02",
+  "title": "",
+  "module": "Electronic Visit Verification",
+  "moduleCode": "EVV",
+  "moduleSlug": "evv",
+  "outcome": "For states that mandate or offer the use of a state-procured EVV solution, the EVV solution is able to save and transmit data regardless of the mode of communication (for example, network connectivity, telephony, and cell coverage). The system is designed such that even if there is a break in communication service, the data is stored and can be transmitted when the service is restored.",
+  "metrics": [
+   "Association of EVV Record to Claim/Encounter",
+   "EVV Record Match Against Approved Services, Providers, and Units",
+   "EVV Records Without Manual Edits"
+  ],
+  "regs": [],
+  "regOther": [
+   "Medicaid Best Practice (MBP)"
+  ],
+  "regRaw": "Medicaid Best Practice (MBP)",
+  "regLines": [
+   [
+    {
+     "text": "Medicaid Best Practice (MBP)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EVV03",
+  "slug": "EVV03",
+  "title": "",
+  "module": "Electronic Visit Verification",
+  "moduleCode": "EVV",
+  "moduleSlug": "evv",
+  "outcome": "Each visit initiated is captured within the EVV system, whether or not the visit was verified.",
+  "metrics": [
+   "Association of EVV Record to Claim/Encounter",
+   "EVV Record Match Against Approved Services, Providers, and Units",
+   "EVV Records Without Manual Edits"
+  ],
+  "regs": [],
+  "regOther": [
+   "MBP"
+  ],
+  "regRaw": "MBP",
+  "regLines": [
+   [
+    {
+     "text": "MBP"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EVV04",
+  "slug": "EVV04",
+  "title": "",
+  "module": "Electronic Visit Verification",
+  "moduleCode": "EVV",
+  "moduleSlug": "evv",
+  "outcome": "For states that receive EVV data from various EVV platforms, the state standardizes EVV data elements. The state validates incoming data against its EVV data standards. (This could be through the EVV solution or through some other data aggregation function.)",
+  "metrics": [
+   "Association of EVV Record to Claim/Encounter",
+   "EVV Record Match Against Approved Services, Providers, and Units",
+   "EVV Records Without Manual Edits"
+  ],
+  "regs": [],
+  "regOther": [
+   "MITA 3.0 IA ML3"
+  ],
+  "regRaw": "MITA 3.0 IA ML3",
+  "regLines": [
+   [
+    {
+     "text": "MITA 3.0 IA ML3"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EVV05",
+  "slug": "EVV05",
+  "title": "",
+  "module": "Electronic Visit Verification",
+  "moduleCode": "EVV",
+  "moduleSlug": "evv",
+  "outcome": "The state Medicaid agency uses the EVV data to avoid paying for unauthorized or unapproved services. The state uses EVV data to check that for each claim/encounter,\n1) the provider in the EVV visit record is approved for the beneficiary and matches the one in the claim/encounter submission,\n2) the visit procedure codes match those in the EVV record,\n3) the visit procedure codes in the record are approved for the beneficiary, and\n4) the number of units charged for a beneficiary does not exceed the beneficiary’s total number of approved units.\nThese validations need not be part of the EVV system; they can be done as part of claims adjudication or another function. This criterion applies to benefits given under all relevant authorizations. Approval could be in the form of a physician’s order, prior authorization, service plan, or other forms of approvals under relevant authorities.",
+  "metrics": [
+   "Association of EVV Record to Claim/Encounter",
+   "EVV Record Match Against Approved Services, Providers, and Units",
+   "EVV Records Without Manual Edits"
+  ],
+  "regs": [],
+  "regOther": [
+   "MBP"
+  ],
+  "regRaw": "MBP",
+  "regLines": [
+   [
+    {
+     "text": "MBP"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EVV06",
+  "slug": "EVV06",
+  "title": "",
+  "module": "Electronic Visit Verification",
+  "moduleCode": "EVV",
+  "moduleSlug": "evv",
+  "outcome": "All EVV data flows and interfaces are documented and tested, such as data flow from state-provided devices/telephony, non-state run EVV platforms, data aggregator, and to other Medicaid systems.",
+  "metrics": [
+   "Association of EVV Record to Claim/Encounter",
+   "EVV Record Match Against Approved Services, Providers, and Units",
+   "EVV Records Without Manual Edits"
+  ],
+  "regs": [],
+  "regOther": [
+   "MITA 3.0 TCM ML3 and ML2, industry best practice"
+  ],
+  "regRaw": "MITA 3.0 TCM ML3 and ML2, industry best practice",
+  "regLines": [
+   [
+    {
+     "text": "MITA 3.0 TCM ML3 and ML2, industry best practice"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EVV07",
+  "slug": "EVV07",
+  "title": "",
+  "module": "Electronic Visit Verification",
+  "moduleCode": "EVV",
+  "moduleSlug": "evv",
+  "outcome": "For states that mandate or offer the use of a state-procured EVV solution, providers, beneficiaries, and caregivers are able to submit the necessary verification information via alternate methods, should the primary mode of submission be out of service. (For example, if a handheld device is not working properly, the provider is able to phone in the visit information or submit it via a website portal.)",
+  "metrics": [
+   "EVV System Availability"
+  ],
+  "regs": [],
+  "regOther": [
+   "MBP"
+  ],
+  "regRaw": "MBP",
+  "regLines": [
+   [
+    {
+     "text": "MBP"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EVV08",
+  "slug": "EVV08",
+  "title": "",
+  "module": "Electronic Visit Verification",
+  "moduleCode": "EVV",
+  "moduleSlug": "evv",
+  "outcome": "The state provides user training and stakeholder outreach.",
+  "metrics": [
+   "EVV System Availability"
+  ],
+  "regs": [],
+  "regOther": [
+   "Section 1903(l) of the Social Security Act, as added by the 21st Century Cures Act (“Cures Act,” Pub. L. No. 114-255)"
+  ],
+  "regRaw": "Section 1903(l) of the Social Security Act, as added by the 21st Century Cures Act (“Cures Act,” Pub. L. No. 114-255)",
+  "regLines": [
+   [
+    {
+     "text": "Section 1903(l) of the Social Security Act, as added by the 21st Century Cures Act (“Cures Act,” Pub. L. No. 114-255)"
+    }
+   ]
+  ],
+  "alsoIn": []
+ },
+ {
+  "id": "EVV09",
+  "slug": "EVV09",
+  "title": "",
+  "module": "Electronic Visit Verification",
+  "moduleCode": "EVV",
+  "moduleSlug": "evv",
+  "outcome": "For states that mandate or offer the use of a state-procured EVV solution, the state provides support for non-native English speakers.",
+  "metrics": [
+   "EVV System Availability"
+  ],
+  "regs": [],
+  "regOther": [
+   "Civil Rights Act of 1964, Title VI, Affordable Health Care Act of 2010, Sect. 1557"
+  ],
+  "regRaw": "Civil Rights Act of 1964, Title VI, Affordable Health Care Act of 2010, Sect. 1557",
+  "regLines": [
+   [
+    {
+     "text": "Civil Rights Act of 1964, Title VI, Affordable Health Care Act of 2010, Sect. 1557"
+    }
+   ]
+  ],
+  "alsoIn": []
  }
 ]

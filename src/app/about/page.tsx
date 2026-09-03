@@ -1,9 +1,12 @@
-import { meta, outcomes, stateExamples, regulations, cefs } from '@/lib/data';
+import { meta, outcomes, stateExamples, regulations, cefs, modules } from '@/lib/data';
 import { BOOKING_URL, CONTACT_EMAIL } from '@/lib/contact';
 
 export const metadata = { title: 'About — MES Certification Navigator' };
 
 export default function AboutPage() {
+  const baselineModules = modules.filter((m) => m.cmsRequired > 0);
+  const stateOnlyModules = modules.filter((m) => m.cmsRequired === 0);
+
   return (
     <div className="max-w-3xl">
       <h1 className="display text-2xl">About this tool</h1>
@@ -16,8 +19,9 @@ export default function AboutPage() {
           to the outcomes it anchors. This tool fixes that.
         </p>
         <p>
-          It indexes {outcomes.length} CMS-required outcomes across the 12 modules that carry a CMS-required
-          baseline (four more — EVV, HIE, AVS, and 1115/Waiver — certify on state-specific outcomes only),{' '}
+          It indexes {outcomes.length} CMS-required outcomes across the {baselineModules.length} modules that
+          carry a CMS-required baseline ({stateOnlyModules.length} more —{' '}
+          {stateOnlyModules.map((m) => m.name).join(', ')} — certify on state-specific outcomes only),{' '}
           {stateExamples.length} state-specific outcome examples gathered and shared by CMS,{' '}
           {cefs.length} Conditions for Enhanced Funding, and {regulations.length} distinct regulatory citations
           linked to the eCFR — plus CMS&apos;s own guidance on the certification process and writing outcome

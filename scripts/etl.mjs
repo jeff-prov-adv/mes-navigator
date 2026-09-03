@@ -38,6 +38,63 @@ const STATE_CSV = {
   ...CMS_CSV, 'evv': 'EVV', 'hie': 'HIE', 'asset-verification': 'Asset Verification System', 'waiver-support': 'Waiver Support Systems',
 };
 
+// The four modules without a CMS_CSV entry publish their CMS-required baseline (or the
+// lack of one) as a table in the module readme instead of a _data/*.csv. HIE, AVS, and
+// Waiver Support Systems say "None"; EVV has a 9-row table. Parse whichever is actually
+// there rather than assuming none of the four ever have one.
+const parseReadmeOutcomeTable = (md) => {
+  const section = md.split(/^## CMS-Required Outcomes/m)[1];
+  if (!section) return null;
+  const lines = section.split('\n');
+  const tableStart = lines.findIndex((l) => l.trim().startsWith('|'));
+  if (tableStart === -1) return null; // e.g. "None. There are no CMS-Required outcomes for X."
+
+  const splitRow = (line) => line.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+  const header = splitRow(lines[tableStart]);
+  const col = (name) => header.findIndex((h) => h.toLowerCase().startsWith(name.toLowerCase()));
+  const cols = {
+    'Reference #': col('Reference'),
+    'CMS Required Outcomes': col('CMS Required Outcomes'),
+    'Default Metrics': col('Default Metrics'),
+    'Regulatory Sources': col('Regulatory Source'),
+  };
+  for (const [field, idx] of Object.entries(cols)) {
+    if (idx < 0) {
+      throw new Error(
+        `ETL: CMS-Required Outcomes table is missing a "${field}" column — CMS may have renamed it. ` +
+          `Found headers: ${JSON.stringify(header)}. Failing loudly instead of shipping a hole.`,
+      );
+    }
+  }
+  const refCol = cols['Reference #'];
+  const outcomeCol = cols['CMS Required Outcomes'];
+  const metricsCol = cols['Default Metrics'];
+  const regCol = cols['Regulatory Sources'];
+
+  // GFM table cells can't contain a real newline, so CMS uses <br/> and markdown links
+  // for the bulleted sub-items; rejoin those as plain newline-separated text so the
+  // shared clean()/splitMetrics()/splitRegs() below treat this exactly like a CSV cell.
+  const mdCellToText = (cell) =>
+    (cell || '')
+      .split(/<br\s*\/?>/i)
+      .map((l) => l.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').trim())
+      .filter(Boolean)
+      .join('\n');
+
+  const rows = [];
+  for (let i = tableStart + 2; i < lines.length; i++) {
+    if (!lines[i].trim().startsWith('|')) break;
+    const cells = splitRow(lines[i]);
+    rows.push({
+      'Reference #': cells[refCol],
+      'CMS Required Outcomes': mdCellToText(cells[outcomeCol]),
+      'Default Metrics': mdCellToText(cells[metricsCol]),
+      'Regulatory Sources': mdCellToText(cells[regCol]),
+    });
+  }
+  return rows;
+};
+
 const clean = (s) => (s || '').replace(/&nbsp;/gi, ' ').replace(/ /g, ' ').replace(/[ \t]+\n/g, '\n').trim();
 
 // URL-safe form of a CMS reference code. Codes are already safe apart from the
@@ -137,9 +194,15 @@ const buildRegLines = (raw) =>
 const outcomes = [];
 for (const mod of MODULES) {
   const frag = CMS_CSV[mod.slug];
-  if (!frag) continue;
-  const rows = readCsv(`MES Outcomes - CMS-Required ${frag}.csv`);
-  if (!rows) throw new Error(`ETL: missing required CSV "MES Outcomes - CMS-Required ${frag}.csv" — CMS may have renamed it. Failing loudly instead of shipping a hole.`);
+  let rows;
+  if (frag) {
+    rows = readCsv(`MES Outcomes - CMS-Required ${frag}.csv`);
+    if (!rows) throw new Error(`ETL: missing required CSV "MES Outcomes - CMS-Required ${frag}.csv" — CMS may have renamed it. Failing loudly instead of shipping a hole.`);
+  } else {
+    const readmePath = path.join(REPO, 'Outcomes and Metrics', mod.dir, 'readme.md');
+    const md = fs.existsSync(readmePath) ? fs.readFileSync(readmePath, 'utf8') : '';
+    rows = parseReadmeOutcomeTable(md) || [];
+  }
   for (const r of rows) {
     const ref = (r['Reference #'] || '').trim();
     if (!ref) continue;
@@ -322,10 +385,10 @@ const regulations = Object.values(regMap).sort((a, b) =>
 const assert = (cond, msg) => {
   if (!cond) throw new Error(`ETL sanity check failed: ${msg}`);
 };
-assert(outcomes.length >= 120, `outcomes=${outcomes.length}, expected ≥120 (132 as of 2026-08)`);
+assert(outcomes.length >= 129, `outcomes=${outcomes.length}, expected ≥129 (141 as of 2026-08 — 132 across 12 CSV-backed modules plus 9 for EVV, read from its readme table)`);
 assert(
-  modulesOut.filter((m) => m.cmsRequired > 0).length === 12,
-  `modules with CMS-required outcomes = ${modulesOut.filter((m) => m.cmsRequired > 0).length}, expected 12`,
+  modulesOut.filter((m) => m.cmsRequired > 0).length === 13,
+  `modules with CMS-required outcomes = ${modulesOut.filter((m) => m.cmsRequired > 0).length}, expected 13 (12 CSV-backed + EVV)`,
 );
 assert(stateExamples.length >= 40, `stateExamples=${stateExamples.length}, expected ≥40 (58 as of 2026-08)`);
 assert(guidance.length === 6, `guidance pages=${guidance.length}, expected 6`);
