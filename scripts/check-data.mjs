@@ -11,6 +11,8 @@ const outcomes = read('outcomes.json');
 const regulations = read('regulations.json');
 const guidance = read('guidance.json');
 const modules = read('modules.json');
+const mitaProcesses = read('mita-processes.json');
+const mitaAreas = read('mita-areas.json');
 
 const failures = [];
 const check = (cond, msg) => { if (!cond) failures.push(msg); };
@@ -107,6 +109,42 @@ for (const page of guidance) {
   }
 }
 
+// --- MITA shape ------------------------------------------------------------
+// etl-mita.mjs asserts these too, but the clone-failure path in prepare-data.mjs
+// copies data-snapshot/ straight into src/data and skips the ETL entirely. On that
+// path these checks are the only thing standing between a damaged snapshot and a
+// build, which is the same reason the outcome invariants above exist.
+check(mitaAreas.length === 9, `MITA business areas=${mitaAreas.length}, expected 9`);
+check(mitaProcesses.length >= 70, `MITA processes=${mitaProcesses.length}, expected >=70 (76 as of 2026-09)`);
+
+const mitaSlugs = new Set();
+for (const p of mitaProcesses) {
+  check(!!p.id, `MITA process "${p.name}": missing process id`);
+  check(
+    !!p.slug && encodeURIComponent(p.slug) === p.slug,
+    `MITA process ${p.id}: slug "${p.slug}" is not URL-safe (would break /mita/[process])`,
+  );
+  check(!p.slug.includes('/'), `MITA process ${p.id}: slug contains a slash and would split the route`);
+  check(!mitaSlugs.has(p.slug), `MITA process ${p.id}: duplicate slug "${p.slug}"`);
+  mitaSlugs.add(p.slug);
+
+  // Provenance is what lets a process page cite the CMS page it came from. A record
+  // without it cannot be shown honestly, so treat it as a failure rather than hiding
+  // the citation.
+  check(!!p.source?.bpt?.file && !!p.source?.bpt?.pages, `MITA process ${p.id}: BPT provenance missing`);
+  check(!!p.source?.bcm?.file && !!p.source?.bcm?.pages, `MITA process ${p.id}: BCM provenance missing`);
+
+  check(Array.isArray(p.maturity) && p.maturity.length > 0, `MITA process ${p.id}: no capability questions`);
+  for (const q of p.maturity || []) {
+    check(
+      Array.isArray(q.levels) && q.levels.length === 5,
+      `MITA process ${p.id}: capability question has ${q.levels?.length} maturity levels, expected 5`,
+    );
+  }
+  const area = mitaAreas.find((a) => a.slug === p.areaSlug);
+  check(!!area, `MITA process ${p.id}: areaSlug "${p.areaSlug}" matches no entry in mita-areas.json`);
+}
+
 // --- report ----------------------------------------------------------------
 if (failures.length) {
   console.error(`\n✗ ${failures.length} data check failure(s):\n`);
@@ -117,6 +155,7 @@ if (failures.length) {
 const anchored = regulations.filter((r) => r.url.includes('#p-')).length;
 const parts = regulations.filter((r) => /\/part-/.test(r.url)).length;
 const noted = regulations.filter((r) => r.note).length;
+const mitaQuestions = mitaProcesses.reduce((n, p) => n + (p.maturity?.length || 0), 0);
 console.log(
-  `✓ data checks passed — ${regulations.length} citations (${anchored} subsection anchors, ${parts} part-level, ${noted} normalized), ${outcomes.length} outcomes with unique URL-safe slugs, ${guidanceLinks} guidance link(s) into ${routes.size} routes`,
+  `✓ data checks passed — ${regulations.length} citations (${anchored} subsection anchors, ${parts} part-level, ${noted} normalized), ${outcomes.length} outcomes with unique URL-safe slugs, ${guidanceLinks} guidance link(s) into ${routes.size} routes, ${mitaProcesses.length} MITA processes across ${mitaAreas.length} areas with ${mitaQuestions} capability questions`,
 );

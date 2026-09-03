@@ -1,0 +1,56 @@
+[
+ {
+  "name": "Business Relationship Management",
+  "slug": "business-relationship-management",
+  "code": "BR",
+  "processes": 4
+ },
+ {
+  "name": "Care Management",
+  "slug": "care-management",
+  "code": "CM",
+  "processes": 9
+ },
+ {
+  "name": "Contractor Management",
+  "slug": "contractor-management",
+  "code": "CO",
+  "processes": 9
+ },
+ {
+  "name": "Eligibility and Enrollment Management",
+  "slug": "eligibility-and-enrollment-management",
+  "code": "EE",
+  "processes": 8
+ },
+ {
+  "name": "Financial Management",
+  "slug": "financial-management",
+  "code": "FM",
+  "processes": 19
+ },
+ {
+  "name": "Operations Management",
+  "slug": "operations-management",
+  "code": "OM",
+  "processes": 9
+ },
+ {
+  "name": "Performance Management",
+  "slug": "performance-management",
+  "code": "PE",
+  "processes": 5
+ },
+ {
+  "name": "Plan Management",
+  "slug": "plan-management",
+  "code": "PL",
+  "processes": 8
+ },
+ {
+  "name": "Provider Management",
+  "slug": "provider-management",
+  "code": "PM",
+  "processes": 5
+ }
+]
