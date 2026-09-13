@@ -1,7 +1,7 @@
 {
- "syncedAt": "2026-09-03",
+ "syncedAt": "2026-09-10",
  "source": "https://github.com/CMSgov/CMCS-DSG-DSS-Certification",
  "sourceCommit": "c9db9cd049f6641373b1ad0bb5aa1e07bd0ce68a",
  "mitaSource": "https://github.com/nickarrow/mita-open-blueprint",
- "mitaSourceCommit": "19a7e6c4e82a93d66cf97f14f31afd542b6b45d5"
+ "mitaSourceCommit": "abef1206b6eba4ae4312e0d1f17ed51f5ce62732"
 }

@@ -14,7 +14,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const MAX_LIST = 20; // long lists get truncated; the diff is still in the PR
-const REPO = 'https://github.com/CMSgov/CMCS-DSG-DSS-Certification';
+const CMS_REPO_WEB = 'https://github.com/CMSgov/CMCS-DSG-DSS-Certification';
+const MITA_REPO_WEB = 'https://github.com/nickarrow/mita-open-blueprint';
 const outDir = path.join(process.cwd(), 'src', 'data');
 
 const git = (args) =>
@@ -43,7 +44,7 @@ const SETS = [
     key: (o) => o.id,
     // 59 of 132 outcomes carry no title — those modules title only the outcome
     // statement itself, so fall back to it rather than printing a bare dash.
-    name: (o) => `\`${o.id}\` — ${o.title || snippet(o.outcome)}`,
+    name: (o) => `\`${o.id}\`: ${o.title || snippet(o.outcome)}`,
     fields: ['title', 'module', 'outcome', 'metrics', 'regRaw'],
   },
   {
@@ -52,14 +53,14 @@ const SETS = [
     file: 'state-examples.json',
     label: 'state examples',
     group: (e) => `${e.state}|${e.moduleCode}`,
-    name: (e) => `${e.state} · ${e.moduleCode} — ${snippet(e.goal)}`,
+    name: (e) => `${e.state} · ${e.moduleCode}: ${snippet(e.goal)}`,
     fields: ['goal', 'outcome', 'metrics'],
   },
   {
     file: 'cefs.json',
     label: 'CEFs',
     key: (c) => c.ref,
-    name: (c) => `\`${c.ref}\` — ${snippet(c.condition)}`,
+    name: (c) => `\`${c.ref}\`: ${snippet(c.condition)}`,
     fields: ['condition', 'evidence'],
   },
   {
@@ -80,8 +81,26 @@ const SETS = [
     file: 'modules.json',
     label: 'modules',
     key: (m) => m.code,
-    name: (m) => `${m.code} — ${m.name}`,
+    name: (m) => `${m.code}: ${m.name}`,
     fields: ['name', 'description', 'cmsRequired', 'stateSpecific'],
+  },
+  {
+    // Keyed on process_id, which upstream keeps stable across file renames, so a
+    // renamed BCM reads as a change to one process rather than a removal plus an
+    // unrelated addition.
+    file: 'mita-processes.json',
+    label: 'MITA processes',
+    key: (p) => p.id,
+    name: (p) => `\`${p.id}\`: ${p.name}`,
+    fields: ['name', 'sourceName', 'area', 'subCategory', 'description', 'steps', 'results',
+      'performanceMeasures', 'failures', 'constraints', 'maturity'],
+  },
+  {
+    file: 'mita-areas.json',
+    label: 'MITA areas',
+    key: (a) => a.slug,
+    name: (a) => a.name,
+    fields: ['name', 'code', 'processes'],
   },
 ];
 
@@ -139,7 +158,7 @@ function diffGrouped(set, before, after, out) {
     const paired = Math.min(bs.length, as.length);
     for (let i = 0; i < paired; i++) {
       const fields = changedFields(bs[i], as[i], set.fields);
-      if (fields.length) out.changed.push(`**${set.label}**: ${set.name(as[i])} — ${fields.join(', ')}`);
+      if (fields.length) out.changed.push(`**${set.label}**: ${set.name(as[i])} (changed: ${fields.join(', ')})`);
     }
     for (const row of bs.slice(paired)) out.removed.push(`**${set.label}**: ${set.name(row)}`);
     for (const row of as.slice(paired)) out.added.push(`**${set.label}**: ${set.name(row)}`);
@@ -154,7 +173,9 @@ function changedFields(before, after, fields) {
     const b = after[f];
     if (JSON.stringify(a) === JSON.stringify(b)) continue;
     if (Array.isArray(a) && Array.isArray(b)) {
-      out.push(`${f} (${a.length} → ${b.length})`);
+      // Same length means entries were edited in place; say so, rather than printing
+      // "15 → 15", which reads as if nothing happened.
+      out.push(a.length === b.length ? `${f} (${a.length}, edited)` : `${f} (${a.length} → ${b.length})`);
     } else if (typeof a === 'string' && typeof b === 'string' && (a.length > 200 || b.length > 200)) {
       out.push(`${f} (${a.length} → ${b.length} chars)`);
     } else {
@@ -187,7 +208,7 @@ for (const set of SETS) {
   const before = committed(set.file);
   const after = built(set.file);
   if (before === null) {
-    counts.push({ label: set.label, before: '—', after: after.length, delta: `+${after.length}` });
+    counts.push({ label: set.label, before: 'none', after: after.length, delta: `+${after.length}` });
     continue;
   }
   counts.push({
@@ -209,7 +230,7 @@ for (const set of SETS) {
   for (const [key, row] of a) {
     if (!b.has(key)) continue;
     const fields = changedFields(b.get(key), row, set.fields);
-    if (fields.length) changed.push(`**${set.label}**: ${set.name(row)} — ${fields.join(', ')}`);
+    if (fields.length) changed.push(`**${set.label}**: ${set.name(row)} (changed: ${fields.join(', ')})`);
   }
 }
 
@@ -229,24 +250,31 @@ const newMeta = built('meta.json');
 const short = (c) => (c ? c.slice(0, 7) : 'unknown');
 const nothing = !removed.length && !added.length && !changed.length && !assets.length;
 
-if (nothing && oldMeta.sourceCommit === newMeta.sourceCommit) {
+const pinsUnchanged =
+  oldMeta.sourceCommit === newMeta.sourceCommit && oldMeta.mitaSourceCommit === newMeta.mitaSourceCommit;
+if (nothing && pinsUnchanged) {
   console.log('No content change.');
   process.exit(0);
 }
 
+/** One line per source: moved (with a compare link), newly pinned, or unchanged. */
+const sourceLine = (label, web, from, to) => {
+  if (!from) return `**${label}**: pinned at \`${short(to)}\``;
+  if (from === to) return `**${label}**: unchanged at \`${short(to)}\``;
+  return `**${label}**: \`${short(from)}\` → \`${short(to)}\` ([compare](${web}/compare/${from}...${to}))`;
+};
+
 // --- report ----------------------------------------------------------------
 const out = [];
-out.push('## CMS content sync');
+out.push('## Content sync');
 out.push('');
-out.push(
-  `\`${short(oldMeta.sourceCommit)}\` → \`${short(newMeta.sourceCommit)}\` ` +
-    `([compare](${REPO}/compare/${oldMeta.sourceCommit}...${newMeta.sourceCommit}))`,
-);
+out.push(`- ${sourceLine('CMS certification repository', CMS_REPO_WEB, oldMeta.sourceCommit, newMeta.sourceCommit)}`);
+out.push(`- ${sourceLine('MITA blueprint', MITA_REPO_WEB, oldMeta.mitaSourceCommit, newMeta.mitaSourceCommit)}`);
 out.push('');
 out.push('| Dataset | Before | After | Δ |');
 out.push('|---|---:|---:|---:|');
 for (const c of counts) {
-  const d = typeof c.delta === 'number' ? (c.delta === 0 ? '—' : c.delta > 0 ? `+${c.delta}` : `${c.delta}`) : c.delta;
+  const d = typeof c.delta === 'number' ? (c.delta === 0 ? '0' : c.delta > 0 ? `+${c.delta}` : `${c.delta}`) : c.delta;
   out.push(`| ${c.label} | ${c.before} | ${c.after} | ${d} |`);
 }
 out.push('');
@@ -278,8 +306,8 @@ if (assets.length) {
   out.push('');
 }
 if (nothing) {
-  out.push('Pin moved, but no dataset changed — CMS commits since the last sync did not touch');
-  out.push('any content this tool indexes.');
+  out.push('A pin moved, but no dataset changed. The upstream commits since the last sync did not');
+  out.push('touch any content this tool indexes.');
   out.push('');
 }
 

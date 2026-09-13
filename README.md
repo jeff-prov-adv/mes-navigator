@@ -20,34 +20,38 @@ Four further modules (EVV, HIE, AVS, 1115/Waiver) certify against state-specific
 
 ## Data pipeline
 
-`npm run build` runs `scripts/prepare-data.mjs` before `next build`. That clones the CMS repository,
-runs the ETL in `scripts/etl.mjs`, and writes `src/data/*.json` plus the guidance images into
-`public/`.
+`npm run build` runs `scripts/prepare-data.mjs` before `next build`. That clones the CMS repository
+and the MITA blueprint, runs the ETLs in `scripts/etl.mjs` and `scripts/etl-mita.mjs`, and writes
+`src/data/*.json` plus the guidance images into `public/`.
 
-Content is **pinned** to a reviewed CMS commit so builds are reproducible and CMS cannot change
-the site's content between deploys. The pin is not a constant in the build script — it is
-`sourceCommit` in `data-snapshot/meta.json`, the commit that produced the committed data. One
-source of truth: the pin and the data it generated cannot drift apart. The build log reports which
-commit it used, where the pin came from, and whether it applied:
+Content is **pinned** to reviewed upstream commits so builds are reproducible and no upstream can
+change the site's content between deploys. There are two sources, each with its own pin in
+`data-snapshot/meta.json`: `sourceCommit` for the CMS certification repository, and
+`mitaSourceCommit` for [nickarrow/mita-open-blueprint](https://github.com/nickarrow/mita-open-blueprint),
+the machine-readable transcription of the MITA framework. The pins are not constants in the build
+script. Each is the commit that produced the committed data, so a pin and the data it generated
+cannot drift apart. The build log reports which commit each source used, where its pin came from,
+and whether it applied:
 
 ```
 Cert repo at commit c9db9cd… (pinned: c9db9cd… from data-snapshot/meta.json)
+MITA repo at commit abef120… (pinned: abef120… from data-snapshot/meta.json)
 ```
 
-The pin moves weekly, not never. `.github/workflows/cms-sync.yml` runs every Monday, asks CMS what
-`HEAD` is, and — when it differs from the pin — rebuilds against it, runs the full CI suite (lint,
-typecheck, build, data invariants, link check), and opens a PR carrying the new data plus a summary
-of what changed: count deltas per dataset, and the outcomes, CEFs, citations, and guidance pages
-added, removed, or reworded. Removals are flagged first, since the ETL's floors tolerate a partial
-loss. Merging that PR advances the pin, because every build rewrites `data-snapshot/meta.json` with
-the commit it used. Nothing deploys until a human merges.
+The pins move weekly, not never. `.github/workflows/cms-sync.yml` runs every Monday and asks both
+upstreams what `HEAD` is. When either differs from its pin, it rebuilds against both, runs the full CI
+suite (lint, typecheck, build, data invariants, link check), and opens a PR carrying the new data plus
+a summary of what changed: count deltas per dataset, and the outcomes, CEFs, citations, guidance
+pages, and MITA processes added, removed, or reworded. Removals are flagged first, since the ETL
+floors tolerate a partial loss. Merging that PR advances the pins, because every build rewrites
+`data-snapshot/meta.json` with the commits it used. Nothing deploys until a human merges.
 
-`node scripts/summarize-sync.mjs` prints that same summary locally after any build — it compares the
+`node scripts/summarize-sync.mjs` prints that same summary locally after any build. It compares the
 committed snapshot against the freshly built `src/data/`.
 
-To build against something other than the pin, set `CERT_REPO_REF` to a commit, tag, or branch;
-`CERT_REPO_REF=HEAD` tracks the latest CMS content. If the pin cannot be read and no `CERT_REPO_REF`
-is set, the build fails rather than quietly tracking whatever CMS has today. Note that reusing an
+To build against something other than a pin, set `CERT_REPO_REF` or `MITA_REPO_REF` to a commit, tag,
+or branch; `HEAD` tracks the latest. If a pin cannot be read and its `*_REPO_REF` is not set, the
+build fails rather than quietly tracking whatever upstream has today. Note that reusing an
 existing clone via `CERT_REPO_DIR` skips checkout and therefore bypasses the pin — the build warns
 loudly and logs `(PIN NOT APPLIED)` when that happens.
 
@@ -84,6 +88,8 @@ Where a cite is normalized, the discrepancy is shown on the page rather than sil
 | `ASSISTANT_ACCESS_CODE` | If set, the assistant requires this code. Set it before any public deployment that also has an API key. |
 | `CERT_REPO_REF` | Build against a CMS commit/tag/branch other than the pin in `data-snapshot/meta.json`. `HEAD` tracks latest. Not sensitive — a public commit in a public repo. |
 | `CERT_REPO_DIR` | Reuse an existing local clone instead of cloning. Bypasses the pin; the build warns when it does. |
+| `MITA_REPO_REF` | Build against a MITA blueprint commit, tag, or branch other than `mitaSourceCommit`. `HEAD` tracks latest. |
+| `MITA_REPO_DIR` | Reuse an existing local MITA clone instead of cloning. Bypasses the pin; the build warns when it does. |
 
 The assistant's per-IP rate limit is in-memory, so it is per serverless instance and not a global
 cap. A public deployment with an API key needs `ASSISTANT_ACCESS_CODE` **and** a provider spend cap.
