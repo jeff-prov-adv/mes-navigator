@@ -4,6 +4,10 @@ Makes the [CMS MES Certification Repository](https://github.com/CMSgov/CMCS-DSG-
 the source of truth for Streamlined Modular Certification outcomes and metrics — searchable and
 crosswalked. Built by [Provenance Advisors](https://provenanceadvisorsllc.com).
 
+It also carries the MITA 3.0 business process templates and capability models, from
+[MITA Open Blueprint](https://github.com/nickarrow/mita-open-blueprint) by Nick Aretakis, so the
+framework a State Self-Assessment uses sits next to the certification outcomes.
+
 Unofficial. Not affiliated with or endorsed by CMS.
 
 ## What it indexes
@@ -15,8 +19,15 @@ Unofficial. Not affiliated with or endorsed by CMS.
 | Conditions for Enhanced Funding | 22 |
 | CFR citations (Title 42 and 45), linked to eCFR | 124 |
 | CMS guidance pages | 6 |
+| MITA 3.0 business processes | 76 across 9 business areas, with 837 capability questions |
 
 Four further modules (EVV, HIE, AVS, 1115/Waiver) certify against state-specific outcomes only.
+
+MES modules and MITA business areas link to each other only where their names match (Provider
+Management, Financial Management, Eligibility and Enrollment). CMS publishes no mapping between the
+two, so those links are labeled as name matches, and no MITA process is mapped to a certification
+outcome. MITA also defines a Member Management area that CMS never published templates for; the
+MITA pages show that gap instead of leaving it out.
 
 ## Data pipeline
 
@@ -116,3 +127,10 @@ Certification Repository, a publicly published U.S. government work. CMS has not
 on it (their `LICENSE.md` reads "FIXME: This is probably in the public domain, but CMMS needs to put
 their license here"), so it is attributed rather than relicensed, and the MIT grant here should not
 be read as extending to it.
+
+The MITA data (`mita-processes.json` and `mita-areas.json` in those same directories) is the
+exception. It is derived from [MITA Open Blueprint](https://github.com/nickarrow/mita-open-blueprint),
+Copyright (c) 2025-2026 Nick Aretakis, under the MIT License; that notice is reproduced in
+[THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) and travels with the data. The content it
+transcribes, the CMS MITA Framework 3.0 (May 2014 Update), is a U.S. Government work in the public
+domain, and his license makes no claim over it.

@@ -22,6 +22,14 @@ It is redistributed here with attribution and is not relicensed by this file;
 no rights in it are granted or implied by these MIT terms. Consult CMS for the
 terms governing that content.
 
+The exception within those directories is the MITA framework data
+(mita-processes.json and mita-areas.json). It is derived from MITA Open
+Blueprint by Nick Aretakis (https://github.com/nickarrow/mita-open-blueprint),
+which is licensed under its own MIT License. That notice is reproduced in
+THIRD-PARTY-NOTICES.txt and governs that data; the Provenance Advisors
+copyright above does not extend to it. The MITA content that dataset
+transcribes is a U.S. Government work in the public domain.
+
 "Provenance Advisors" and associated names, logos, and branding are not
 licensed for use under these terms.
 

@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { Source_Serif_4, Public_Sans, IBM_Plex_Mono } from 'next/font/google';
 import Link from 'next/link';
 import { meta, outcomes, stateExamples } from '@/lib/data';
-import { mitaProcesses } from '@/lib/mita';
+import { mitaMeta, mitaProcesses } from '@/lib/mita';
 import HeaderSearch from '@/components/HeaderSearch';
 import NavLinks from '@/components/NavLinks';
 import './globals.css';
@@ -62,7 +62,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 >
                   CMS MES Certification Repository
                 </a>{' '}
-                (synced {meta.syncedAt}). Verify against the official repository before relying on it for a
+                (synced {meta.syncedAt}). MITA content from{' '}
+                <a
+                  className="text-accent underline underline-offset-2 hover:text-accent-dark"
+                  href={mitaMeta.mitaSource}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  MITA Open Blueprint
+                </a>{' '}
+                by Nick Aretakis (MIT License). Verify against the official sources before relying on it for a
                 certification submission.
               </p>
             </div>
