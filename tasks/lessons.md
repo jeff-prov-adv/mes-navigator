@@ -21,3 +21,6 @@ Patterns worth not re-learning. Append on correction.
 - Before opening a phase PR, walk that phase's plan checklist item by item against the diff. MITA
   Phase 1 shipped without the `cms-sync.yml` change the plan listed, so upstream fixes sat unnoticed
   for a week with nothing flagging them.
+- Switch the active `gh` account only when Jeff directs it, and only the switch he names. Approval to
+  switch to `jeff-prov-adv` and push does not include switching back: no EXIT trap, no automatic
+  restore. Leave the account where he put it, say which one is active, and wait for his direction.
