@@ -13,12 +13,16 @@ const read = (f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
 const modules = read('modules.json');
 const guidance = read('guidance.json');
 const outcomes = read('outcomes.json');
+const mitaAreas = read('mita-areas.json');
+const mitaProcesses = read('mita-processes.json');
 
 const seeds = [
-  '/', '/search', '/search?q=timely', '/modules', '/regulations', '/cefs', '/about', '/assistant',
+  '/', '/search', '/search?q=timely', '/modules', '/mita', '/regulations', '/cefs', '/about', '/assistant',
   ...modules.map((m) => `/modules/${m.slug}`),
   ...guidance.map((g) => `/guidance/${g.slug}`),
   ...outcomes.map((o) => `/outcomes/${o.slug}`),
+  ...mitaAreas.map((a) => `/mita/${a.slug}`),
+  ...mitaProcesses.map((p) => `/mita/${p.areaSlug}/${p.slug}`),
 ];
 
 async function waitForServer(tries = 30) {

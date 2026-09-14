@@ -75,11 +75,14 @@ const templates = [];
   if (fs.existsSync(path.join(dir, 'page.tsx'))) templates.push(route || '/');
 })(path.join(process.cwd(), 'src', 'app'), '');
 
-// Dynamic segments expand from the same data generateStaticParams uses.
+// Dynamic segments expand from the same data generateStaticParams uses. Each entry is
+// a list of concrete paths, so a route nesting two dynamic segments expands in pairs.
 const PARAMS = {
-  '/guidance/[slug]': guidance.map((g) => g.slug),
-  '/modules/[slug]': modules.map((m) => m.slug),
-  '/outcomes/[id]': outcomes.map((o) => o.slug),
+  '/guidance/[slug]': guidance.map((g) => `/guidance/${g.slug}`),
+  '/modules/[slug]': modules.map((m) => `/modules/${m.slug}`),
+  '/outcomes/[id]': outcomes.map((o) => `/outcomes/${o.slug}`),
+  '/mita/[area]': mitaAreas.map((a) => `/mita/${a.slug}`),
+  '/mita/[area]/[process]': mitaProcesses.map((p) => `/mita/${p.areaSlug}/${p.slug}`),
 };
 
 const routes = new Set();
@@ -88,9 +91,9 @@ for (const t of templates) {
     routes.add(t);
     continue;
   }
-  const values = PARAMS[t];
-  check(values, `route ${t} has no expansion in check-data.mjs — add one, or guidance links into it go unverified`);
-  for (const v of values || []) routes.add(t.replace(/\[[^\]]+\]/, v));
+  const paths = PARAMS[t];
+  check(paths, `route ${t} has no expansion in check-data.mjs; add one, or guidance links into it go unverified`);
+  for (const p of paths || []) routes.add(p);
 }
 
 let guidanceLinks = 0;
@@ -116,13 +119,19 @@ for (const page of guidance) {
 // build, which is the same reason the outcome invariants above exist.
 check(mitaAreas.length === 9, `MITA business areas=${mitaAreas.length}, expected 9`);
 check(mitaProcesses.length >= 70, `MITA processes=${mitaProcesses.length}, expected >=70 (76 as of 2026-09)`);
+for (const a of mitaAreas) {
+  check(
+    !!a.slug && encodeURIComponent(a.slug) === a.slug,
+    `MITA area "${a.name}": slug "${a.slug}" is not URL-safe (would break /mita/[area])`,
+  );
+}
 
 const mitaSlugs = new Set();
 for (const p of mitaProcesses) {
   check(!!p.id, `MITA process "${p.name}": missing process id`);
   check(
     !!p.slug && encodeURIComponent(p.slug) === p.slug,
-    `MITA process ${p.id}: slug "${p.slug}" is not URL-safe (would break /mita/[process])`,
+    `MITA process ${p.id}: slug "${p.slug}" is not URL-safe (would break /mita/[area]/[process])`,
   );
   check(!p.slug.includes('/'), `MITA process ${p.id}: slug contains a slash and would split the route`);
   check(!mitaSlugs.has(p.slug), `MITA process ${p.id}: duplicate slug "${p.slug}"`);

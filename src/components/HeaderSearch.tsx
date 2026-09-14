@@ -59,8 +59,8 @@ export default function HeaderSearch({ total }: { total: number }) {
         ref={ref}
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        aria-label="Search outcomes and examples"
-        placeholder={`Search ${total} outcomes & examples`}
+        aria-label="Search outcomes, state examples, and MITA processes"
+        placeholder={`Search ${total} outcomes & processes`}
         className={`w-full bg-transparent text-[13.5px] outline-none ${
           active ? 'text-ink placeholder:text-ink-3' : 'text-white placeholder:text-white/50'
         }`}

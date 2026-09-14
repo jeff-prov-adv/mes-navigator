@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 
 const NAV = [
   { href: '/modules', label: 'Modules' },
+  { href: '/mita', label: 'MITA' },
   { href: '/regulations', label: 'Regulations' },
   { href: '/cefs', label: 'CEFs' },
   { href: '/guidance/certification-process', label: 'Guidance', match: '/guidance' },

@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import SearchResults from '@/components/SearchResults';
+import { mitaSearchDocs } from '@/lib/mita';
 
 export const metadata = { title: 'Search — MES Certification Navigator' };
 
@@ -8,11 +9,12 @@ export default function SearchPage() {
     <div>
       <h1 className="display mb-1 text-2xl">Search</h1>
       <p className="mb-6 max-w-3xl text-sm text-ink-2">
-        Every CMS-required outcome and CMS-published state example, indexed with its metrics and citations. Filter
-        by result type and module; search from the field in the header on any page.
+        Every CMS-required outcome and CMS-published state example, indexed with its metrics and citations, plus
+        every MITA business process by name, description, and steps. Filter by result type, module, or business
+        area; search from the field in the header on any page.
       </p>
       <Suspense fallback={<ResultsSkeleton />}>
-        <SearchResults />
+        <SearchResults mita={mitaSearchDocs()} />
       </Suspense>
     </div>
   );
