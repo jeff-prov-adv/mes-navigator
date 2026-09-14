@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { Source_Serif_4, Public_Sans, IBM_Plex_Mono } from 'next/font/google';
 import Link from 'next/link';
 import { meta, outcomes, stateExamples } from '@/lib/data';
+import { mitaProcesses } from '@/lib/mita';
 import HeaderSearch from '@/components/HeaderSearch';
 import NavLinks from '@/components/NavLinks';
 import './globals.css';
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const searchable = outcomes.length + stateExamples.length;
+  const searchable = outcomes.length + stateExamples.length + mitaProcesses.length;
 
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>

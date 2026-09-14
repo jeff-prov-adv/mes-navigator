@@ -5,14 +5,18 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import MiniSearch from 'minisearch';
 import { outcomes, stateExamples, modules } from '@/lib/data';
+// Type only: the MITA data itself arrives as a prop, so its JSON never enters this bundle.
+import type { MitaSearchDoc } from '@/lib/mita';
 import Highlight from '@/components/Highlight';
 
 interface Doc {
   key: string;
-  kind: 'cms' | 'state';
+  kind: 'cms' | 'state' | 'mita';
   ref: string;
   title: string;
+  /** Module name, or the business area name for a MITA process. */
   module: string;
+  /** Facet key. MITA areas are prefixed, since some share a slug with an MES module. */
   moduleSlug: string;
   outcome: string;
   metricCount: number;
@@ -23,9 +27,12 @@ interface Doc {
   metrics: string;
   regs: string;
   state?: string;
+  steps?: string;
 }
 
-function buildDocs(): Doc[] {
+const areaKey = (slug: string) => `mita:${slug}`;
+
+function buildDocs(mita: MitaSearchDoc[]): Doc[] {
   const docs: Doc[] = outcomes.map((o) => ({
     key: `cms-${o.id}`,
     kind: 'cms' as const,
@@ -64,15 +71,34 @@ function buildDocs(): Doc[] {
       href: `/modules/${s.moduleSlug}#ex-${localIdx}`,
     });
   });
+  for (const p of mita) {
+    docs.push({
+      key: `mita-${p.slug}`,
+      kind: 'mita',
+      ref: p.code,
+      id: p.code,
+      title: p.name,
+      module: p.area,
+      moduleSlug: areaKey(p.areaSlug),
+      outcome: p.description,
+      metricCount: 0,
+      cites: [],
+      metrics: '',
+      regs: '',
+      steps: `${p.subCategory} ${p.steps}`,
+      href: p.href,
+    });
+  }
   return docs;
 }
 
 const KINDS = [
   { id: 'cms', label: 'CMS-required' },
   { id: 'state', label: 'State examples' },
+  { id: 'mita', label: 'MITA processes' },
 ] as const;
 
-export default function SearchResults() {
+export default function SearchResults({ mita }: { mita: MitaSearchDoc[] }) {
   const params = useSearchParams();
   const q = params.get('q') || '';
 
@@ -80,16 +106,16 @@ export default function SearchResults() {
   const [mods, setMods] = useState<string[]>([]);
 
   const { mini, docs, byKey } = useMemo(() => {
-    const docs = buildDocs();
+    const docs = buildDocs(mita);
     const mini = new MiniSearch<Doc>({
-      fields: ['id', 'title', 'outcome', 'metrics', 'regs', 'module', 'state'],
+      fields: ['id', 'title', 'outcome', 'metrics', 'regs', 'module', 'state', 'steps'],
       storeFields: ['key'],
       idField: 'key',
       searchOptions: { boost: { id: 3, title: 2 }, prefix: true, fuzzy: 0.15 },
     });
     mini.addAll(docs);
     return { mini, docs, byKey: new Map(docs.map((d) => [d.key, d])) };
-  }, []);
+  }, [mita]);
 
   // Result set for the query, before any facet is applied.
   const matched = useMemo(() => {
@@ -124,9 +150,14 @@ export default function SearchResults() {
   const toggle = (list: string[], set: (v: string[]) => void, v: string) =>
     set(list.includes(v) ? list.filter((x) => x !== v) : [...list, v]);
 
+  const byCount = (a: { slug: string }, b: { slug: string }) =>
+    (moduleCounts.get(b.slug) || 0) - (moduleCounts.get(a.slug) || 0);
   const facetModules = modules
     .filter((m) => (moduleCounts.get(m.slug) || 0) > 0 || mods.includes(m.slug))
-    .sort((a, b) => (moduleCounts.get(b.slug) || 0) - (moduleCounts.get(a.slug) || 0));
+    .sort(byCount);
+  const facetAreas = [...new Map(mita.map((p) => [p.areaSlug, { slug: areaKey(p.areaSlug), name: p.area }])).values()]
+    .filter((a) => (moduleCounts.get(a.slug) || 0) > 0 || mods.includes(a.slug))
+    .sort(byCount);
 
   return (
     <div className="grid items-start gap-0 md:grid-cols-[224px_1fr]">
@@ -160,6 +191,24 @@ export default function SearchResults() {
           ))}
           {!facetModules.length && <p className="text-[13px] text-ink-3">No modules match.</p>}
         </div>
+
+        {facetAreas.length > 0 && (
+          <>
+            <div className="my-5 h-px bg-line" />
+            <div className="eyebrow mb-2.5">MITA business area</div>
+            <div className="flex flex-col gap-1.5">
+              {facetAreas.map((a) => (
+                <Facet
+                  key={a.slug}
+                  label={a.name}
+                  count={moduleCounts.get(a.slug) || 0}
+                  checked={mods.includes(a.slug)}
+                  onChange={() => toggle(mods, setMods, a.slug)}
+                />
+              ))}
+            </div>
+          </>
+        )}
 
         {activeFilters > 0 && (
           <button
@@ -237,28 +286,39 @@ function Facet({
   );
 }
 
+const CARD_STYLE = {
+  cms: {
+    border: 'border-l-ink',
+    ref: 'bg-ink font-mono font-semibold text-white',
+    badge: 'bg-accent/10 text-accent-dark',
+    label: 'CMS-required',
+  },
+  state: {
+    border: 'border-l-gold',
+    ref: 'bg-gold/15 font-bold text-gold-ink',
+    badge: 'bg-gold/12 text-gold-ink',
+    label: 'State example',
+  },
+  mita: {
+    border: 'border-l-accent',
+    ref: 'bg-ink font-mono font-semibold text-gold-bright',
+    badge: 'bg-ink/8 text-ink',
+    label: 'MITA process',
+  },
+} as const;
+
 function ResultCard({ doc, terms }: { doc: Doc; terms: string[] }) {
-  const isCms = doc.kind === 'cms';
+  const style = CARD_STYLE[doc.kind];
   return (
     <article
-      className={`rounded-lg border border-line bg-white p-[16px_18px] shadow-[0_1px_2px_rgba(16,35,63,.05)] transition-colors hover:border-line-2 ${
-        isCms ? 'border-l-[3px] border-l-ink' : 'border-l-[3px] border-l-gold'
-      }`}
+      className={`rounded-lg border border-line border-l-[3px] bg-white p-[16px_18px] shadow-[0_1px_2px_rgba(16,35,63,.05)] transition-colors hover:border-line-2 ${style.border}`}
     >
       <div className="flex flex-wrap items-center gap-2">
-        {isCms ? (
-          <span className="rounded bg-ink px-1.5 py-0.5 font-mono text-[11.5px] font-semibold text-white">{doc.ref}</span>
-        ) : (
-          <span className="rounded bg-gold/15 px-1.5 py-0.5 text-[11.5px] font-bold text-gold-ink">{doc.ref}</span>
-        )}
+        <span className={`rounded px-1.5 py-0.5 text-[11.5px] ${style.ref}`}>{doc.ref}</span>
         <span className="text-xs font-semibold text-ink-2">{doc.module}</span>
         <span aria-hidden className="size-[3px] rounded-full bg-line-2" />
-        <span
-          className={`rounded px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-[.04em] ${
-            isCms ? 'bg-accent/10 text-accent-dark' : 'bg-gold/12 text-gold-ink'
-          }`}
-        >
-          {isCms ? 'CMS-required' : 'State example'}
+        <span className={`rounded px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-[.04em] ${style.badge}`}>
+          {style.label}
         </span>
       </div>
 
@@ -308,7 +368,7 @@ function EmptyState({ q }: { q: string }) {
   return (
     <div className="rounded-lg border border-dashed border-line-2 bg-zebra p-[22px] text-center">
       <p className="font-serif text-base font-semibold text-ink">
-        {q ? <>No outcomes match “{q}”</> : <>Nothing to show</>}
+        {q ? <>Nothing matches “{q}”</> : <>Nothing to show</>}
       </p>
       <p className="mt-1.5 text-[12.5px] leading-[1.6] text-ink-2">
         Try a broader term, or browse{' '}
