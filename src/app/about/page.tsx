@@ -1,4 +1,5 @@
 import { meta, outcomes, stateExamples, regulations, cefs } from '@/lib/data';
+import { mitaAreas, mitaMeta, mitaProcesses } from '@/lib/mita';
 import { BOOKING_URL, CONTACT_EMAIL } from '@/lib/contact';
 
 export const metadata = { title: 'About — MES Certification Navigator' };
@@ -24,6 +25,11 @@ export default function AboutPage() {
           statements. The drafting assistant applies that guidance, the module&apos;s CMS-required baseline, and
           the shared state examples to give teams a rigorous starting draft — one they finalize with their own
           experts and their CMS State Officer.
+        </p>
+        <p>
+          It also carries the MITA 3.0 framework: {mitaProcesses.length} business processes across{' '}
+          {mitaAreas.length} business areas, each with its Business Process Template and Business Capability
+          Model, cited to the CMS PDF pages they came from.
         </p>
         <h2>Who built it</h2>
         <p>
@@ -52,6 +58,16 @@ export default function AboutPage() {
             (CMSgov/CMCS-DSG-DSS-Certification), synced {meta.syncedAt}. CMS publishes that repository publicly
             without an asserted license; this tool attributes all content to it and adds navigation, crosswalks,
             and drafting support on top.
+          </li>
+          <li>
+            MITA content comes from{' '}
+            <a href={mitaMeta.mitaSource} target="_blank" rel="noreferrer">
+              MITA Open Blueprint
+            </a>{' '}
+            by Nick Aretakis, a machine-readable transcription of the CMS MITA Framework 3.0 (May 2014 Update),
+            used under the MIT License. The framework itself is a U.S. Government work in the public domain.
+            MES modules and MITA business areas are linked only where their names match; CMS publishes no
+            mapping between them.
           </li>
           <li>
             This is an unofficial tool, not affiliated with or endorsed by CMS. Always verify against the official

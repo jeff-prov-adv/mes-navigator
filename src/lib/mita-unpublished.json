@@ -1,0 +1,20 @@
+{
+ "_comment": "Business areas the MITA 3.0 framework defines but CMS never published BPT or BCM documents for, transcribed from the cited page. check-data.mjs fails if one of these ever appears in mita-areas.json, so this cannot silently go stale.",
+ "areas": [
+  {
+   "name": "Member Management",
+   "code": "ME",
+   "processes": [
+    { "code": "ME01", "name": "Manage Member Information" },
+    { "code": "ME02", "name": "Manage Applicant and Member Communication" },
+    { "code": "ME03", "name": "Perform Population and Member Outreach" },
+    { "code": "ME08", "name": "Manage Member Grievance and Appeal" }
+   ],
+   "status": "Under Development",
+   "source": {
+    "file": "source-pdfs/may-2014-update/business-architecture/Business Architecture Table of Contents.pdf",
+    "pages": "2"
+   }
+  }
+ ]
+}

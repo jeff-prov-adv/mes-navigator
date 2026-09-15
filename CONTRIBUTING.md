@@ -11,6 +11,12 @@ searchable, crosswalked, and traceable. Everything it displays is derived from t
 the build. That constraint is the product. A state or a CMS reviewer has to be able to trust that
 what they read here is what CMS published — nothing added, nothing editorialized.
 
+It also carries the MITA 3.0 framework, built from
+[MITA Open Blueprint](https://github.com/nickarrow/mita-open-blueprint), a machine-readable
+transcription of the CMS MITA PDFs. The same constraint holds: MES modules and MITA business areas
+link only where their names match, and nothing here maps a MITA process to a certification outcome,
+because CMS publishes no such mapping.
+
 ## What belongs here
 
 - Bug fixes — routing, search, rendering, accessibility, broken links.
@@ -30,6 +36,10 @@ what they read here is what CMS published — nothing added, nothing editorializ
   belong with CMS at <MES.Certification@cms.hhs.gov>, the address in their repository README. GitHub
   issues are disabled on that repository, so email is the channel they read. If this tool renders
   something differently from CMS's repository, that *is* a bug here; file it.
+- **Corrections to the MITA transcription.** If a MITA process reads differently from the CMS PDF
+  page it cites, open an issue on
+  [MITA Open Blueprint](https://github.com/nickarrow/mita-open-blueprint/issues), where the data is
+  maintained. If this tool renders something differently from that dataset, file it here.
 - **A default model id or provider-specific wiring** in the drafting route. Operators supply their
   own endpoint, credential, and model, deliberately.
 

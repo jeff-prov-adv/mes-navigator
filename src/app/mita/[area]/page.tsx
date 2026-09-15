@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { mitaAreas, getMitaArea, mitaProcessesByArea, mitaProcessHref } from '@/lib/mita';
+import { AreaModulePanel } from '@/components/MitaCrosswalk';
 
 export function generateStaticParams() {
   return mitaAreas.map((a) => ({ area: a.slug }));
@@ -40,6 +41,7 @@ export default async function MitaAreaPage({ params }: { params: Promise<{ area:
         {procs.length} business process{procs.length === 1 ? '' : 'es'}, each with its Business Process Template and
         Business Capability Model.
       </p>
+      <AreaModulePanel area={a} />
 
       {[...groups].map(([sub, list]) => (
         <section key={sub} className="mt-9">

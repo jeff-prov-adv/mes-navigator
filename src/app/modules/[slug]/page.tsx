@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import OpenFromHash from '@/components/OpenFromHash';
+import { ModuleMitaPanel } from '@/components/MitaCrosswalk';
 import { modules, getModule, outcomesByModule, examplesByModule } from '@/lib/data';
 
 export function generateStaticParams() {
@@ -23,6 +24,7 @@ export default async function ModulePage({ params }: { params: Promise<{ slug: s
       {mod.description && (
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-2 text-pretty">{mod.description}</p>
       )}
+      <ModuleMitaPanel mod={mod} />
 
       {cms.length > 0 && (
         <section className="mt-9">

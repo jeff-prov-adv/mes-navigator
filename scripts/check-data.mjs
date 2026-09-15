@@ -13,6 +13,10 @@ const guidance = read('guidance.json');
 const modules = read('modules.json');
 const mitaProcesses = read('mita-processes.json');
 const mitaAreas = read('mita-areas.json');
+// Hand-transcribed from a cited CMS page, not generated, so it lives beside the code that renders it.
+const mitaUnpublished = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), 'src', 'lib', 'mita-unpublished.json'), 'utf8'),
+).areas;
 
 const failures = [];
 const check = (cond, msg) => { if (!cond) failures.push(msg); };
@@ -154,6 +158,24 @@ for (const p of mitaProcesses) {
   check(!!area, `MITA process ${p.id}: areaSlug "${p.areaSlug}" matches no entry in mita-areas.json`);
 }
 
+// --- MITA areas CMS never published -----------------------------------------
+// The gap note says CMS published no templates for these areas. If upstream data ever
+// carries one, the note is wrong, so fail here rather than keep showing it.
+const mitaNames = new Set(mitaProcesses.flatMap((p) => [p.name, p.sourceName].filter(Boolean).map((n) => n.toLowerCase())));
+for (const gap of mitaUnpublished) {
+  check(
+    !mitaAreas.some((a) => a.name.toLowerCase() === gap.name.toLowerCase() || a.code === gap.code),
+    `MITA area ${gap.code} ${gap.name} is listed as unpublished in src/lib/mita-unpublished.json but now appears in mita-areas.json`,
+  );
+  check(gap.processes.length > 0 && !!gap.source?.file && !!gap.source?.pages, `unpublished MITA area ${gap.code}: processes or source citation missing`);
+  for (const proc of gap.processes) {
+    check(
+      !mitaNames.has(proc.name.toLowerCase()),
+      `unpublished MITA process ${proc.code} ${proc.name} now matches a published process; update src/lib/mita-unpublished.json`,
+    );
+  }
+}
+
 // --- report ----------------------------------------------------------------
 if (failures.length) {
   console.error(`\n✗ ${failures.length} data check failure(s):\n`);
@@ -166,5 +188,5 @@ const parts = regulations.filter((r) => /\/part-/.test(r.url)).length;
 const noted = regulations.filter((r) => r.note).length;
 const mitaQuestions = mitaProcesses.reduce((n, p) => n + (p.maturity?.length || 0), 0);
 console.log(
-  `✓ data checks passed — ${regulations.length} citations (${anchored} subsection anchors, ${parts} part-level, ${noted} normalized), ${outcomes.length} outcomes with unique URL-safe slugs, ${guidanceLinks} guidance link(s) into ${routes.size} routes, ${mitaProcesses.length} MITA processes across ${mitaAreas.length} areas with ${mitaQuestions} capability questions`,
+  `✓ data checks passed: ${regulations.length} citations (${anchored} subsection anchors, ${parts} part-level, ${noted} normalized), ${outcomes.length} outcomes with unique URL-safe slugs, ${guidanceLinks} guidance link(s) into ${routes.size} routes, ${mitaProcesses.length} MITA processes across ${mitaAreas.length} areas with ${mitaQuestions} capability questions, ${mitaUnpublished.length} unpublished area(s) confirmed absent`,
 );

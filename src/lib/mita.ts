@@ -4,6 +4,8 @@
 import processesJson from '@/data/mita-processes.json';
 import areasJson from '@/data/mita-areas.json';
 import metaJson from '@/data/meta.json';
+import unpublishedJson from '@/lib/mita-unpublished.json';
+import { modules, type Module } from '@/lib/data';
 
 export interface MitaMaturityQuestion {
   category: string;
@@ -51,9 +53,19 @@ export interface MitaArea {
   processes: number;
 }
 
+/** A business area the framework defines but CMS never published templates or models for. */
+export interface MitaUnpublishedArea {
+  name: string;
+  code: string;
+  processes: { code: string; name: string }[];
+  status: string;
+  source: MitaSourceDoc;
+}
+
 export const mitaProcesses = processesJson as MitaProcess[];
 export const mitaAreas = areasJson as MitaArea[];
 export const mitaMeta = metaJson as { mitaSource: string; mitaSourceCommit: string };
+export const mitaUnpublishedAreas = unpublishedJson.areas as MitaUnpublishedArea[];
 
 export const getMitaArea = (slug: string) => mitaAreas.find((a) => a.slug === slug);
 export const mitaProcessesByArea = (slug: string) => mitaProcesses.filter((p) => p.areaSlug === slug);
@@ -103,3 +115,14 @@ export const mitaSearchDocs = (): MitaSearchDoc[] =>
     steps: p.steps.join(' '),
     href: mitaProcessHref(p),
   }));
+
+// MES modules and MITA business areas cross-reference by name only. CMS publishes no mapping
+// between them, so the rule is deliberately mechanical: names match once a trailing "Management"
+// is dropped (MITA's "Eligibility and Enrollment Management" is the MES "Eligibility and
+// Enrollment" module). Pages that show a match label it as a name match.
+const baseName = (s: string) => s.trim().toLowerCase().replace(/\s+management$/, '');
+
+export const mitaAreaForModule = (m: Module) => mitaAreas.find((a) => baseName(a.name) === baseName(m.name));
+export const unpublishedMitaAreaForModule = (m: Module) =>
+  mitaUnpublishedAreas.find((a) => baseName(a.name) === baseName(m.name));
+export const moduleForMitaArea = (a: { name: string }) => modules.find((m) => baseName(m.name) === baseName(a.name));

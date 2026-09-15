@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { mitaAreas, mitaProcesses, mitaProcessesByArea, mitaMeta } from '@/lib/mita';
+import { mitaAreas, mitaProcesses, mitaProcessesByArea, mitaMeta, mitaUnpublishedAreas, moduleForMitaArea } from '@/lib/mita';
+import { UnpublishedAreaNote } from '@/components/MitaCrosswalk';
 
 export const metadata = { title: 'MITA Business Areas · MES Certification Navigator' };
 
@@ -55,6 +56,28 @@ export default function MitaPage() {
           );
         })}
       </div>
+
+      {mitaUnpublishedAreas.map((gap) => {
+        const mod = moduleForMitaArea(gap);
+        return (
+          <UnpublishedAreaNote
+            key={gap.code}
+            area={gap}
+            className="mt-8 max-w-3xl"
+          >
+            {mod && (
+              <p className="mt-3 text-sm leading-relaxed text-ink-2 text-pretty">
+                The MES certification side has a module of the same name,{' '}
+                <Link href={`/modules/${mod.slug}`} className="font-semibold text-accent hover:text-accent-dark">
+                  {mod.name} ({mod.code})
+                </Link>
+                , with {mod.cmsRequired} CMS-required outcome{mod.cmsRequired === 1 ? '' : 's'} and no MITA templates to
+                set beside them.
+              </p>
+            )}
+          </UnpublishedAreaNote>
+        );
+      })}
     </div>
   );
 }
