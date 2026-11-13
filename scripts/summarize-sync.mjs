@@ -75,7 +75,7 @@ const SETS = [
     label: 'guidance pages',
     key: (g) => g.slug,
     name: (g) => `${g.title}`,
-    fields: ['title', 'markdown'],
+    fields: ['title', 'group', 'markdown'],
   },
   {
     file: 'modules.json',
@@ -237,7 +237,8 @@ for (const set of SETS) {
 // Guidance images live outside the JSON; the ETL copies them into public/.
 let assets = [];
 try {
-  assets = git(['status', '--porcelain', '--', 'public/SMC Process'])
+  // -uall lists each new file; without it a new directory reports as one line.
+  assets = git(['status', '--porcelain', '-uall', '--', 'public/cms'])
     .split('\n')
     .filter(Boolean)
     .map((l) => l.trim());

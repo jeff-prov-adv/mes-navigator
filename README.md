@@ -18,7 +18,7 @@ Unofficial. Not affiliated with or endorsed by CMS.
 | CMS-approved state-specific examples | 58 |
 | Conditions for Enhanced Funding | 22 |
 | CFR citations (Title 42 and 45), linked to eCFR | 124 |
-| CMS guidance pages | 6 |
+| CMS guidance pages | 16 |
 | MITA 3.0 business processes | 76 across 9 business areas, with 837 capability questions |
 
 Four further modules (EVV, HIE, AVS, 1115/Waiver) certify against state-specific outcomes only.
@@ -33,7 +33,7 @@ MITA pages show that gap instead of leaving it out.
 
 `npm run build` runs `scripts/prepare-data.mjs` before `next build`. That clones the CMS repository
 and the MITA blueprint, runs the ETLs in `scripts/etl.mjs` and `scripts/etl-mita.mjs`, and writes
-`src/data/*.json` plus the guidance images into `public/`.
+`src/data/*.json` plus the guidance images into `public/cms/`.
 
 Content is **pinned** to reviewed upstream commits so builds are reproducible and no upstream can
 change the site's content between deploys. There are two sources, each with its own pin in
@@ -69,7 +69,7 @@ loudly and logs `(PIN NOT APPLIED)` when that happens.
 The ETL fails the build rather than shipping a hole: a missing CMS-required CSV throws, and sanity
 assertions enforce floors on every count. If the clone itself fails, the committed `data-snapshot/`
 is used as a fallback with a loud warning — that path skips the ETL, which is why the generated data
-and `public/SMC Process/` images are committed rather than gitignored.
+and `public/cms/` images are committed rather than gitignored.
 
 Citation parsing lives only in `scripts/etl.mjs`. The UI consumes precomputed link segments; it does
 not re-parse citations. Keep it that way — two copies of that regex previously drifted apart.
@@ -122,7 +122,7 @@ tool and what doesn't. For anything beyond a fix, please open an issue before wr
 
 The MIT license in this repository covers the application code only.
 
-Content under `src/data/`, `data-snapshot/`, and `public/SMC Process/` is derived from the CMS MES
+Content under `src/data/`, `data-snapshot/`, and `public/cms/` is derived from the CMS MES
 Certification Repository, a publicly published U.S. government work. CMS has not asserted a license
 on it (their `LICENSE.md` reads "FIXME: This is probably in the public domain, but CMMS needs to put
 their license here"), so it is attributed rather than relicensed, and the MIT grant here should not

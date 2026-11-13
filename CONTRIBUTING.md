@@ -30,7 +30,7 @@ because CMS publishes no such mapping.
   consultant positioning, opinion and advocacy pieces, marketing. This isn't a judgment on the
   material — it's that a navigator with editorial content in it stops being a navigator, and the
   audience that needs this tool is exactly the audience that would notice.
-- **Hand edits to generated content.** `src/data/`, `data-snapshot/`, and `public/SMC Process/` are
+- **Hand edits to generated content.** `src/data/`, `data-snapshot/`, and `public/cms/` are
   written by the build and will be overwritten. Fix the ETL instead.
 - **Corrections to CMS's own content.** Wrong outcome text, a bad metric, a missing CEF — those
   belong with CMS at <MES.Certification@cms.hhs.gov>, the address in their repository README. GitHub

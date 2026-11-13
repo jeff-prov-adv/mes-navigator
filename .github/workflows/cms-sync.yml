@@ -168,7 +168,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git checkout -b "$BRANCH"
-          git add src/data data-snapshot 'public/SMC Process'
+          git add src/data data-snapshot public/cms
           if git diff --cached --quiet; then
             echo "Build produced no file changes, so no PR was opened." >> "$GITHUB_STEP_SUMMARY"
             exit 0
