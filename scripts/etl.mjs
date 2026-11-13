@@ -229,6 +229,18 @@ const modulesOut = MODULES.map((mod) => {
 });
 
 // Guidance pages
+//
+// The first six are the pages this tool has always carried. The rest follow CMS's own
+// table of contents (`_data/toc.yaml`), in CMS's order: a page is added here because CMS
+// publishes it in their navigation. `group` is CMS's section name for pages they nest
+// under one. The CEFs page of that section is not here because /cefs renders it from
+// the CSV.
+//
+// Two readmes are deliberately left out: `Conditions for Enhanced Funding/readme.md`
+// (last changed 2022-06) and `Ongoing Reporting/readme.md` (2025-06). Neither is in
+// CMS's table of contents, and each predates the page of its section that is.
+const CEF_GROUP = 'Conditions for Enhanced Funding';
+const REPORTING_GROUP = 'Metrics and Ongoing Reporting';
 const guidancePages = [
   { slug: 'writing-outcome-statements', title: 'Writing Outcome Statements', file: 'writing-outcome-statements.md' },
   { slug: 'certification-process', title: 'The Certification Process', file: 'certification-process.md' },
@@ -236,40 +248,85 @@ const guidancePages = [
   { slug: 'smc-planning', title: 'SMC Process — Planning Phase', file: 'SMC Process/Planning/readme.md' },
   { slug: 'smc-development', title: 'SMC Process — Development Phase', file: 'SMC Process/Development/readme.md' },
   { slug: 'smc-production', title: 'SMC Process — Production Phase', file: 'SMC Process/Production/readme.md' },
+  { slug: 'intake-form', title: 'Using the Intake Form', file: 'Intake Form/readme.md' },
+  { slug: 'cef-security-privacy', title: 'Security and Privacy', group: CEF_GROUP, file: 'Conditions for Enhanced Funding/Security and Privacy/readme.md' },
+  { slug: 'cef-tips', title: 'CEF Tips and Best Practices', group: CEF_GROUP, file: 'Conditions for Enhanced Funding/CEF Tips/readme.md' },
+  { slug: 'reporting-overview', title: 'Ongoing Reporting Overview', group: REPORTING_GROUP, file: 'Ongoing Reporting/Overview/readme.md' },
+  { slug: 'reporting-state-abbreviations', title: 'State Abbreviations', group: REPORTING_GROUP, file: 'Ongoing Reporting/State Abbreviations/readme.md' },
+  { slug: 'reporting-module-abbreviations', title: 'Module Abbreviations', group: REPORTING_GROUP, file: 'Ongoing Reporting/Module Abbreviations/readme.md' },
+  { slug: 'reporting-rules', title: 'Operational Report Workbook Rules and Guidelines', group: REPORTING_GROUP, file: 'Ongoing Reporting/Rules and Guidelines/readme.md' },
+  { slug: 'box', title: 'Using Box', file: 'Box/readme.md' },
+  { slug: 'faqs', title: 'Frequently Asked Questions', file: 'FAQs/readme.md' },
+  { slug: 'templates', title: 'Templates', file: 'Templates/readme.md' },
 ];
-// The guidance markdown is written for the CMS Jekyll site: images resolve against the
-// repo root and cross-links are relative repo paths. Both are dead here unless we copy
-// the assets in and repoint the links — at internal routes where we have an equivalent
-// page, and back at the CMS repo on GitHub where we don't.
+// The guidance markdown is written for the CMS Jekyll site: images and cross-links are
+// relative to the page's own URL there. Both are dead here unless we copy the assets in
+// and repoint the links — at internal routes where we have an equivalent page, and back
+// at the CMS repo on GitHub where we don't.
 const REPO_WEB = 'https://github.com/CMSgov/CMCS-DSG-DSS-Certification';
 
-const INTERNAL_LINKS = [
-  [/^(\.\.\/)*writing-outcome-statements\/?$/, '/guidance/writing-outcome-statements'],
-  [/^(\.\.\/)*certification-process\/?$/, '/guidance/certification-process'],
-  [/^(\.\.\/)*SMC(%20|\s)Process\/Overview\/?$/, '/guidance/smc-overview'],
-  [/^(\.\.\/)*SMC(%20|\s)Process\/Planning\/?$/, '/guidance/smc-planning'],
-  [/^(\.\.\/)*SMC(%20|\s)Process\/Development\/?$/, '/guidance/smc-development'],
-  [/^(\.\.\/)*SMC(%20|\s)Process\/Production\/?$/, '/guidance/smc-production'],
-  [/^(\.\.\/)*Conditions(%20|\s)for(%20|\s)Enhanced(%20|\s)Funding\/CEFs\/?$/, '/cefs'],
-];
+// Where Jekyll serves a page: `Box/readme.md` at /Box/, `certification-process.md` at
+// /certification-process. Links into a page are matched on this.
+const pagePath = (file) => file.replace(/\/readme\.md$/i, '').replace(/\.md$/i, '');
+
+// What a page's own relative links and images resolve against: the directory holding
+// the file. For a readme that is the page's path; for a root-level page it is the root,
+// which is why `certification-process.md` links to its sibling as a bare
+// "writing-outcome-statements".
+const pageBase = (file) => path.posix.dirname(file).replace(/^\.$/, '');
+
+// Internal routes are keyed on the page path, so listing a page above is all it takes
+// for links into it to land here instead of on GitHub.
+const ROUTE_BY_DIR = new Map([
+  ...guidancePages.map((g) => [pagePath(g.file), `/guidance/${g.slug}`]),
+  ['Conditions for Enhanced Funding/CEFs', '/cefs'],
+]);
+
+/**
+ * Repo-root-relative path for a link or image as written on the page at `dir`.
+ * A leading slash is repo-root-relative, not app-absolute (see rewriteGuidance).
+ * Climbing above the root clamps to it, which is what a browser does with the URL.
+ */
+const repoPath = (dir, href) => {
+  let h = href;
+  try {
+    h = decodeURIComponent(href);
+  } catch {
+    /* a stray % — resolve it as written */
+  }
+  const joined = h.startsWith('/') ? h.slice(1) : path.posix.join(dir, h);
+  return path.posix.normalize(joined).replace(/^(\.\.\/)+/, '').replace(/\/$/, '');
+};
 
 const copiedAssets = [];
-const copyAsset = (src) => {
-  const rel = decodeURIComponent(src.replace(/^\//, ''));
+// Every file copied out of the CMS repo lands under this one directory, at its repo path.
+// One root means the sync workflow, the licence scope, and the docs name a single path
+// however many pages carry images, and a CMS directory can never shadow an app route.
+// The ETL owns the directory outright: it is emptied first, so an image CMS drops shows
+// up as a deletion in the sync PR instead of lingering.
+const ASSET_ROOT = 'cms';
+fs.rmSync(path.join(process.cwd(), 'public', ASSET_ROOT), { recursive: true, force: true });
+
+const copyAsset = (rel) => {
   const from = path.join(REPO, rel);
   if (!fs.existsSync(from)) return false;
-  const to = path.join(process.cwd(), 'public', rel);
+  const to = path.join(process.cwd(), 'public', ASSET_ROOT, rel);
   fs.mkdirSync(path.dirname(to), { recursive: true });
   fs.copyFileSync(from, to);
   copiedAssets.push(rel);
   return true;
 };
 
-const rewriteGuidance = (md) => {
-  // <img src="/SMC Process/..."> — copy the file into public/ at the same path.
+const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+const rewriteGuidance = (md, dir) => {
+  // <img src="..."> — copy the file into public/cms/ at its repo path and point at it there.
+  // The src is rewritten to that absolute path: a page-relative one ("Example 1.png" on
+  // the Box page) would otherwise resolve against /guidance/ and 404.
   let out = md.replace(/(<img\b[^>]*?\bsrc=")([^"]+)(")/gi, (full, pre, src, post) => {
     if (/^https?:/i.test(src)) return full;
-    return copyAsset(src) ? `${pre}${encodeURI(src)}${post}` : full;
+    const rel = repoPath(dir, src);
+    return copyAsset(rel) ? `${pre}/${ASSET_ROOT}/${encodeURI(rel)}${post}` : full;
   });
 
   // [text](relative/path) — internal route where one exists, else the CMS repo.
@@ -277,30 +334,40 @@ const rewriteGuidance = (md) => {
   // A leading slash is repo-root-relative, not app-absolute: CMS writes these as
   // [text]({{ site.baseurl }}/Templates/) for their Jekyll site, and stripMd removes
   // the Liquid variable before this runs, leaving "/Templates/". Skipping those as
-  // already-absolute renders them as dead links here. copyAsset already reads a
-  // leading slash the same way for <img src>. (The pinned content happens to carry
-  // none of these — CMS dropped them in 2026-05 — but they were used for years, and
-  // a weekly sync has to survive their return.)
+  // already-absolute renders them as dead links here. (The pinned content happens to
+  // carry none of these — CMS dropped them in 2026-05 — but they were used for years,
+  // and a weekly sync has to survive their return.)
   out = out.replace(/\[([^\]]*)\]\(([^)]+)\)/g, (full, text, href) => {
     if (/^(https?:|mailto:|#)/i.test(href)) return full;
-    href = href.replace(/^\//, '');
-    const hit = INTERNAL_LINKS.find(([re]) => re.test(href));
-    if (hit) return `[${text}](${hit[1]})`;
-    const rel = href.replace(/^(\.\.\/)+/, '');
+    const [target, fragment] = href.split('#');
+    const rel = repoPath(dir, target);
+    const route = ROUTE_BY_DIR.get(rel);
+    if (route) return `[${text}](${route}${fragment ? `#${fragment}` : ''})`;
     const kind = /\.[a-z0-9]{2,5}$/i.test(rel) ? 'blob' : 'tree';
-    return `[${text}](${REPO_WEB}/${kind}/main/${encodeURI(decodeURIComponent(rel)).replace(/\/$/, '')})`;
+    return `[${text}](${REPO_WEB}/${kind}/main/${encodeURI(rel)})`;
   });
+
+  // "## Heading {#id}" is Kramdown's syntax for a heading anchor, which the pages' own
+  // tables of contents link to. marked has no such syntax and would print the braces, so
+  // the heading is emitted as HTML carrying the id. Heading text is escaped, not parsed:
+  // inline markdown inside an anchored heading would render literally.
+  out = out.replace(
+    /^(#{1,6})[ \t]+(.+?)[ \t]*\{#([A-Za-z][\w-]*)\}[ \t]*$/gm,
+    (full, hashes, text, id) => `<h${hashes.length} id="${id}">${escapeHtml(text)}</h${hashes.length}>`,
+  );
 
   return out;
 };
 
+const missingGuidance = guidancePages.filter((g) => !fs.existsSync(path.join(REPO, g.file)));
 const guidance = guidancePages
-  .map((g) => {
-    const p = path.join(REPO, g.file);
-    if (!fs.existsSync(p)) return null;
-    return { slug: g.slug, title: g.title, markdown: rewriteGuidance(stripMd(fs.readFileSync(p, 'utf8'))) };
-  })
-  .filter(Boolean);
+  .filter((g) => !missingGuidance.includes(g))
+  .map((g) => ({
+    slug: g.slug,
+    title: g.title,
+    ...(g.group ? { group: g.group } : {}),
+    markdown: rewriteGuidance(stripMd(fs.readFileSync(path.join(REPO, g.file), 'utf8')), pageBase(g.file)),
+  }));
 
 // Regulation crosswalk: cite -> outcomes
 const regMap = {};
@@ -328,7 +395,10 @@ assert(
   `modules with CMS-required outcomes = ${modulesOut.filter((m) => m.cmsRequired > 0).length}, expected 12`,
 );
 assert(stateExamples.length >= 40, `stateExamples=${stateExamples.length}, expected ≥40 (58 as of 2026-08)`);
-assert(guidance.length === 6, `guidance pages=${guidance.length}, expected 6`);
+assert(
+  missingGuidance.length === 0,
+  `guidance pages missing from the CMS repo: ${missingGuidance.map((g) => g.file).join(', ')}`,
+);
 assert(regulations.length >= 100, `regulations=${regulations.length}, expected ≥100 (124 as of 2026-08)`);
 assert(cefs.length >= 15, `cefs=${cefs.length}, expected ≥15 (22 as of 2026-08)`);
 

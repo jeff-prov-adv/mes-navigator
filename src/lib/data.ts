@@ -69,6 +69,8 @@ export interface Module {
 export interface GuidancePage {
   slug: string;
   title: string;
+  /** CMS's own section name, for pages their table of contents nests under one. */
+  group?: string;
   markdown: string;
 }
 

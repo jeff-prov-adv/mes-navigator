@@ -13,7 +13,7 @@ redistributed here, specifically the contents of:
 
   - src/data/
   - data-snapshot/
-  - public/SMC Process/
+  - public/cms/
 
 That material is derived from the CMS MES Certification Repository
 (https://github.com/CMSgov/CMCS-DSG-DSS-Certification), published by the U.S.
